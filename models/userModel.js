@@ -10,13 +10,19 @@ const userSchema = new Schema({
     minlength: [3, 'A username must have more than or 3 characters'],
     // validate in Front-End
   },
-  email: {
-    type: String,
-    required: [true, 'You must provide an email'],
-    lowercase: true,
-    unique: true,
-    maxlength: [25, 'An email must have less than or 25 characters'],
-    // validate in Front-End
+  contact: {
+    email: {
+      type: String,
+      required: [true, 'You must provide an email'],
+      lowercase: true,
+      unique: true,
+      maxlength: [25, 'An email must have less than or 25 characters'],
+      // validate in Front-End
+    },
+    phone: {
+      type: Number,
+      unique: true,
+    },
   },
   password: {
     type: String,
