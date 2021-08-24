@@ -1,4 +1,4 @@
-const UserModel = require("../model/UserSchema");
+const UserModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const jwtkey = require("../config/env").jwtKey;
@@ -10,6 +10,21 @@ exports.getAllUsers = async (res, req, next) => {
   } catch (e) {
     console.log(e);
   }
+};
+
+exports.postUser = async (req, res, next) => {
+  
+  try{
+      const user = new UserModel(req.body)
+      await user.save()
+
+      res.send({success:true, data:user})
+  }
+  catch(err){
+      console.log(err.message)
+      next(err)
+  }
+
 };
 
 //Register
@@ -35,7 +50,7 @@ exports.signUp = async (res, req, next) => {
             jwtkey,
             { expiresIn: 2592000000 }
           );
-          res.json({ token, userId: userData._id });
+          res.json({success:true, token, userId: userData._id });
         });
       } else {
         res.json({ err: "Please confirm the password" });
