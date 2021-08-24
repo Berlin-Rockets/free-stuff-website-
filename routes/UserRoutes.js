@@ -3,10 +3,12 @@ const UserRoute = express.Router();
 
 const {
 getAllUsers,
-postUser ,
+postUser,
  signUp,
 
 } = require("../controllers/UserController");
+
+
 
 UserRoute.get("/", getAllUsers);
 UserRoute.post("/", postUser);

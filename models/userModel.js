@@ -33,7 +33,7 @@ const userSchema = new Schema({
   },
   profilePicture: {
     type: String,
-    default: '',
+    default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Crystal_personal.svg/2000px-Crystal_personal.svg.png',
   },
 });
 

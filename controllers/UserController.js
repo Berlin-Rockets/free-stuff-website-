@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const jwtkey = require("../config/env").jwtKey;
 
-exports.getAllUsers = async (res, req, next) => {
+exports.getAllUsers = async (req, res, next) => {
   try {
     const allUsers = await UserModel.find({});
     res.json({ success: true, data: allUsers });
@@ -22,12 +22,12 @@ exports.postUser = async (req, res, next) => {
   }
   catch(err){
       console.log(err.message)
-      next(err)
+  
   }
 
 };
 
-//Register
+// Register
 exports.signUp = async (res, req, next) => {
   const { username, password, confirmPassword, email } = req.body;
   try {
@@ -62,3 +62,13 @@ exports.signUp = async (res, req, next) => {
     console.log(e);
   }
 };
+
+// Login
+
+
+
+
+// get single user 
+
+
+

@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { port, mongoURL } = require("./config/env");
-const UserRoute = require('./routes/UserRoutes')
+const userRoute = require('./routes/UserRoutes')
 
 
 mongoose.connect(mongoURL, {
@@ -17,7 +17,8 @@ app.use(cors({ origin: '*', exposedHeaders: 'token' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("users", UserRoute);
+app.use("/users", userRoute);
+app.use("/items", userRoute);
 
 app.listen(port, () => {
   console.log('====================================');
