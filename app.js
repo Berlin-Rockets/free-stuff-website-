@@ -1,10 +1,9 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const { port, mongoURL } = require("./config/env");
-const userRoute = require('./routes/UserRoutes')
-const itemRoute = require('./routes/ItemRoutes')
-
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const { port, mongoURL } = require('./config/env');
+const userRoute = require('./routes/UserRoutes');
+const itemRoute = require('./routes/ItemRoutes');
 
 mongoose.connect(mongoURL, {
   useNewUrlParser: true,
@@ -18,8 +17,11 @@ app.use(cors({ origin: '*', exposedHeaders: 'token' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/users", userRoute);
-app.use("/items", itemRoute);
+app.use('/users', userRoute);
+app.use('/items', itemRoute);
+app.use((error, req, res, next) => {
+  res.json(error.toString());
+});
 
 app.listen(port, () => {
   console.log('====================================');

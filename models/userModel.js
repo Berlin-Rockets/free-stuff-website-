@@ -5,25 +5,26 @@ const userSchema = new Schema({
   username: {
     type: String,
     required: [true, 'You must provide a username'],
-    unique: true,
+    unique: [true, 'This username is already taken'],
     maxlength: [10, 'A username must have less than or 10 characters'],
     minlength: [3, 'A username must have more than or 3 characters'],
     // validate in Front-End
   },
-  contact: {
-    email: {
-      type: String,
-      required: [true, 'You must provide an email'],
-      lowercase: true,
-      unique: true,
-      maxlength: [25, 'An email must have less than or 25 characters'],
-      // validate in Front-End
+  contact: [
+    {
+      email: {
+        type: String,
+        required: [true, 'You must provide an email'],
+        lowercase: true,
+        unique: true,
+        maxlength: [25, 'An email must have less than or 25 characters'],
+        // validate in Front-End
+      },
+      phone: {
+        type: Number,
+      },
     },
-    phone: {
-      type: Number,
-      unique: true,
-    },
-  },
+  ],
   password: {
     type: String,
     required: [true, 'You must provide a password'],
@@ -39,7 +40,8 @@ const userSchema = new Schema({
   },
   profilePicture: {
     type: String,
-    default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Crystal_personal.svg/2000px-Crystal_personal.svg.png',
+    default:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Crystal_personal.svg/2000px-Crystal_personal.svg.png',
   },
 });
 
