@@ -26,6 +26,21 @@ exports.postItem = async (req, res, next) => {
 };
 
 
+// FILTER ITEMS BY CATEGORY 
+exports.fItemByCategory = async (req, res, next) => {
+ 
+  try {
+    const items = await ItemModel.find({category:'furniture'});
+    res.json(items);
+  
+  } catch (err) {
+    console.log(err.message);
+    next(err);
+  }
+};
+
+
+// get Location 
 
 
 
@@ -52,10 +67,10 @@ exports.postItem = async (req, res, next) => {
 
 
 
-// get category Item 
 
 
-// get Location Item
+
+
 
 
 
