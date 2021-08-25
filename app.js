@@ -4,6 +4,7 @@ const cors = require('cors');
 const { port, mongoURL } = require('./config/env');
 const userRoute = require('./routes/UserRoutes');
 const itemRoute = require('./routes/ItemRoutes');
+const core = require("./middleware/security");
 
 mongoose.connect(mongoURL, {
   useNewUrlParser: true,
@@ -12,7 +13,7 @@ mongoose.connect(mongoURL, {
 });
 
 const app = express();
-
+app.use(core)
 app.use(cors({ origin: '*', exposedHeaders: 'token' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
