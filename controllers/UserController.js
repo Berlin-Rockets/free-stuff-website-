@@ -2,7 +2,7 @@ const UserModel = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const jwtkey = require('../config/env').jwtKey;
-const createError = require("http-errors");
+const createError = require('http-errors');
 
 exports.getAllUsers = async (req, res, next) => {
   try {
@@ -38,12 +38,7 @@ exports.getUser = async (req, res, next) => {
 
 // Register
 exports.signUp = async (req, res, next) => {
-  const {
-    username,
-    password,
-    confirmPassword,
-    contact: [{ email }],
-  } = req.body;
+  const { username, password, confirmPassword, email } = req.body;
   try {
     const user = await UserModel.findOne({ email });
     if (!user) {
@@ -52,13 +47,13 @@ exports.signUp = async (req, res, next) => {
 
         const userData = await new UserModel({
           username,
-          contact: [{ email }],
+          email,
           password: hashPassword,
         }).save();
 
         const token = jwt.sign(
           {
-            contact: [{ email }],
+            email,
             username,
           },
           jwtkey,
@@ -78,16 +73,16 @@ exports.signUp = async (req, res, next) => {
 
 // Login
 exports.login = async (req, res, next) => {
-
   console.log(req.body);
-  const user = await UserModel.findOne({ username: req.body.username});
-  // const user = await UserModel.findOne({contact:[{email:req.body.email}] });
+  // const user = await UserModel.findOne({ username: req.body.username});
+  const user = await UserModel.findOne({
+    email: req.body.email,
+  });
   console.log('user', user);
   if (!user) {
     res.json({ error: 'Email is incorrect or does not exist' });
     // next(new createError.NotFound('Email is incorrect or does not exist'))
   } else {
-   
     let check = bcrypt.compareSync(req.body.password, user.password);
     console.log('check', check);
     console.log('body', req.body.password);
@@ -99,7 +94,7 @@ exports.login = async (req, res, next) => {
       const token = jwt.sign(
         {
           username: user.username,
-          contact: [{ email: user.email }],
+          email: user.email,
           password: user.password,
           id: user._id,
         },
@@ -110,39 +105,3 @@ exports.login = async (req, res, next) => {
     }
   }
 };
-
-
-
-
-// exports.loginUser = async (req, res, next) => {
-//   // console.log(req.body);
-//   const user = await UsersModel.findOne({ email: req.body.email });
-//   // console.log('loginuser',user);
-//   if (!user) {
-//     res.json({
-//       error: "NO such user found in DB. Email or password is invalid",
-//     });
-//     // next(new createError.NotFound('NO such user found in DB'))
-//   } else {
-//     // compare password and hash password
-//     let check = bcrypt.compareSync(req.body.password, user.password);
-//     // console.log('loginCheck',check);
-//     if (!check) {
-//       next(new createError.NotFound("password dose not match"));
-//     } else {
-//       const token = jwt.sign(
-//         {
-//           password: user.password,
-//           email: user.email,
-//           id: user._id,
-//         },
-//         config.jwtKey,
-//         { expiresIn: 2555000000 }
-//       );
-
-//       // console.log('token', token)
-
-//       res.json({ success: true, data: user, userId: user._id, token: token });
-//     }
-//   }
-// };
