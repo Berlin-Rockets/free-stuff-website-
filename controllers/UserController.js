@@ -28,6 +28,7 @@ exports.postUser = async (req, res, next) => {
 // get single user
 exports.getUser = async (req, res, next) => {
   const id = req.params.id;
+  console.log(id);
   try {
     const user = await UserModel.findById(id);
     res.json({ success: true, data: user });
