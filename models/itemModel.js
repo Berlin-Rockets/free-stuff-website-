@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const itemSchema = new Schema({
+  giveOrSearch: {
+    type: Boolean,
+    default: true, // true = give, false = search
+  },
   name: {
     type: String,
     required: true,
@@ -12,13 +16,14 @@ const itemSchema = new Schema({
     type: String,
     required: true,
   },
-  date: {
+  createdAt: {
     type: Date,
     default: Date.now,
   },
   description: {
     type: String,
     maxlength: 500,
+    required: true,
   },
   images: {
     type: Array,
@@ -28,7 +33,10 @@ const itemSchema = new Schema({
     type: Boolean,
     default: true,
   },
-  location: {}, // radius: need to get geolocation and publish it in form of radius instead of precise location
+  location: {
+    type: String,
+    required: true,
+  }, // radius: need to get geolocation and publish it in form of radius instead of precise location
   pickUp: {
     type: Boolean,
     default: true,
@@ -43,8 +51,8 @@ const itemSchema = new Schema({
   },
   userId: {
     type: Schema.Types.ObjectId,
-    ref: "user",
-  }
+    ref: 'user',
+  },
 });
 
 const ItemModel = mongoose.model('item', itemSchema);
