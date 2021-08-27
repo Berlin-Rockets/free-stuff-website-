@@ -2,8 +2,21 @@ const ItemModel = require('../models/itemModel');
 
 exports.getAllItems = async (req, res, next) => {
   try {
-    const allItems = await ItemModel.find();
-    res.json({ success: true, results: allItems.length, data: allItems });
+    const queryObj = { ...req.query };
+    console.log(queryObj);
+    const excludedFields = ['page', 'sort', 'limit', 'fields'];
+    excludedFields.forEach((el) => delete queryObj[el]);
+
+    let query = ItemModel.find(queryObj);
+
+    if (req.query.sort) {
+      // const sortBy = req.query.split(',').join(' ')
+      query = query.sort('-createdAt');
+    }
+
+    const items = await query;
+
+    res.json({ success: true, results: items.length, data: items });
   } catch (e) {
     console.log(e);
   }
@@ -69,7 +82,27 @@ exports.fItemByLocation = async (req, res, next) => {
 
 // get Location
 
-// get Latest item
+// get Latest item – review & test later
+
+exports.getLatestItems = async (req, res, next) => {
+  try {
+    const queryObj = { ...req.query };
+    const excludedFields = ['page', 'sort', 'limit', 'fields'];
+    excludedFields.forEach((el) => delete queryObj[el]);
+
+    let query = ItemModel.find(queryObj);
+
+    if (req.query.sort) {
+      query = query.sort('-createdAt');
+    }
+
+    const items = await query;
+
+    res.json({ success: true, results: items.length, data: items });
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 // get given Item
 
