@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const itemSchema = new Schema({
+  postOrSearch: {
+    type: Boolean,
+    default: true, // by default, user posts an item he wants to give away. If false, user searches an item
+  },
   name: {
     type: String,
     required: true,
@@ -43,8 +47,8 @@ const itemSchema = new Schema({
   },
   userId: {
     type: Schema.Types.ObjectId,
-    ref: "user",
-  }
+    ref: 'user',
+  },
 });
 
 const ItemModel = mongoose.model('item', itemSchema);
