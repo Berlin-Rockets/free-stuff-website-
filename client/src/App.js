@@ -1,12 +1,17 @@
-import React from 'react'
-import './App.css';
+import React from "react";
+import "./App.css";
+import Banner from "./components/Banner";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer";
 
-export default function App() {
+function App() {
   return (
-    <div>
-    <h1>Final Project</h1>
+    <div className="App">
+      <Navbar />
+      <Banner />
+      <Footer />
     </div>
-  )
+  );
 }
 
-
+export default App;
