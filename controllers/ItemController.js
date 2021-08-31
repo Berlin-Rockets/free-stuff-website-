@@ -64,7 +64,7 @@ exports.filterByOne = async (req, res, next) => {
     const filterByOneItems = await ItemModel.find({
       $or: [{ category: filterItem }, { location: filterItem }],
     });
-    res.json({ success: true, items: filterByOneItems.length, filterByOneItems });
+    res.json({ success: true, items: filterByOneItems.length,data: filterByOneItems });
   } catch (err) {
     console.log(err.message);
     next(err);
@@ -84,7 +84,7 @@ exports.filterByOne = async (req, res, next) => {
        {$and: [  {'location':filterItem},{'category': secFilterItem}  ] }
 
      ]});
-     res.json({success:true,items: filterItems.length,filterItems});
+     res.json({success:true,items: filterItems.length,data: filterItems});
    } catch (err) {
      console.log(err.message);
      next(err);
@@ -106,19 +106,31 @@ exports.getSingleItem = async (req, res, next) => {
 
 
 
-//get sold/given Item
-// exports.givenItem = async (req, res, next) => {
+// get sold/given Item
+exports.givenItem = async (req, res, next) => {
+console.log('start given controller');
+   try {
+     const givenItems = await ItemModel.find({soldState:false});
+     res.json({success:true,items: givenItems.length,data: givenItems});
+   } catch (err) {
+     console.log(err.message);
+     next(err);
+   }
+ };
 
-//    try {
-//      const givenItems = await ItemModel.find({soldState:false});
-//      res.json({success:true,items: givenItems.length,givenItems});
-//    } catch (err) {
-//      console.log(err.message);
-//      next(err);
-//    }
-//  };
 
 // get need item
+exports.neededItem = async (req, res, next) => {
+  console.log('start given controller');
+     try {
+       const neededItems = await ItemModel.find({postOrSearch:false});
+       res.json({success:true,items: neededItems.length,data: neededItems});
+     } catch (err) {
+       console.log(err.message);
+       next(err);
+     }
+   };
+
 
 // Delete Item
 exports.deleteItem = async (req, res, next) => {
