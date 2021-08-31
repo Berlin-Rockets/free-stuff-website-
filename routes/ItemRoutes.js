@@ -4,13 +4,21 @@ const ItemRoute = express.Router();
 const {
 getAllItems,
 postItem,
-fItemByCategory
+catefilterItem,
+locfilterItem,
+filterByOne,
+filterItems,
+givenItem 
 } = require("../controllers/ItemController");
 
 
 
 ItemRoute.get("/", getAllItems);
-ItemRoute.get("/category", fItemByCategory);
+ItemRoute.get("/sort", givenItem );
+ItemRoute.get("/:filter", filterByOne);
+ItemRoute.get("/:filter/:both", filterItems);
+// ItemRoute.get("/category/:category", catefilterItem );
+// ItemRoute.get("/location/:location", locfilterItem );
 ItemRoute.post("/", postItem);
 
 
