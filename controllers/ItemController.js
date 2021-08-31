@@ -1,4 +1,4 @@
-const ItemModel = require("../models/itemModel");
+const ItemModel = require('../models/itemModel');
 
 exports.getAllItems = async (req, res, next) => {
   try {
@@ -35,7 +35,7 @@ exports.getAllItems = async (req, res, next) => {
     // }
 
     const items = await query;
-    
+
     res.json({ success: true, Items: items.length, data: items });
   } catch (e) {
     console.log(e);
@@ -64,7 +64,11 @@ exports.filterByOne = async (req, res, next) => {
     const filterByOneItems = await ItemModel.find({
       $or: [{ category: filterItem }, { location: filterItem }],
     });
-    res.json({ success: true, items: filterByOneItems.length,data: filterByOneItems });
+    res.json({
+      success: true,
+      items: filterByOneItems.length,
+      data: filterByOneItems,
+    });
   } catch (err) {
     console.log(err.message);
     next(err);
@@ -73,25 +77,26 @@ exports.filterByOne = async (req, res, next) => {
 
 // Filter items by Category and Location
 
- exports.filterItems = async (req, res, next) => {
-  const secFilterItem= req.params.both
-  const filterItem= req.params.filter
+exports.filterItems = async (req, res, next) => {
+  const secFilterItem = req.params.both;
+  const filterItem = req.params.filter;
   // console.log(filterItem);
   // console.log(secFilterItem);
-   try {
-     const filterItems = await ItemModel.find({$or:[
-      {$and: [  {'category': filterItem}, {'location':secFilterItem} ] },
-       {$and: [  {'location':filterItem},{'category': secFilterItem}  ] }
+  try {
+    const filterItems = await ItemModel.find({
+      $or: [
+        { $and: [{ category: filterItem }, { location: secFilterItem }] },
+        { $and: [{ location: filterItem }, { category: secFilterItem }] },
+      ],
+    });
+    res.json({ success: true, items: filterItems.length, data: filterItems });
+  } catch (err) {
+    console.log(err.message);
+    next(err);
+  }
+};
 
-     ]});
-     res.json({success:true,items: filterItems.length,data: filterItems});
-   } catch (err) {
-     console.log(err.message);
-     next(err);
-   }
- };
-
- // get Single Item
+// get Single Item
 exports.getSingleItem = async (req, res, next) => {
   const id = req.params.id;
   // console.log(id);
@@ -104,33 +109,29 @@ exports.getSingleItem = async (req, res, next) => {
   }
 };
 
-
-
 // get sold/given Item
 exports.givenItem = async (req, res, next) => {
-console.log('start given controller');
-   try {
-     const givenItems = await ItemModel.find({soldState:false});
-     res.json({success:true,items: givenItems.length,data: givenItems});
-   } catch (err) {
-     console.log(err.message);
-     next(err);
-   }
- };
+  console.log('start given controller');
+  try {
+    const givenItems = await ItemModel.find({ soldState: false });
+    res.json({ success: true, items: givenItems.length, data: givenItems });
+  } catch (err) {
+    console.log(err.message);
+    next(err);
+  }
+};
 
-
-// get need item
+// get needed item - As a user, if I don’t find what I search, then I want to be provided with a suggestion to post my need for a specific item that I’m looking for.
 exports.neededItem = async (req, res, next) => {
   console.log('start given controller');
-     try {
-       const neededItems = await ItemModel.find({postOrSearch:false});
-       res.json({success:true,items: neededItems.length,data: neededItems});
-     } catch (err) {
-       console.log(err.message);
-       next(err);
-     }
-   };
-
+  try {
+    const neededItems = await ItemModel.find({ postOrSearch: false });
+    res.json({ success: true, items: neededItems.length, data: neededItems });
+  } catch (err) {
+    console.log(err.message);
+    next(err);
+  }
+};
 
 // Delete Item
 exports.deleteItem = async (req, res, next) => {
@@ -149,7 +150,6 @@ exports.deleteItem = async (req, res, next) => {
     next();
   }
 };
-
 
 // get Latest item – review & test later
 // exports.getLatestItems = async (req, res, next) => {
