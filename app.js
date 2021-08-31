@@ -4,7 +4,7 @@ const cors = require('cors');
 const { port, mongoURL } = require('./config/env');
 const userRoute = require('./routes/UserRoutes');
 const itemRoute = require('./routes/ItemRoutes');
-const core = require("./middleware/security");
+const core = require('./middleware/security');
 
 mongoose.connect(mongoURL, {
   useNewUrlParser: true,
@@ -13,7 +13,7 @@ mongoose.connect(mongoURL, {
 });
 
 const app = express();
-app.use(core)
+app.use(core);
 app.use(cors({ origin: '*', exposedHeaders: 'token' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -24,7 +24,7 @@ app.use((error, req, res, next) => {
   res.json(error.toString());
 });
 
-app.listen(port, () => {
+app.listen(port || 5000, () => {
   console.log('====================================');
   console.log('Server start with port: ' + port);
   console.log('====================================');
