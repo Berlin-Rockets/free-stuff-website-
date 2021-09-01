@@ -3,6 +3,7 @@ import "./App.css";
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer";
+import Accordion from "./components/Accordion/Accordion";
 
 function App() {
   return (
