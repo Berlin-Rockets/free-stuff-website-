@@ -10,8 +10,8 @@ const userSchema = new Schema({
     minlength: [3, 'A username must have more than or 3 characters'],
     // validate in Front-End
   },
-  contact: [
-    {
+ 
+    
       email: {
         type: String,
         required: [true, 'You must provide an email'],
@@ -22,9 +22,9 @@ const userSchema = new Schema({
       },
       phone: {
         type: Number,
+        required: true
       },
-    },
-  ],
+ 
   password: {
     type: String,
     required: [true, 'You must provide a password'],

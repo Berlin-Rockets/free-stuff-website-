@@ -10,7 +10,7 @@ const {
 } = require('../controllers/UserController');
 
 UserRoute.get('/', getAllUsers);
-UserRoute.post('/', postUser);
+// UserRoute.post('/', postUser);
 UserRoute.post('/register', signUp);
 UserRoute.get('/:id', getUser);
 UserRoute.post('/login', login);
