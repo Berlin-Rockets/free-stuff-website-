@@ -13,17 +13,6 @@ exports.getAllUsers = async (req, res, next) => {
   }
 };
 
-exports.postUser = async (req, res, next) => {
-  try {
-    const user = new UserModel(req.body);
-    await user.save();
-
-    res.send({ success: true, data: user });
-  } catch (err) {
-    console.log(err.message);
-    next(err);
-  }
-};
 
 // get single user
 exports.getUser = async (req, res, next) => {
@@ -42,7 +31,8 @@ exports.signUp = async (req, res, next) => {
     username,
     password,
     confirmPassword,
-    contact: [{ email }],
+     email,
+     phone
   } = req.body;
   try {
     const user = await UserModel.findOne({ email });
@@ -52,13 +42,14 @@ exports.signUp = async (req, res, next) => {
 
         const userData = await new UserModel({
           username,
-          contact: [{ email }],
+          email ,
           password: hashPassword,
+          phone
         }).save();
 
         const token = jwt.sign(
           {
-            contact: [{ email }],
+             email ,
             username,
           },
           jwtkey,
@@ -69,7 +60,7 @@ exports.signUp = async (req, res, next) => {
         res.json({ err: 'Please confirm the password' });
       }
     } else {
-      res.json({ err: email + 'This email is already registered' });
+      res.json({ err: email +' '+ 'This email is already registered' });
     }
   } catch (e) {
     next(e);
@@ -80,7 +71,7 @@ exports.signUp = async (req, res, next) => {
 exports.login = async (req, res, next) => {
 
   console.log(req.body);
-  const user = await UserModel.findOne({ username: req.body.username});
+  const user = await UserModel.findOne({ email: req.body.email});
   // const user = await UserModel.findOne({contact:[{email:req.body.email}] });
   console.log('user', user);
   if (!user) {
@@ -99,7 +90,7 @@ exports.login = async (req, res, next) => {
       const token = jwt.sign(
         {
           username: user.username,
-          contact: [{ email: user.email }],
+          email: user.email,
           password: user.password,
           id: user._id,
         },

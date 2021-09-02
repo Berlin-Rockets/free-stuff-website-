@@ -1,16 +1,47 @@
-import React from "react";
+import React, { useState ,useEffect} from "react";
 import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar/Navbar";
+
 import Footer from "./components/Footer";
+import Login from './components/Login'
+import Register from './components/Register'
+import axios from "axios";
+import baseURL from "../src/config/baseUrl";
 
 function App() {
+  const [user, setUser] = useState();
+
+  const getUser = async () => {
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      const userData = await axios.get(baseURL + "/users/" + userId);
+      console.log(userData.data);
+      setUser(userData.data);
+    }
+  };
+useEffect(() => {
+ getUser()
+}, [])
+
   return (
+    <BrowserRouter>
     <div className="App">
-      <Navbar />
-      <Banner />
+     <Navbar user={user} />
+    
+      <Banner /> 
+    
+   <Switch>
+   <Route exact path="/banner" component={Banner} />
+   <Route exact path="/login" component={Login} />
+   <Route exact path="/register" component={Register} />
+      
+   
+      </Switch>
       <Footer />
     </div>
+    </BrowserRouter>
   );
 }
 
