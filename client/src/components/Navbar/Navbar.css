@@ -19,7 +19,7 @@
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
-  font-family: "Neucha", cursive;
+  font-family: 'Neucha', cursive;
 }
 
 .nav-menu {
@@ -37,7 +37,7 @@
   color: var(--dark);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   text-transform: uppercase;
   font-weight: 600;
 }
