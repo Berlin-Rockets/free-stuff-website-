@@ -3,6 +3,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const jwtkey = require('../config/env').jwtKey;
 const createError = require("http-errors");
+const multer = require('multer');
+
+
+
+
+
+
+
 
 exports.getAllUsers = async (req, res, next) => {
   try {
@@ -44,7 +52,8 @@ exports.signUp = async (req, res, next) => {
           username,
           email ,
           password: hashPassword,
-          phone
+          phone,
+          avatar: req.picName
         }).save();
 
         const token = jwt.sign(

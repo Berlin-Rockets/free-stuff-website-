@@ -2,6 +2,7 @@ const express = require("express");
 const ItemRoute = express.Router();
 
 const {
+    getItems,
 getAllItems,
 getSingleItem,
 postItem,
@@ -14,8 +15,8 @@ deleteItem
 } = require("../controllers/ItemController");
 
 
-
-ItemRoute.get("/", getAllItems);
+ItemRoute.get("/", getItems);
+// ItemRoute.get("/", getAllItems);
 ItemRoute.get("/singleItem/:id",getSingleItem);
 ItemRoute.post("/", postItem);
 ItemRoute.get("/filter/:filter", filterByOne);
