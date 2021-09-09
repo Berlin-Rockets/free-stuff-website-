@@ -5,14 +5,8 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-<<<<<<< HEAD
 .App {
   /* position: fixed; */
   height: 100%;
-=======
-.App{
-  
-  height:100%;
->>>>>>> fc18f1cc12a3f6a77be84b4d42187ae9744014a1
   width: 100%;
 }

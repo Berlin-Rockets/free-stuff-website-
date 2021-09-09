@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -13,9 +12,9 @@ import SingleItem from './components/SingleItem/SingleItem';
 import AllItems from './components/AllItems/AllItems';
 import axios from 'axios';
 import baseURL from '../src/config/baseUrl';
-import Accordion from "./components/Accordion/Accordion";
-import UserForm from "./components/";
-
+import Accordion from './components/Accordion/Accordion';
+import UserForm from './components/PostItem/UserForm';
+import Carousel from './components/Carousel';
 
 function App() {
   const [user, setUser] = useState();
@@ -33,15 +32,15 @@ function App() {
   }, []);
 
   return (
-
     <BrowserRouter>
       <div className="App">
         <Navbar user={user} />
 
         {/* <Banner /> */}
-        {/* <SingleItem /> */}
- <UserForm />
+        <SingleItem />
+        {/* <UserForm /> */}
         <AllItems />
+        <Carousel />
 
         <Switch>
           <Route exact path="/banner" component={Banner} />
@@ -53,7 +52,6 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
-
   );
 }
 
