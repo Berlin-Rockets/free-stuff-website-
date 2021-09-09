@@ -16,7 +16,7 @@ deleteItem
 
 
 ItemRoute.get("/", getItems);
-// ItemRoute.get("/", getAllItems);
+ItemRoute.get("/", getAllItems);
 ItemRoute.get("/singleItem/:id",getSingleItem);
 ItemRoute.post("/", postItem);
 ItemRoute.get("/filter/:filter", filterByOne);

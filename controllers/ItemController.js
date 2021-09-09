@@ -1,47 +1,47 @@
 const ItemModel = require("../models/itemModel");
 
-// exports.getAllItems = async (req, res, next) => {
-//   try {
-//     const queryObj = { ...req.query };
-//     // console.log(queryObj);
-//     const excludedFields = ["page", "sort", "limit", "fields"];
-//     excludedFields.forEach((el) => delete queryObj[el]);
-//     let query = ItemModel.find(queryObj);
+exports.getAllItems = async (req, res, next) => {
+  try {
+    const queryObj = { ...req.query };
+    // console.log(queryObj);
+    const excludedFields = ["page", "sort", "limit", "fields"];
+    excludedFields.forEach((el) => delete queryObj[el]);
+    let query = ItemModel.find(queryObj);
 
-//     if (req.query.sort) {
-//       const sortBy = req.query.sort.split(",").join(" ");
-//       query = query.sort(sortBy); // for our website: always sort by latest items only
-//       query = query.sort("-createdAt"); // for our website: always sort by latest items only
-//     }
-//     // limiting fields - FIX LATER
-//     if (req.query.fields) {
-//       const fields = req.query.fields.split(",").join(" ");
-//       console.log(fields);
-//       query = query.select(fields);
-//     }
-//     // else {
-//     //   query = query.select('–__v');
-//     // }
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(",").join(" ");
+      query = query.sort(sortBy); // for our website: always sort by latest items only
+      query = query.sort("-createdAt"); // for our website: always sort by latest items only
+    }
+    // limiting fields - FIX LATER
+    if (req.query.fields) {
+      const fields = req.query.fields.split(",").join(" ");
+      console.log(fields);
+      query = query.select(fields);
+    }
+    // else {
+    //   query = query.select('–__v');
+    // }
 
-//     // Pagination
-//     const page = req.query.page * 1 || 1;
-//     const limit = req.query.limit * 1 || 20;
-//     const skip = (page - 1) * limit;
+    // Pagination
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.limit * 1 || 20;
+    const skip = (page - 1) * limit;
 
-//     query = query.skip(skip).limit(limit);
+    query = query.skip(skip).limit(limit);
 
-//     // if (req.query.page) {
-//     //   const numItems = await ItemModel.countDocuments()
-//     // }
+    // if (req.query.page) {
+    //   const numItems = await ItemModel.countDocuments()
+    // }
 
-//     const items = await query;
+    const items = await query;
 
-//     res.json({ success: true, Items: items.length, data: items });
-//   } catch (e) {
-//     console.log(e);
-//     next();
-//   }
-// };
+    res.json({ success: true, Items: items.length, data: items });
+  } catch (e) {
+    console.log(e);
+    next();
+  }
+};
 
 // get all sorting Items 
 exports.getItems = async (req, res, next) => {
