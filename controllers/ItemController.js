@@ -43,6 +43,17 @@ exports.getAllItems = async (req, res, next) => {
   }
 };
 
+// get all sorting Items 
+exports.getItems = async (req, res, next) => {
+  try {
+    const items = await ItemModel.find({}).sort("-createdAt");
+    res.json({ success: true,Items: items.length, data: items });
+
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
 // post item
 exports.postItem = async (req, res, next) => {
   try {

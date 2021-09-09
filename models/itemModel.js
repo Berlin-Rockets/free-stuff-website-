@@ -10,13 +10,13 @@ const itemSchema = new Schema({
     type: String,
     required: true,
     maxlength: 20,
-    minlength: 3,
+    minlength: 2,
   },
   category: {
     type: String,
     required: true,
   },
-  date: {
+  createdAt: {
     type: Date,
     default: Date.now,
   },
@@ -32,7 +32,10 @@ const itemSchema = new Schema({
     type: Boolean,
     default: true,
   },
-  location: {}, // radius: need to get geolocation and publish it in form of radius instead of precise location
+  location: {
+    type:String,
+    require:true
+  }, // radius: need to get geolocation and publish it in form of radius instead of precise location
   pickUp: {
     type: Boolean,
     default: true,

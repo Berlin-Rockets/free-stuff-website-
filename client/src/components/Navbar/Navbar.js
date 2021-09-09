@@ -19,7 +19,7 @@ class Navbar extends React.Component {
   };
 
   render() {
-    console.log(this.props.user);
+    // console.log(this.props.user);
     return (
       <nav className="NavbarItems">
         <h1 className="navbar-name">Free Your Stuff</h1>
@@ -64,7 +64,7 @@ class Navbar extends React.Component {
           <div className='d-flex m-3 align-items-center'>
             <div className="btn-login">
              
-                <span>welcome {this.props.user.data.username}</span>
+                <span>welcome {this.props.user.data.name}</span>
              
              
             </div>
