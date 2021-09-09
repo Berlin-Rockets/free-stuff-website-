@@ -1,6 +1,8 @@
-import React from "react";
-import LazyHero from "react-lazy-hero";
-import "./Banner.css";
+import React from 'react';
+import LazyHero from 'react-lazy-hero';
+import './Banner.css';
+import Searchbar from './Searchbar/Searchbar';
+import Categories from './Categories/Categories';
 
 function Banner() {
   return (
@@ -12,6 +14,8 @@ function Banner() {
             reading the same book and wish to trade it?
           </p>
         </div>
+        <Searchbar />
+        <Categories />
       </LazyHero>
 
       {/* ... */}
