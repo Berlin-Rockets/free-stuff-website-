@@ -1,10 +1,8 @@
-//questions for the FAQ
-
-export const Data = [
+export const faqs = [
   {
     question: "What is Free Your Stuff about?",
     answer:
-      "Free Your Stuff is a platform for people who live in Berlin and in the Brandenburg region. Here you can post items you wish to give away or exchange with something else. All you need to do is quickly register to post your item(s) and interact with the other users. You can also check the About Us page and our Terms & Conditions.",
+      "Free Your Stuff is a platform for people who live in Berlin and in the Brandenburg region. Here you can post items you wish to give away or exchange with something else. All you need to do is quickly register to post your item(s) and interact with the other users. You can also check the About Us section and our Terms & Conditions.",
   },
   {
     question: "Why do you need my phone number?",
@@ -43,6 +41,6 @@ export const Data = [
   {
     question: "Can I find pets in this website?",
     answer:
-      "No, we do not allow posts regarding animal donation. We encourage you to get in touch with Tierheim Berlim or another organization if you are looking for a pet or if you encountered an animal that needs assistance. Please read more details in our Terms and Conditions.",
+      "No, we do not allow posts regarding animal donation. We encourage you to get in touch with Tierheim Berlin or another organization if you are looking for a pet or if you encountered an animal that needs assistance. Please read more details in our Terms and Conditions.",
   },
 ];
