@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import baseURL from "../config/baseUrl";
 import "./Register.css";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
+// import { FcGoogle } from "react-icons/fc";
+// import { FaFacebook } from "react-icons/fa";
 
 export default function Register() {
   const [error, setError] = useState();
@@ -11,13 +11,13 @@ export default function Register() {
 
   const registerHandler = async (e) => {
     e.preventDefault();
-    const username = e.target.username.value;
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword.value;
     const phone = e.target.phone.value;
     const user = {
-      username,
+      name,
       email,
       phone,
       password,
@@ -35,9 +35,9 @@ export default function Register() {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("userId", res.data.userId);
         setSuccess("registered successfully");
-        //   setTimeout(() => {
-        //     window.location.replace("/");
-        //   }, 3000);
+        setTimeout(() => {
+          window.location.replace("/");
+        }, 500);
       }
       console.log("RES ==> ", res.data);
     } catch (e) {
@@ -62,13 +62,13 @@ export default function Register() {
           <div className="d-flex my-1 ">
             <div className="col-6 ">
               <label className="form-label" htmlFor="inputUsername">
-                Username
+                name
               </label>
               <input
                 className="form-control m-1 "
                 id="inputUsername"
                 type="text"
-                name="username"
+                name="name"
                 required
               />
             </div>
@@ -168,7 +168,7 @@ export default function Register() {
           </div>
 
           <input
-            className="btn btn-primary w-100"
+            className="btn btn-primary w-100 mt-5"
             type="submit"
             value="Register"
           />
@@ -177,31 +177,7 @@ export default function Register() {
         </div>
       </form>
 
-      <div className="d-flex justify-content-center my-3 w-100">
-            <p className="par text-center text-dark bg-light ">or</p>
-          </div>
-
-          <div className="d-flex flex-column align-items-center  w-100 ">
-
-            <div className="my-2 w-50 ">
-              <button className="w-100 btn btn-primary d-flex  align-items-center justify-content-center">
-                <span className="bg-light p-2 rounded">
-                  <FaFacebook className="w-100 me-3 text-primary" />
-                </span>
-                <span className="m-2">Login with Facebook</span>{" "}
-              </button>
-            </div>
-
-            <div className="my-2 w-50">
-              <button className="w-100 btn btn-primary d-flex  align-items-center justify-content-center">
-                <span className="bg-light p-2 rounded ">
-                  {" "}
-                  <FcGoogle className="w-100 me-3" />
-                </span>{" "}
-                <span className="m-2">Login with Google</span>
-              </button>
-            </div>
-            </div>
+      
 
     </div>
   );
