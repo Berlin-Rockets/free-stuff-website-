@@ -1,6 +1,6 @@
-import React from "react";
-import "react-bootstrap";
-import "./Footer.css";
+import React from 'react';
+import 'react-bootstrap';
+import './Footer.css';
 
 function Footer() {
   return (
@@ -36,7 +36,7 @@ function Footer() {
                 <a href="#">FAQ</a>
               </li>
               <li>
-                <a href="#">Support</a>
+                <a href="./Support/Support.js">Support</a>
               </li>
               <li>
                 <a href="#">Advertise</a>

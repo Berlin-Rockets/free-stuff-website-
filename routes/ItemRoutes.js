@@ -1,7 +1,9 @@
-const express = require("express");
-const ItemRoute = express.Router();
+ const express = require("express");
+ const ItemRoute = express.Router();
+
 
 const {
+    getItems,
 getAllItems,
 getSingleItem,
 postItem,
@@ -14,7 +16,7 @@ deleteItem
 } = require("../controllers/ItemController");
 
 
-
+ItemRoute.get("/", getItems);
 ItemRoute.get("/", getAllItems);
 ItemRoute.get("/singleItem/:id",getSingleItem);
 ItemRoute.post("/", postItem);
@@ -28,4 +30,6 @@ ItemRoute.delete("/:id", deleteItem);
 
 
 
-module.exports = ItemRoute;
+
+
+ module.exports = ItemRoute;

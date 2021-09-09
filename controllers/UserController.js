@@ -1,8 +1,15 @@
-const UserModel = require('../models/userModel');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const jwtkey = require('../config/env').jwtKey;
+const UserModel = require("../models/userModel");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const jwtkey = require("../config/env").jwtKey;
 const createError = require("http-errors");
+const multer = require("multer");
+const { OAuth2Client } = require("google-auth-library");
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
+const client = new OAuth2Client(
+  "353102265666-7892m1a66n2nim7n9alca66ctocb62bf.apps.googleusercontent.com"
+);
 
 exports.getAllUsers = async (req, res, next) => {
   try {
@@ -10,18 +17,6 @@ exports.getAllUsers = async (req, res, next) => {
     res.json({ users: allUsers.length, success: true, data: allUsers });
   } catch (e) {
     console.log(e);
-  }
-};
-
-exports.postUser = async (req, res, next) => {
-  try {
-    const user = new UserModel(req.body);
-    await user.save();
-
-    res.send({ success: true, data: user });
-  } catch (err) {
-    console.log(err.message);
-    next(err);
   }
 };
 
@@ -38,12 +33,7 @@ exports.getUser = async (req, res, next) => {
 
 // Register
 exports.signUp = async (req, res, next) => {
-  const {
-    username,
-    password,
-    confirmPassword,
-    contact: [{ email }],
-  } = req.body;
+  const { name, password, confirmPassword, email, phone } = req.body;
   try {
     const user = await UserModel.findOne({ email });
     if (!user) {
@@ -51,25 +41,27 @@ exports.signUp = async (req, res, next) => {
         const hashPassword = await bcrypt.hash(password, 10);
 
         const userData = await new UserModel({
-          username,
-          contact: [{ email }],
+          name,
+          email,
           password: hashPassword,
+          phone,
+          avatar: req.picName,
         }).save();
 
         const token = jwt.sign(
           {
-            contact: [{ email }],
-            username,
+            email,
+            name,
           },
           jwtkey,
           { expiresIn: 2592000000 }
         );
         res.json({ success: true, token, userId: userData._id });
       } else {
-        res.json({ err: 'Please confirm the password' });
+        res.json({ err: "Please confirm the password" });
       }
     } else {
-      res.json({ err: email + 'This email is already registered' });
+      res.json({ err: email + " " + "This email is already registered" });
     }
   } catch (e) {
     next(e);
@@ -78,28 +70,26 @@ exports.signUp = async (req, res, next) => {
 
 // Login
 exports.login = async (req, res, next) => {
-
   console.log(req.body);
-  const user = await UserModel.findOne({ username: req.body.username});
+  const user = await UserModel.findOne({ email: req.body.email });
   // const user = await UserModel.findOne({contact:[{email:req.body.email}] });
-  console.log('user', user);
+  console.log("user", user);
   if (!user) {
-    res.json({ error: 'Email is incorrect or does not exist' });
+    res.json({ error: "Email is incorrect or does not exist" });
     // next(new createError.NotFound('Email is incorrect or does not exist'))
   } else {
-   
     let check = bcrypt.compareSync(req.body.password, user.password);
-    console.log('check', check);
-    console.log('body', req.body.password);
-    console.log('user password', user.password);
+    console.log("check", check);
+    console.log("body", req.body.password);
+    console.log("user password", user.password);
 
     if (!check) {
-      next(new createError.NotFound('Wrong password')); // or use next() instead
+      next(new createError.NotFound("Wrong password")); // or use next() instead
     } else {
       const token = jwt.sign(
         {
-          username: user.username,
-          contact: [{ email: user.email }],
+          name: user.name,
+          email: user.email,
           password: user.password,
           id: user._id,
         },
@@ -111,38 +101,123 @@ exports.login = async (req, res, next) => {
   }
 };
 
+exports.googlelogin = (req, res, next) => {
+  const { tokenId } = req.body;
 
+  client
+    .verifyIdToken({
+      idToken: tokenId,
+      audience:
+        "353102265666-7892m1a66n2nim7n9alca66ctocb62bf.apps.googleusercontent.com",
+    })
+    .then((response) => {
+      const { email_verified, name, email } = response.payload;
+      // console.log(response.payload);
+      if (email_verified) {
+        UserModel.findOne({ email }).exec((err, user) => {
+          if (err) {
+            return res.json({ error: "something went wrong ..." });
+          } else {
+            if (user) {
+              const token = jwt.sign(
+                {
+                  id: user._id,
+                },
+                jwtkey,
+                { expiresIn: 2592000000 }
+              );
+              const { name, email, password } = user;
+              res.json({ success: true, data: user, userId: user._id, token });
+            } else {
+              let userPassword = email + "123";
 
+              let password = bcrypt.hashSync(userPassword, 10);
+              // let phone = '12345678'
+              let newUser = new UserModel({
+                name,
+                email,
+                password,
+              });
+              newUser.save();
 
-// exports.loginUser = async (req, res, next) => {
-//   // console.log(req.body);
-//   const user = await UsersModel.findOne({ email: req.body.email });
-//   // console.log('loginuser',user);
-//   if (!user) {
-//     res.json({
-//       error: "NO such user found in DB. Email or password is invalid",
-//     });
-//     // next(new createError.NotFound('NO such user found in DB'))
-//   } else {
-//     // compare password and hash password
-//     let check = bcrypt.compareSync(req.body.password, user.password);
-//     // console.log('loginCheck',check);
-//     if (!check) {
-//       next(new createError.NotFound("password dose not match"));
-//     } else {
-//       const token = jwt.sign(
-//         {
-//           password: user.password,
-//           email: user.email,
-//           id: user._id,
-//         },
-//         config.jwtKey,
-//         { expiresIn: 2555000000 }
-//       );
+              console.log("new user", newUser);
+              const token = jwt.sign(
+                {
+                  id: newUser._id,
+                },
+                jwtkey,
+                { expiresIn: 2592000000 }
+              );
+              res.json({
+                success: true,
+                data: newUser,
+                userId: newUser._id,
+                token,
+              });
+              next();
+            }
+          }
+        });
+      }
+    });
+};
 
-//       // console.log('token', token)
+exports.facebooklogin = (req, res, next) => {
+  const { accessToken, userID } = req.body;
 
-//       res.json({ success: true, data: user, userId: user._id, token: token });
-//     }
-//   }
-// };
+  let urlGraphFacebook = `https://graph.facebook.com/v2.11/${userID}/?fields=id,name,email&access_token=${accessToken}`;
+  fetch(urlGraphFacebook, {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((response) => {
+      console.log('responseeeee facebook', response)
+      const { email, name } = response;
+      UserModel.findOne({ email }).exec((err, user) => {
+        if (err) {
+          return response.json({
+            error: "something went wrong .....",
+          });
+        } else {
+          if (user) {
+            const token = jwt.sign(
+              {
+                id: user._id,
+              },
+              jwtkey,
+              { expiresIn: 2592000000 }
+            );
+            const { name, email, password } = user;
+            res.json({ success: true, data: user, userId: user._id, token });
+          } else {
+            let userPassword = email + "123";
+
+            let password = bcrypt.hashSync(userPassword, 10);
+            // let phone = '12345678'
+            let newUser = new UserModel({
+              name,
+              email,
+              password,
+            });
+            newUser.save();
+
+            console.log("new user", newUser);
+            const token = jwt.sign(
+              {
+                id: newUser._id,
+              },
+              jwtkey,
+              { expiresIn: 2592000000 }
+            );
+            res.json({
+              success: true,
+              data: newUser,
+              userId: newUser._id,
+              token,
+            });
+            next()
+          }
+        }
+      });
+    });
+};
