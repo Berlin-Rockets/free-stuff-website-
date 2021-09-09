@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  username: {
+  name: {
     type: String,
     required: [true, 'You must provide a username'],
     unique: [true, 'This username is already taken'],
-    maxlength: [10, 'A username must have less than or 10 characters'],
+    maxlength: [30, 'A username must have less than or 10 characters'],
     minlength: [3, 'A username must have more than or 3 characters'],
     // validate in Front-End
   },
@@ -17,12 +17,12 @@ const userSchema = new Schema({
         required: [true, 'You must provide an email'],
         lowercase: true,
         unique: true,
-        maxlength: [25, 'An email must have less than or 25 characters'],
+        maxlength: [50, 'An email must have less than or 25 characters'],
         // validate in Front-End
       },
       phone: {
         type: Number,
-        required: true
+       
       },
  
   password: {

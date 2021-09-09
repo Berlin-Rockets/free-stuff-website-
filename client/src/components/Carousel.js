@@ -22,7 +22,7 @@ useEffect(()=>{
     getAllItems()
 },[])
 
-console.log('items are:',items);
+// console.log('items are:',items);
 
     return items? (
         

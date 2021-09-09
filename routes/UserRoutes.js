@@ -7,6 +7,8 @@ const {
   signUp,
   getUser,
   login,
+  googlelogin,
+  facebooklogin,
 } = require('../controllers/UserController');
 
 let storage = multer.diskStorage({
@@ -26,5 +28,7 @@ UserRoute.get('/', getAllUsers);
 UserRoute.post('/register', upload.single("file"), signUp);
 UserRoute.get('/:id', getUser);
 UserRoute.post('/login', login);
+UserRoute.post('/googlelogin', googlelogin);
+UserRoute.post('/facebooklogin', facebooklogin);
 
 module.exports = UserRoute;
