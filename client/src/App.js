@@ -35,11 +35,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar user={user} />
-
         <Banner />
         <Categories />
         {/* <SingleItem /> */}
-        {/* <UserForm />  */}
+        <UserForm />
         {/* <AllItems /> */}
         <Carousel />
 

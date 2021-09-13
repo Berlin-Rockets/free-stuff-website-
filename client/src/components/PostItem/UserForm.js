@@ -1,3 +1,5 @@
+//This is the main file
+
 import React, { Component } from "react";
 import Name from "./Name";
 import Description from "./Description";
