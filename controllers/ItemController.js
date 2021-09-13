@@ -58,6 +58,8 @@ exports.getItems = async (req, res, next) => {
 exports.postItem = async (req, res, next) => {
   try {
     const item = new ItemModel(req.body);
+    // item.images=req.picName
+    item.images=[...item.images,req.picName]
     await item.save();
 
     res.send({ success: true, data: item });
@@ -65,6 +67,9 @@ exports.postItem = async (req, res, next) => {
     console.log(err.message);
   }
 };
+
+
+
 
 // Filter items by Category or Location
 exports.filterByOne = async (req, res, next) => {

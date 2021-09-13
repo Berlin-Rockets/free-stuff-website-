@@ -37,8 +37,8 @@ function App() {
           <Route exact path="/banner" component={Banner} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/postItem" component={PostItem} />
           <Route exact path="/carousel" component={Carousel} />
+          <Route exact path="/postItem" component={PostItem} />
         </Switch>
         <Footer />
       </div>
