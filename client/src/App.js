@@ -36,10 +36,11 @@ function App() {
       <div className="App">
         <Navbar user={user} />
 
-        {/* <Banner /> */}
-        <SingleItem />
-        {/* <UserForm /> */}
-        <AllItems />
+         <Banner /> 
+         <Categories />
+        {/* <SingleItem /> */}
+         {/* <UserForm />  */}
+       {/* <AllItems /> */}
         <Carousel />
 
         <Switch>
@@ -48,12 +49,12 @@ function App() {
           <Route exact path="/register" component={Register} />
 
           <Route exact path="/carousel" component={Carousel} />
-          <Route exact path="/postItem" component={PostItem} />
+          
 
           {/* <Route exact path="/singleItem/:id" component={SingleItem} /> */}
 
         </Switch>
-        <Categories />
+       
         <Footer />
       </div>
     </BrowserRouter>
