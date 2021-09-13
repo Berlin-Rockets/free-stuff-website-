@@ -125,21 +125,21 @@ axios({
           required
         />
 
-        <div class="form-check mt-2">
+        <div className="form-check mt-2">
           <input
-            class="form-check-input"
+            className="form-check-input"
             type="checkbox"
             value=""
             id="flexCheckDefault"
           />
-          <label class="form-check-label" for="flexCheckDefault">
+          <label className="form-check-label" for="flexCheckDefault">
             Keep me logged in
           </label>
         </div>
 
-        <div class="form-check mt-2 ">
+        <div className="form-check mt-2 ">
           <input
-            class="form-check-input"
+            className="form-check-input"
             type="checkbox"
             value=""
             id="CheckDefault"

@@ -13,7 +13,8 @@ import AllItems from "./components/AllItems/AllItems";
 import axios from "axios";
 import baseURL from "../src/config/baseUrl";
 import Accordion from "./components/Accordion/Accordion";
-import UserForm from "./components/";
+import UserForm from "./components/PostItem/UserForm";
+import Carousel from "./components/Carousel";
 
 function App() {
   const [user, setUser] = useState();
@@ -33,19 +34,25 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        {/* <Navbar user={user} /> */}
-        {/* <Banner /> */}
+        <Navbar user={user} />
+
+        <Banner />
+        <Categories />
         {/* <SingleItem /> */}
-        <UserForm />
+        {/* <UserForm />  */}
         {/* <AllItems /> */}
+        <Carousel />
 
         <Switch>
-          {/* <Route exact path="/banner" component={Banner} /> */}
-          {/* <Route exact path="/login" component={Login} /> */}
-          {/* <Route exact path="/register" component={Register} /> */}
+          <Route exact path="/banner" component={Banner} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+
+          <Route exact path="/carousel" component={Carousel} />
+
           {/* <Route exact path="/singleItem/:id" component={SingleItem} /> */}
         </Switch>
-        <Categories />
+
         <Footer />
       </div>
     </BrowserRouter>

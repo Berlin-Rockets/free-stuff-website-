@@ -128,41 +128,41 @@ export default function Register() {
             />
           </div>
 
-          <div class="form-check mt-2">
+          <div className="form-check mt-2">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="flexCheckDefault"
               required
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label className="form-check-label" for="flexCheckDefault">
               Accept our Terms and Conditions.
             </label>
           </div>
 
-          <div class="form-check mt-2">
+          <div className="form-check mt-2">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="flexCheckDefault"
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label className="form-check-label" for="flexCheckDefault">
               Do you wish to receive our newsletter? You can cancel it at any
               time.
             </label>
           </div>
 
-          <div class="form-check mt-2 w-100">
+          <div className="form-check mt-2 w-100">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="flexCheckDefault"
               required
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label className="form-check-label" for="flexCheckDefault">
               I am not a robot - reCAPTCHA
             </label>
           </div>
