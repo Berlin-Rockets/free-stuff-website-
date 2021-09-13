@@ -36,25 +36,23 @@ function App() {
       <div className="App">
         <Navbar user={user} />
 
-         <Banner /> 
-         <Categories />
+        <Banner />
+        {/* <Categories /> */}
         {/* <SingleItem /> */}
-         {/* <UserForm />  */}
-       {/* <AllItems /> */}
+        {/* <UserForm />  */}
         <Carousel />
 
         <Switch>
           <Route exact path="/banner" component={Banner} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-
+          <Route exact path="/allitems" component={AllItems} />
+          <Route exact path="/" component={UserForm} />
           <Route exact path="/carousel" component={Carousel} />
-          
 
           {/* <Route exact path="/singleItem/:id" component={SingleItem} /> */}
-
         </Switch>
-       
+
         <Footer />
       </div>
     </BrowserRouter>
