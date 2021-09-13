@@ -1,21 +1,21 @@
-const ItemModel = require("../models/itemModel");
+const ItemModel = require('../models/itemModel');
 
 exports.getAllItems = async (req, res, next) => {
   try {
     const queryObj = { ...req.query };
     // console.log(queryObj);
-    const excludedFields = ["page", "sort", "limit", "fields"];
+    const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach((el) => delete queryObj[el]);
     let query = ItemModel.find(queryObj);
 
     if (req.query.sort) {
-      const sortBy = req.query.sort.split(",").join(" ");
+      const sortBy = req.query.sort.split(',').join(' ');
       query = query.sort(sortBy); // for our website: always sort by latest items only
-      query = query.sort("-createdAt"); // for our website: always sort by latest items only
+      query = query.sort('-createdAt'); // for our website: always sort by latest items only
     }
-    // limiting fields - FIX LATER
+    // limiting fields
     if (req.query.fields) {
-      const fields = req.query.fields.split(",").join(" ");
+      const fields = req.query.fields.split(',').join(' ');
       console.log(fields);
       query = query.select(fields);
     }
@@ -127,7 +127,7 @@ exports.getSingleItem = async (req, res, next) => {
 
 // get sold/given Item
 exports.givenItem = async (req, res, next) => {
-  console.log("start given controller");
+  console.log('start given controller');
   try {
     const givenItems = await ItemModel.find({ soldState: false });
     res.json({ success: true, items: givenItems.length, data: givenItems });
@@ -139,7 +139,7 @@ exports.givenItem = async (req, res, next) => {
 
 // get needed item - As a user, if I don’t find what I search, then I want to be provided with a suggestion to post my need for a specific item that I’m looking for.
 exports.neededItem = async (req, res, next) => {
-  console.log("start given controller");
+  console.log('start given controller');
   try {
     const neededItems = await ItemModel.find({ postOrSearch: false });
     res.json({ success: true, items: neededItems.length, data: neededItems });
@@ -155,12 +155,12 @@ exports.deleteItem = async (req, res, next) => {
   try {
     await ItemModel.findByIdAndDelete(id);
     res.status(204).json({
-      status: "success",
+      status: 'success',
       // data: null,
     });
   } catch (err) {
     res.status(404).json({
-      status: "fail",
+      status: 'fail',
       message: err,
     });
     next();
