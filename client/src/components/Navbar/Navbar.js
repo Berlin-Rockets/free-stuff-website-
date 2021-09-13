@@ -1,8 +1,8 @@
-import React from "react";
-import { MenuItems } from "./MenuItems";
-import { Button } from "./Button";
-import "./Navbar.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { MenuItems } from './MenuItems';
+import { Button } from './Button';
+import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
   state = {
@@ -12,10 +12,10 @@ class Navbar extends React.Component {
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
   };
-   onLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userId");
-    window.location.replace("/");
+  onLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    window.location.replace('/');
   };
 
   render() {
@@ -26,10 +26,10 @@ class Navbar extends React.Component {
 
         <div className="menu-icon" onClick={this.handleClick}>
           <i
-            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
+            className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}
           ></i>
         </div>
-        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu "}>
+        <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu '}>
           {MenuItems.map((item, index) => {
             return (
               <li key={index}>
@@ -40,53 +40,44 @@ class Navbar extends React.Component {
             );
           })}
 
-{!this.props.user && (
-          <div className='d-flex m-3 align-items-center'>
-            <div className="btn-login">
-              <Button>
-                <Link to="/login" className="text-dark"> login</Link>
-              </Button>
-             
-            </div>
-            <div className="divider" />
+          {!this.props.user && (
+            <div className="d-flex m-3 align-items-center">
+              <div className="btn-login">
+                <Button>
+                  <Link to="/login" className="text-dark">
+                    {' '}
+                    login
+                  </Link>
+                </Button>
+              </div>
+              <div className="divider" />
 
-            <div className="btn-register">
-              <Button>
-                <Link to="/register" className="text-dark">
-                  Register
-                </Link>
-              </Button>
+              <div className="btn-register">
+                <Button>
+                  <Link to="/register" className="text-dark">
+                    Register
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-{this.props.user && (
-          <div className='d-flex m-3 align-items-center'>
-            <div className="btn-login">
-             
+          {this.props.user && (
+            <div className="d-flex m-3 align-items-center">
+              <div className="btn-login">
                 <span>welcome {this.props.user.data.name}</span>
-             
-             
-            </div>
-            <div className="divider" />
+              </div>
+              <div className="divider" />
 
-            <div className="btn-register">
-              <Button onClick={this.onLogout}>
-              
-                  logout
-               
-              </Button>
+              <div className="btn-register">
+                <Button onClick={this.onLogout}>logout</Button>
+              </div>
             </div>
-          </div>
-        )}
-
+          )}
         </ul>
-    
-
       </nav>
     );
   }
 }
 
 export default Navbar;
-

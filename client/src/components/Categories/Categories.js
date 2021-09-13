@@ -1,56 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
+import data from './Data';
 import './Categories.css';
 
-class Categories extends Component {
-  render() {
-    return (
-      <div className="cat-container">
-        <ul className="cat-list">
-          <li className="cat-item">
-            <a href="/" class="btn btn-circle">
-              Auto
-            </a>
+function Categories() {
+  return (
+    <div className="cat-container">
+      <ul className="cat-list">
+        {data.map((item) => (
+          <li className="cat-item ">
+            <Link to={item.url} className="btn-circle">
+              {item.label}
+            </Link>
           </li>
-          <li className="cat-item">
-            <a href="/" class="btn btn-circle">
-              Electronics
-            </a>
-          </li>
-          <li className="cat-item">
-            <a href="/" class="btn btn-circle">
-              Furniture
-            </a>
-          </li>
-          <li className="cat-item">
-            <a href="/" class="btn btn-circle">
-              Fashion
-            </a>
-          </li>
-          <li className="cat-item">
-            <a href="/" class="btn btn-circle">
-              Animals
-            </a>
-          </li>
-          <li className="cat-item">
-            <a href="/" class="btn btn-circle">
-              Garden
-            </a>
-          </li>
-          <li className="cat-item">
-            <a href="/" class="btn btn-circle">
-              Free Time
-            </a>
-          </li>
-          <li className="cat-item">
-            <a href="/" class="btn btn-circle">
-              Misc
-            </a>
-          </li>
-        </ul>
-      </div>
-    );
-  }
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default Categories;
