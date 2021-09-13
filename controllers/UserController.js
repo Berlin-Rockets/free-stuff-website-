@@ -45,7 +45,9 @@ exports.signUp = async (req, res, next) => {
           name,
           email,
           password: hashPassword,
-          phone,
+
+          phone
+
         }).save();
 
         const token = jwt.sign(
@@ -101,6 +103,8 @@ exports.login = async (req, res, next) => {
   }
 };
 
+
+// Google login
 exports.googlelogin = (req, res, next) => {
   const { tokenId } = req.body;
 
@@ -162,6 +166,8 @@ exports.googlelogin = (req, res, next) => {
     });
 };
 
+
+ // Facebook login 
 exports.facebooklogin = (req, res, next) => {
   const { accessToken, userID } = req.body;
 

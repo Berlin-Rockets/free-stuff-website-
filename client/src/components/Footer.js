@@ -5,68 +5,68 @@ import './Footer.css';
 function Footer() {
   return (
     <div>
-      <div class="container"></div>
-      <div class="footer">
+      <div className="container"></div>
+      <div className="footer">
         {/* Footer main */}
-        <section class="ft-main">
-          <div class="ft-main-item">
-            <h2 class="ft-title">
+        <section className="ft-main">
+          <div className="ft-main-item">
+            <h2 className="ft-title">
               <strong>About Us</strong>
             </h2>
             <ul>
               <li>
-                <a href="#">Our Mission</a>
+                <a href="/ourMission">Our Mission</a>
               </li>
               <li>
-                <a href="#">Careers</a>
+                <a href="careers">Careers</a>
               </li>
               <li>
-                <a href="https://www.buymeacoffee.com/" target="_blank">
+                <a href="https://www.buymeacoffee.com/">
                   Buy Me a Coffee
                 </a>
               </li>
             </ul>
           </div>
-          <div class="ft-main-item">
-            <h2 class="ft-title">
+          <div className="ft-main-item">
+            <h2 className="ft-title">
               <strong>Contact</strong>
             </h2>
             <ul>
               <li>
-                <a href="#">FAQ</a>
+                <a href="/faq">FAQ</a>
               </li>
               <li>
-                <a href="./Support/Support.js">Support</a>
+                <a href="/support">Support</a>
               </li>
               <li>
-                <a href="#">Advertise</a>
+                <a href="/advertise">Advertise</a>
               </li>
             </ul>
           </div>
-          <div class="ft-main-item">
-            <h2 class="ft-title">
+          <div className="ft-main-item">
+            <h2 className="ft-title">
               <strong>Resources</strong>
             </h2>
             <ul>
               <li>
-                <a href="#" target="_blank">
+                <a href="/" target="">
                   Some link 1
                 </a>
               </li>
               <li>
-                <a href="#" target="_blank">
+                <a href="/" target="_blank">
                   Some link 2
                 </a>
               </li>
               <li>
-                <a href="#" target="_blank">
+                <a href="/" target="_blank">
                   Some link 3
                 </a>
               </li>
             </ul>
           </div>
-          <div class="ft-main-item">
-            <h2 class="ft-title">
+          <div className="ft-main-item">
+            <h2 className="ft-title">
               <strong>Stay Updated</strong>
             </h2>
             <p>Subscribe to our newsletter to get our latest features.</p>
@@ -82,34 +82,34 @@ function Footer() {
         </section>
 
         {/* Footer social */}
-        <section class="ft-social">
-          <ul class="ft-social-list">
+        <section className="ft-social">
+          <ul className="ft-social-list">
             <li>
-              <a href="#" target="_blank">
-                <i class="fab fa-facebook"></i>
+              <a href="https://www.facebook.com/" >
+                <i className="fab fa-facebook"></i>
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
-                <i class="fab fa-twitter"></i>
+              <a href="https://twitter.com/" target="">
+                <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
-                <i class="fab fa-instagram"></i>
+              <a href="https://www.instagram.com/" target="">
+                <i className="fab fa-instagram"></i>
               </a>
             </li>
           </ul>
         </section>
 
         {/* Footer legal */}
-        <section class="ft-legal">
-          <ul class="ft-legal-list">
+        <section className="ft-legal">
+          <ul className="ft-legal-list">
             <li>
-              <a href="#">Terms &amp; Conditions</a>
+              <a href="/term">Terms &amp; Conditions</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="policy">Privacy Policy</a>
             </li>
             <li>
               &copy;{new Date().getFullYear()} Free Your Stuff - All Rights
