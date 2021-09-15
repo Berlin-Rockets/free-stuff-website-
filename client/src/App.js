@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Banner from './components/Banner';
 import Navbar from './components/Navbar/Navbar';
-
+import FirstPostItem from './components/PostItem'
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -15,6 +15,7 @@ import baseURL from '../src/config/baseUrl';
 import Accordion from './components/Accordion/Accordion';
 import UserForm from './components/PostItem/UserForm';
 import Carousel from './components/Carousel';
+import PostItemmm from './components/StepPages/PostItemmm';
 
 function App() {
   const [user, setUser] = useState();
@@ -39,7 +40,7 @@ function App() {
          <Banner /> 
          <Categories />
         {/* <SingleItem /> */}
-         {/* <UserForm />  */}
+           {/* <UserForm />    */}
        {/* <AllItems /> */}
         <Carousel />
 
@@ -47,14 +48,14 @@ function App() {
           <Route exact path="/banner" component={Banner} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-
+          <Route exact path="/postItemmm" component={PostItemmm} />
           <Route exact path="/carousel" component={Carousel} />
           
 
           {/* <Route exact path="/singleItem/:id" component={SingleItem} /> */}
 
         </Switch>
-       
+       {/* <FirstPostItem/> */}
         <Footer />
       </div>
     </BrowserRouter>

@@ -40,11 +40,12 @@ export class UserForm extends Component {
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
   };
-
+ 
   render() {
     const { step } = this.state;
     const { name, description, categories, condition, interest, photo } =
       this.state;
+      
     const values = {
       name,
       description,
@@ -53,7 +54,7 @@ export class UserForm extends Component {
       interest,
       photo,
     };
-
+    console.log(values);
     switch (step) {
       case 1:
         return (
@@ -119,6 +120,7 @@ export class UserForm extends Component {
       case 8:
         return <Success />;
       default:
+        console.log(values);
         console.log("This is a multi-step form built with React.");
     }
   }
