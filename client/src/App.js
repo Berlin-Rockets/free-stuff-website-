@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Banner from './components/Banner';
-import Navbar from './components/Navbar/Navbar';
-import FirstPostItem from './components/PostItem'
-import Footer from './components/Footer';
-import Login from './components/Login';
-import Register from './components/Register';
-import Categories from './components/Categories/Categories';
-import SingleItem from './components/SingleItem/SingleItem';
-import AllItems from './components/AllItems/AllItems';
-import axios from 'axios';
-import baseURL from '../src/config/baseUrl';
-import Accordion from './components/Accordion/Accordion';
-import UserForm from './components/PostItem/UserForm';
-import Carousel from './components/Carousel';
-import PostItemmm from './components/StepPages/PostItemmm';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Banner from "./components/Banner";
+import Navbar from "./components/Navbar/Navbar";
+import FirstPostItem from "./components/PostItem";
+import Footer from "./components/Footer";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Categories from "./components/Categories/Categories";
+import SingleItem from "./components/SingleItem/SingleItem";
+import AllItems from "./components/AllItems/AllItems";
+import axios from "axios";
+import baseURL from "../src/config/baseUrl";
+import Accordion from "./components/Accordion/Accordion";
+// import UserForm from "./components/PostItem/UserForm";
+import Carousel from "./components/Carousel";
+import PostItemmm from "./components/StepPages/PostItemmm";
 
 function App() {
   const [user, setUser] = useState();
@@ -36,21 +36,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar user={user} />
-
-
-     
-        {/* <Categories /> */}
-        {/* <SingleItem /> */}
-
-           {/* <UserForm />    */}
-       {/* <AllItems /> */}
-
-    
-
         <Banner />
         <Categories />
         {/* <SingleItem /> */}
-        <UserForm />
+      
         {/* <AllItems /> */}
 
         <Carousel />
@@ -64,7 +53,7 @@ function App() {
 
           {/* <Route exact path="/singleItem/:id" component={SingleItem} /> */}
         </Switch>
-       {/* <FirstPostItem/> */}
+        {/* <FirstPostItem/> */}
         <Footer />
       </div>
     </BrowserRouter>
