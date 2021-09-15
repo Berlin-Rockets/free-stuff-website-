@@ -1,7 +1,7 @@
 import React from 'react';
 import LazyHero from 'react-lazy-hero';
 import './Banner.css';
-import Searchbar from './Searchbar/Searchbar';
+import Searchbar from '../Searchbar/Searchbar';
 
 function Banner() {
   return (
