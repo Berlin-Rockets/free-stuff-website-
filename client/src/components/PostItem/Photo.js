@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Dropzone from "./Dropzone";
 
 export class Photo extends Component {
   continue = (e) => {
@@ -25,10 +26,11 @@ export class Photo extends Component {
             <AppBar title="Upload a Picture" />
             <h6>Please select up to 3 pictures of your item.</h6>
             <br />
-            <Button variant="contained" component="label">
+            <Dropzone />
+            {/* <Button variant="contained" component="label">
               Upload File
               <input type="file" hidden />
-            </Button>
+            </Button> */}
             {/* <TextField
               placeholder="Item Picture"
               label="Please select up to 3 pictures of your item."

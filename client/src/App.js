@@ -21,9 +21,9 @@ function App() {
   const [user, setUser] = useState();
 
   const getUser = async () => {
-    const userId = localStorage.getItem('userId');
+    const userId = localStorage.getItem("userId");
     if (userId) {
-      const userData = await axios.get(baseURL + '/users/' + userId);
+      const userData = await axios.get(baseURL + "/users/" + userId);
       console.log(userData.data);
       setUser(userData.data);
     }
@@ -37,11 +37,22 @@ function App() {
       <div className="App">
         <Navbar user={user} />
 
-         <Banner /> 
-         <Categories />
+
+     
+        {/* <Categories /> */}
         {/* <SingleItem /> */}
+
            {/* <UserForm />    */}
        {/* <AllItems /> */}
+
+    
+
+        <Banner />
+        <Categories />
+        {/* <SingleItem /> */}
+        <UserForm />
+        {/* <AllItems /> */}
+
         <Carousel />
 
         <Switch>
@@ -50,10 +61,8 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/postItemmm" component={PostItemmm} />
           <Route exact path="/carousel" component={Carousel} />
-          
 
           {/* <Route exact path="/singleItem/:id" component={SingleItem} /> */}
-
         </Switch>
        {/* <FirstPostItem/> */}
         <Footer />
