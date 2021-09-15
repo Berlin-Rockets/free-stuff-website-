@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Banner from './components/Banner';
 import Navbar from './components/Navbar/Navbar';
-
+import FirstPostItem from './components/PostItem';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -13,9 +13,9 @@ import AllItems from './components/AllItems/AllItems';
 import axios from 'axios';
 import baseURL from '../src/config/baseUrl';
 import Accordion from './components/Accordion/Accordion';
-// import UserForm from './components/PostItem/UserForm';
+// import UserForm from "./components/PostItem/UserForm";
 import Carousel from './components/Carousel';
-import Support from './components/Support/Support';
+import PostItemmm from './components/StepPages/PostItemmm';
 
 function App() {
   const [user, setUser] = useState();
@@ -49,13 +49,17 @@ function App() {
           <Route exact path="/banner" component={Banner} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
+
           <Route exact path="/allitems" component={AllItems} />
           {/* <Route exact path="/" component={UserForm} /> */}
+
+          <Route exact path="/postItemmm" component={PostItemmm} />
+
           <Route exact path="/carousel" component={Carousel} />
 
           {/* <Route exact path="/singleItem/:id" component={SingleItem} /> */}
         </Switch>
-
+        {/* <FirstPostItem/> */}
         <Footer />
       </div>
     </BrowserRouter>

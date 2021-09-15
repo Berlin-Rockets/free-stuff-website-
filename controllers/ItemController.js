@@ -56,6 +56,8 @@ exports.getItems = async (req, res, next) => {
 
 // post item
 exports.postItem = async (req, res, next) => {
+  // console.log(req.body);
+  // console.log(req.picName);
   try {
     const item = new ItemModel(req.body);
     // item.images=req.picName

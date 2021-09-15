@@ -37,7 +37,7 @@ export class Categories extends Component {
               fullWidth
             /> */}
             <br />
-            <CategoriesDropdown />
+            <CategoriesDropdown  />
             <Button color="secondary" variant="contained" onClick={this.back}>
               Back
             </Button>

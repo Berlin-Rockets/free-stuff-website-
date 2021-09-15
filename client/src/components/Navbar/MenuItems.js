@@ -10,9 +10,9 @@ export const MenuItems = [
     cName: 'nav-links',
   },
   {
-    title: 'Post Item',
-    url: '/postItem',
-    cName: 'nav-links',
+    title: "Post Item",
+    url: "/postItemmm",
+    cName: "nav-links",
   },
   {
     title: 'Support',

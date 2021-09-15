@@ -30,7 +30,7 @@ export default function PostItem() {
         fd.append('name',item.name);
         fd.append('location', item.location);
         fd.append('file', image.raw, image.preview)
-        console.log(fd);
+        console.log('fddddddddddd', fd);
       axios({
         method: 'POST',
         url: '/items',

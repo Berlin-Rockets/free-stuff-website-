@@ -23,6 +23,7 @@ export default function CategoriesDropdown() {
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
+    console.log(event.target);
     setCategory(event.target.value);
   };
 
@@ -33,7 +34,7 @@ export default function CategoriesDropdown() {
   const handleOpen = () => {
     setOpen(true);
   };
-
+  console.log(Category);
   return (
     <div>
       <Button className={classes.button} onClick={handleOpen}>
@@ -49,20 +50,66 @@ export default function CategoriesDropdown() {
           onOpen={handleOpen}
           value={Category}
           onChange={handleChange}
+          name='Category'
         >
           {/* <MenuItem value="">
             <em>None</em>
           </MenuItem> */}
-          <MenuItem value={1}>Books</MenuItem>
-          <MenuItem value={2}>Clothing</MenuItem>
-          <MenuItem value={3}>Furniture</MenuItem>
-          <MenuItem value={4}>...</MenuItem>
-          <MenuItem value={5}>...</MenuItem>
-          <MenuItem value={6}>...</MenuItem>
-          <MenuItem value={7}>...</MenuItem>
-          <MenuItem value={8}>...</MenuItem>
-          <MenuItem value={9}>...</MenuItem>
-          <MenuItem value={10}>...</MenuItem>
+          <MenuItem value="Books">Books</MenuItem>
+          <MenuItem
+            value="Clothing & Textiles
+"
+          >
+            Clothing & Textiles
+          </MenuItem>
+          <MenuItem value="Furniture">Furniture</MenuItem>
+          <MenuItem value="Auto">Auto</MenuItem>
+          <MenuItem
+            value="Electronics & Appliances
+"
+          >
+            Electronics & Appliances
+          </MenuItem>
+          <MenuItem value="Pets">Pets</MenuItem>
+          <MenuItem value="Gardening">Gardening</MenuItem>
+          <MenuItem
+            value="Office Supplies
+"
+          >
+            Office Supplies
+          </MenuItem>
+          <MenuItem
+            value="Sports & Leisure
+"
+          >
+            Sports & Leisure
+          </MenuItem>
+          <MenuItem
+            value="Movies, Music & Books
+"
+          >
+            Movies, Music & Books
+          </MenuItem>
+          <MenuItem value="Decoration">Decoration</MenuItem>
+          <MenuItem value="Beauty">Beauty</MenuItem>
+          <MenuItem
+            value="Kitchen utensils
+"
+          >
+            Kitchen utensils
+          </MenuItem>
+          <MenuItem
+            value="Tools
+"
+          >
+            Tools
+          </MenuItem>
+          <MenuItem
+            value="Other
+"
+          >
+            Other
+          </MenuItem>
         </Select>
       </FormControl>
     </div>
