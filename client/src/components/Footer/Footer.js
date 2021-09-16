@@ -1,6 +1,6 @@
-import React from 'react';
-import 'react-bootstrap';
-import './Footer.css';
+import React from "react";
+import "react-bootstrap";
+import "./Footer.css";
 
 function Footer() {
   return (
@@ -11,19 +11,17 @@ function Footer() {
         <section className="ft-main">
           <div className="ft-main-item">
             <h2 className="ft-title">
-              <strong>About Us</strong>
+              <strong>Free Your Stuff</strong>
             </h2>
             <ul>
               <li>
-                <a href="/ourMission">Our Mission</a>
+                <a href="/ourMission">About Us</a>
               </li>
               <li>
                 <a href="careers">Careers</a>
               </li>
               <li>
-                <a href="https://www.buymeacoffee.com/">
-                  Buy Me a Coffee
-                </a>
+                <a href="https://www.buymeacoffee.com/">Buy Me a Coffee</a>
               </li>
             </ul>
           </div>
@@ -85,7 +83,7 @@ function Footer() {
         <section className="ft-social">
           <ul className="ft-social-list">
             <li>
-              <a href="https://www.facebook.com/" >
+              <a href="https://www.facebook.com/">
                 <i className="fab fa-facebook"></i>
               </a>
             </li>
