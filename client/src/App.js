@@ -52,7 +52,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
 
-          <Route exact path="/allitems" component={AllItems} />
+          <Route exact path="/items" component={AllItems} />
           {/* <Route exact path="/" component={UserForm} /> */}
 
           <Route exact path="/postItemmm" component={PostItemmm} />

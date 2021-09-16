@@ -5,32 +5,53 @@ const data = [
   },
   {
     label: 'Electronics',
-    url: '/electronics',
+    url: '/Electronics',
   },
   {
     label: 'Furniture',
-    url: '/furniture',
+    url: '/Furniture',
   },
   {
-    label: 'Fashion',
-    url: '/fashion',
+    label: 'Clothing & Textiles',
+    url: '/Clothing & Textiles',
   },
   {
-    label: 'Animals',
-    url: '/animals',
+    label: 'Pets',
+    url: '/Pets',
   },
   {
-    label: 'Garden',
-    url: '/garden',
+    label: 'Gardening',
+    url: '/Gardening',
   },
   {
-    label: 'Free Time',
-    url: '/free-time',
+    label: 'Office Supplies',
+    url: '/Office Supplies',
   },
   {
-    label: 'Misc',
-    url: '/misc',
+    label: 'Sports & Leisure',
+    url: '/Sports & Leisure',
   },
+  {
+    label: 'Movies, Music & Books',
+    url: '/Movies, Music & Books',
+  },
+  {
+    label: 'Decoration',
+    url: '/Decoration',
+  },
+  {
+    label: 'Beauty',
+    url: '/Beauty',
+  },
+  {
+    label: 'Tools',
+    url: '/Tools',
+  },
+  {
+    label: 'Kitchen utensils',
+    url: '/Kitchen utensils',
+  }
 ];
 
 export default data;
+
