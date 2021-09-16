@@ -14,7 +14,8 @@ const client = new OAuth2Client(
 
 exports.getAllUsers = async (req, res, next) => {
   try {
-    const allUsers = await UserModel.find({});
+    const allUsers = await UserModel.find({}).select(
+      "email name phone profilePicture isAdmin");
     res.json({ users: allUsers.length, success: true, data: allUsers });
   } catch (e) {
     console.log(e);
@@ -25,7 +26,8 @@ exports.getAllUsers = async (req, res, next) => {
 exports.getUser = async (req, res, next) => {
   const id = req.params.id;
   try {
-    const user = await UserModel.findById(id);
+    const user = await UserModel.findById(id).select(
+      "email name phone profilePicture isAdmin");
     res.json({ success: true, data: user });
   } catch (e) {
     console.log(e);

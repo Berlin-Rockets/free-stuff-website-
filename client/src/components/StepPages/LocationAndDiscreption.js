@@ -6,9 +6,9 @@ export default function LocationAndDiscreption(props) {
       <p>
         <input
           type="text"
-          name="discreption"
-          placeholder="discreption"
-          defaultValue={props.getState("discreption", "")}
+          name="description"
+          placeholder="description"
+          defaultValue={props.getState("description", "")}
           className="form-control mb-3 col-11 ml-3"
           onChange={props.handleChange}
         />

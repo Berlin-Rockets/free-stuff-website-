@@ -24,7 +24,8 @@ export default function FinalPage(props) {
     fd.append("PostOrSearch", props.state.PostOrSearch);
     fd.append("usedState", props.state.usedState);
     fd.append("name", props.state.name);
-    fd.append("discreption", props.state.discreption);
+    fd.append("userId", localStorage.getItem("userId"));
+    fd.append("description", props.state.description);
     // fd.category=props.state.category
     // fd.name=props.state.name
     // fd.location=props.state.location
