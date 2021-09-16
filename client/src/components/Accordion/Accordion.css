@@ -11,33 +11,40 @@ body {
 }
 
 .container {
-  max-width: 600px;
-  margin: 6rem auto 4rem;
+  max-width: 60%;
+  /* margin: 6rem auto 4rem; */
   padding: 0 10px;
 }
 
 .heading {
   font-size: 2rem;
   font-weight: bold;
-  position: relative;
+  /* position: relative; */
   margin-bottom: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #1e212d;
+  text-align: center;
 }
 
 .accordion {
   list-style: none;
-  position: absolute;
-  width: 50%;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  /* position: absolute; */
+  /* width: 50%; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* margin-right: -50%; */
+  /* transform: translate(-50%, -50%); */
+
+  /* width: 60%; */
+  border-radius: 5px;
+  /* border: indigo 1px solid; */
+  overflow: hidden;
+  margin-bottom: 40px;
 }
 
 .accordion_item {
   border-top: 1px solid #eabf9f;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .button {
@@ -51,10 +58,10 @@ body {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 8px;
+  padding: 18px;
   cursor: pointer;
   border: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
 }
 
@@ -65,7 +72,7 @@ body {
 .answer {
   background-color: #faf3e0;
   padding: 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
 }
 
