@@ -29,9 +29,7 @@ const userSchema = new Schema({
     // move to the form in Front-End
     // maxlength: [20, 'A password must have less than or 20 characters'],
   },
-  userId: {
-    // TBD
-  },
+
   isAdmin: {
     type: Boolean,
     default: false,

@@ -32,9 +32,9 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 
 ItemRoute.get("/", getItems);
-ItemRoute.get("/", getAllItems);
+// ItemRoute.get("/", getAllItems);
 ItemRoute.get("/singleItem/:id", getSingleItem);
-ItemRoute.post("/", upload.single("file"), postItem);
+ItemRoute.post("/", upload.array("file"), postItem);
 ItemRoute.get("/filter/:filter", filterByOne);
 ItemRoute.get("/filter/:filter/:both", filterItems);
 ItemRoute.get("/given", givenItem);
