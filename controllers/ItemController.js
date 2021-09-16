@@ -119,7 +119,7 @@ exports.getSingleItem = async (req, res, next) => {
   const id = req.params.id;
   // console.log(id);
   try {
-    const item = await ItemModel.findById(id);
+    const item = await ItemModel.findById(id).populate("userId");
     res.json({ success: true, data: item });
   } catch (e) {
     console.log(e);

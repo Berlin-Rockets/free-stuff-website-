@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 // import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import RadioButtonsGroup from "./RadioButtons";
 
 export class Condition extends Component {
   continue = (e) => {
@@ -25,6 +26,12 @@ export class Condition extends Component {
             <AppBar title="Select Item Condition" />
             <br />
             <h6>Is your item new or used?</h6>
+<<<<<<< HEAD:client/src/components/PostItem/Condition.js
+            {/* <Button>New</Button>
+            <br />
+            <Button>Used</Button> */}
+            <RadioButtonsGroup />
+=======
             <Button
               label="Is your item new or used?"
               onChange={handleChange("condition")}
@@ -49,8 +56,8 @@ export class Condition extends Component {
               margin="normal"
               fullWidth
             /> */}
+>>>>>>> a02ba993eb4e7c44e500714aa5be2bd6bb69b60c:client/src/components/test-components/PostItem-Nathaly/Condition.js
             <br />
-
             <Button color="secondary" variant="contained" onClick={this.back}>
               Back
             </Button>

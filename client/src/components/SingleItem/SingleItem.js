@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import 'react-bootstrap';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-
-import baseURL from '../../config/baseUrl';
-import { Button } from '../Navbar/Button';
-import './SingleItem.css';
+import React, { useState, useEffect } from "react";
+import "react-bootstrap";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import baseURL from "../../config/baseUrl";
+import { Button } from "../Navbar/Button";
+import "./SingleItem.css";
 
 const SingleItem = () => {
   const [item, setItem] = useState();
@@ -15,7 +15,7 @@ const SingleItem = () => {
 
   const getSingleItem = async () => {
     try {
-      const res = await axios.get(baseURL + '/items/singleitem/' + id);
+      const res = await axios.get(baseURL + "/items/singleitem/" + id);
       console.log(res.data);
 
       setItem(res.data.data);
@@ -28,7 +28,7 @@ const SingleItem = () => {
     getSingleItem();
   }, []);
 
-  console.log('Item:', item);
+  console.log("Item:", item);
 
   return item ? (
     <React.Fragment>
@@ -67,10 +67,10 @@ const SingleItem = () => {
             </div>
             <div className="row">
               <p className="m-0 pl-3">
-                <a href="mailto:advertizer@email.com" className="card-link">
+                <a href='' className="card-link">
                   Send email to:
                 </a>
-                &nbsp; johnathan.swift@dublin.ie
+                &nbsp; {item.userId.email}
               </p>
             </div>
           </li>
@@ -78,7 +78,10 @@ const SingleItem = () => {
       </div>
       <div className="container text-center px-0 pb-5 m-0 mx-auto">
         <a href="/" className="card-link">
-          <Button> Back to Search Results</Button>
+          <Link to="/allitems" className="btn btn-outline-success  me-2">
+            Back to Search Results
+          </Link>
+          {/* <Button> Back to Search Results</Button>  */}
         </a>
         <a href="/" className="card-link">
           <button type="button" className="btn btn--black">
