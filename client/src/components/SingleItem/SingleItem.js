@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import "react-bootstrap";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import baseURL from "../../config/baseUrl";
-import { Button } from "../Navbar/Button";
-import "./SingleItem.css";
+import React, { useState, useEffect } from 'react';
+import 'react-bootstrap';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import baseURL from '../../config/baseUrl';
+import { Button } from '../Navbar/Button';
+import './SingleItem.css';
 
 const SingleItem = () => {
   const [item, setItem] = useState();
@@ -15,7 +15,7 @@ const SingleItem = () => {
 
   const getSingleItem = async () => {
     try {
-      const res = await axios.get(baseURL + "/items/singleitem/" + id);
+      const res = await axios.get(baseURL + '/items/singleitem/' + id);
       console.log(res.data);
 
       setItem(res.data.data);
@@ -28,7 +28,7 @@ const SingleItem = () => {
     getSingleItem();
   }, []);
 
-  console.log("Item:", item);
+  console.log('Item:', item);
 
   return item ? (
     <React.Fragment>
@@ -67,7 +67,7 @@ const SingleItem = () => {
             </div>
             <div className="row">
               <p className="m-0 pl-3">
-                <a href='' className="card-link">
+                <a href={`mailto:${item.userId.email}`} className="card-link">
                   Send email to:
                 </a>
                 &nbsp; {item.userId.email}
