@@ -1,44 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'react-bootstrap';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-import baseUrl from '../../config/baseUrl';
+import baseURL from '../../config/baseUrl';
 import { Button } from '../Navbar/Button';
 import './SingleItem.css';
 
-function SingleItem() {
+const SingleItem = () => {
   const [item, setItem] = useState();
+
   const { id } = useParams();
   console.log(id);
 
-  return (
+  const getSingleItem = async () => {
+    try {
+      const res = await axios.get(baseURL + '/items/singleitem/' + id);
+      console.log(res.data);
+
+      setItem(res.data.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getSingleItem();
+  }, []);
+
+  console.log('Item:', item);
+
+  return item ? (
     <React.Fragment>
       <div className="card mt-5 mb-4 mx-auto col-8 p-0">
         <img
           className="card-img-top"
-          src="https://images.pexels.com/photos/4846097/pexels-photo-4846097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          src={require(`../../../../images/${item.images[0]}`).default}
           alt="Card Item"
         />
         <div className="card-body">
-          <h4 className="mb-0 card-title font-weight-bold">Item Name</h4>
+          <h4 className="mb-0 card-title font-weight-bold">{item.name}</h4>
           <p className="mb-2">
-            <small className="text-muted">Published on: 06.09.2021</small>
+            <small className="text-muted">Published on: {item.createdAt}</small>
           </p>
-          <p className="card-text">
-            {/* text-truncate */}
-            Item Description. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Dignissimos quae explicabo libero quasi eos natus
-            animi alias, minima nihil itaque.
-          </p>
+          <p className="card-text">{item.description}</p>
         </div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
             <div className="row">
-              <ul className="list-group list-group-flush">
-                <li className="col">Location: Berlin</li>
-                <li className="col ">Pick-up / Delivery</li>
-                <li className="col ">Used / New</li>
+              <ul className="list-group list-group-flush pl-2">
+                <li className="col">Location: {item.location}</li>
+                <li className="col ">
+                  Condition: {useState ? <span>Used</span> : <span>New</span>}
+                </li>
               </ul>
             </div>
           </li>
@@ -73,7 +87,9 @@ function SingleItem() {
         </a>
       </div>
     </React.Fragment>
+  ) : (
+    <div>Loading...</div>
   );
-}
+};
 
 export default SingleItem;
