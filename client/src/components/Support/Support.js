@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
-import Accordion from '../Accordion/Accordion';
 import './Support.css';
+import Accordion from '../Accordion/Accordion';
+import SupportForm from '../SupportForm/SupportForm';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -22,6 +24,7 @@ function Support() {
         </section>
       </div>
       <Accordion />
+      <SupportForm />
     </React.Fragment>
   );
 }
