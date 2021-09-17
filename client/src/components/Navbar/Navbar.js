@@ -1,8 +1,8 @@
-import React from 'react';
-import { MenuItems } from './MenuItems';
-import { Button } from './Button';
-import './Navbar.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { MenuItems } from "./MenuItems";
+import { Button } from "./Button";
+import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   state = {
@@ -13,23 +13,23 @@ class Navbar extends React.Component {
     this.setState({ clicked: !this.state.clicked });
   };
   onLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userId');
-    window.location.replace('/');
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    window.location.replace("/");
   };
 
   render() {
     // console.log(this.props.user);
     return (
       <nav className="NavbarItems">
-        <h1 className="navbar-name">Free Your Stuff</h1>
+        <h1 className="navbar-name">Freebay</h1>
 
         <div className="menu-icon" onClick={this.handleClick}>
           <i
-            className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}
+            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
           ></i>
         </div>
-        <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu '}>
+        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu "}>
           {MenuItems.map((item, index) => {
             return (
               <li key={index}>
@@ -45,7 +45,7 @@ class Navbar extends React.Component {
               <div className="btn-login">
                 <Button>
                   <Link to="/login" className="text-dark">
-                    {' '}
+                    {" "}
                     login
                   </Link>
                 </Button>
