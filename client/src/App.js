@@ -19,7 +19,8 @@ import Carousel from "./components/Carousel/Carousel";
 import PostItemmm from "./components/StepPages/PostItemmm";
 import Support from "./components/Support/Support";
 import AboutUs from "./components/AboutUs/AboutUs";
-import Careers from "./components/Careers/Careers";
+import Terms from "./components/Terms/Terms";
+import Privacy from "./components/PrivacyPolicy/Privacy";
 
 function App() {
   const [user, setUser] = useState();
@@ -66,7 +67,9 @@ function App() {
 
           <Route exact path="/singleItem/:id" component={SingleItem} />
         </Switch>
-        <FirstPostItem />
+        {/* <FirstPostItem/> */}
+        {/* <Terms /> */}
+        {/* <Privacy /> */}
         <Footer />
       </div>
     </BrowserRouter>

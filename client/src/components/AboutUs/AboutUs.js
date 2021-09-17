@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./AboutUs.css";
+=======
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from '../Navbar/Navbar';
+import './AboutUs.css';
+>>>>>>> 75b4aefd2996a37afddeb0023d90198bbd0c4a08
 
 function AboutUsPage() {
   return (
