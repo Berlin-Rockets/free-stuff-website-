@@ -10,6 +10,7 @@ import Register from "./components/Register/Register";
 import Categories from "./components/Categories/Categories";
 import SingleItem from "./components/SingleItem/SingleItem";
 import AllItems from "./components/AllItems/AllItems";
+import FByCategory from "./components/Filter/FByCategory";
 import axios from "axios";
 import baseURL from "../src/config/baseUrl";
 import Accordion from "./components/Accordion/Accordion";
@@ -26,7 +27,7 @@ function App() {
     const userId = localStorage.getItem("userId");
     if (userId) {
       const userData = await axios.get(baseURL + "/users/" + userId);
-      console.log(userData.data);
+      // console.log(userData.data);
       setUser(userData.data);
     }
   };
@@ -53,16 +54,15 @@ function App() {
           <Route exact path="/register" component={Register} />
 
           <Route exact path="/items" component={AllItems} />
-          {/* <Route exact path="/" component={UserForm} /> */}
 
           <Route exact path="/postItemmm" component={PostItemmm} />
           <Route exact path="/support" component={Support} />
 
           <Route exact path="/carousel" component={Carousel} />
-
-          <Route exact path="/singleItem/:id" component={SingleItem} />
+          <Route exact path="/items/:filter" component={FByCategory} />
+          <Route exact path="/items/singleItem/:id" component={SingleItem} />
         </Switch>
-        {/* <FirstPostItem/> */}
+
         <Footer />
       </div>
     </BrowserRouter>
