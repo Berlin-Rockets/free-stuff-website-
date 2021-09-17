@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import baseURL from '../../config/baseUrl';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 
 export default function Carousel() {
   const [items, setItems] = useState();
@@ -32,6 +33,7 @@ export default function Carousel() {
       <div className="carousel-inner container w-75 mx-auto">
         <div className="carousel-item active">
           <div className="row row-cols-1 row-cols-md-3 g-4">
+          <Link to={'singleItem/' + items[0]._id}>
             <div className="col">
               <div className="card ">
                 <img
@@ -53,6 +55,9 @@ export default function Carousel() {
                 </div>
               </div>
             </div>
+            </Link>
+            <Link to={'singleItem/' + items[1]._id}>
+            
             <div className="col">
               <div className="card ">
                 <img
@@ -73,6 +78,8 @@ export default function Carousel() {
                 </div>
               </div>
             </div>
+            </Link>
+            <Link to={'singleItem/' + items[2]._id}>
             <div className="col">
               <div className="card ">
                 <img
@@ -93,11 +100,14 @@ export default function Carousel() {
                 </div>
               </div>
             </div>
+            </Link>
           </div>
+          
         </div>
 
         <div className="carousel-item">
           <div className="row row-cols-1 row-cols-md-3 g-4">
+          <Link to={'singleItem/' + items[3]._id}>
             <div className="col">
               <div className="card ">
                 <img
@@ -118,6 +128,8 @@ export default function Carousel() {
                 </div>
               </div>
             </div>
+            </Link>
+            <Link to={'singleItem/' + items[4]._id}>
             <div className="col">
               <div className="card ">
                 <img
@@ -138,6 +150,8 @@ export default function Carousel() {
                 </div>
               </div>
             </div>
+            </Link>
+            <Link to={'singleItem/' + items[5]._id}>
             <div className="col">
               <div className="card ">
                 <img
@@ -158,11 +172,14 @@ export default function Carousel() {
                 </div>
               </div>
             </div>
+            </Link>
           </div>
         </div>
 
         <div className="carousel-item">
           <div className="row row-cols-1 row-cols-md-3 g-4">
+
+          <Link to={'singleItem/' + items[6]._id}>
             <div className="col">
               <div className="card ">
                 <img
@@ -183,6 +200,8 @@ export default function Carousel() {
                 </div>
               </div>
             </div>
+            </Link>
+            <Link to={'singleItem/' + items[7]._id}>
             <div className="col">
               <div className="card ">
                 <img
@@ -203,6 +222,8 @@ export default function Carousel() {
                 </div>
               </div>
             </div>
+            </Link>
+            <Link to={'singleItem/' + items[8]._id}>
             <div className="col">
               <div className="card ">
                 <img
@@ -223,11 +244,12 @@ export default function Carousel() {
                 </div>
               </div>
             </div>
+            </Link>
           </div>
         </div>
       </div>
       <button
-        className="carousel-control-prev border-0   "
+        className="carousel-control-prev border-0  bg-dark "
         type="button"
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev"
@@ -236,7 +258,7 @@ export default function Carousel() {
         <span className="visually-hidden text-warning">Previous</span>
       </button>
       <button
-        className="carousel-control-next border-0 "
+        className="carousel-control-next border-0 bg-dark"
         type="button"
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="next"

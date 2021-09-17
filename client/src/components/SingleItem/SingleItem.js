@@ -51,7 +51,7 @@ const SingleItem = () => {
               <ul className="list-group list-group-flush pl-2">
                 <li className="col">Location: {item.location}</li>
                 <li className="col ">
-                  Condition: {useState ? <span>Used</span> : <span>New</span>}
+                  Condition: {item.usedState ? <span>Used</span> : <span>New</span>}
                 </li>
               </ul>
             </div>

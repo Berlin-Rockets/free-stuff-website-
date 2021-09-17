@@ -30,7 +30,7 @@ const AllItems = () => {
   return items ? (
     <div className="container-lg">
       <div className="categories">
-        <Categories />
+        <Categories items={items} />
       </div>
       <div className="row row-cols-1 row-cols-md-6 g-4">
         {items.map((item) => {
