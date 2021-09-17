@@ -1,13 +1,17 @@
+<<<<<<< HEAD
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer";
 import "./AboutUs.css";
+=======
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from '../Navbar/Navbar';
+import './AboutUs.css';
+>>>>>>> 75b4aefd2996a37afddeb0023d90198bbd0c4a08
 
 function AboutUsPage() {
   return (
     <div>
-      <Navbar />
       <div class="pt-5 pb-5">
         <div class="container">
           <div class="row">
@@ -69,7 +73,6 @@ function AboutUsPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

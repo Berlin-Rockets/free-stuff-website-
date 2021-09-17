@@ -11,7 +11,7 @@ function Footer() {
         <section className="ft-main">
           <div className="ft-main-item">
             <h2 className="ft-title">
-              <strong>Free Your Stuff</strong>
+              <strong>Freebay</strong>
             </h2>
             <ul>
               <li>
@@ -31,7 +31,7 @@ function Footer() {
             </h2>
             <ul>
               <li>
-                <a href="/accordion">FAQ</a>
+                <a href="/support">FAQ</a>
               </li>
               <li>
                 <a href="/support">Support</a>
@@ -110,8 +110,7 @@ function Footer() {
               <a href="policy">Privacy Policy</a>
             </li>
             <li>
-              &copy;{new Date().getFullYear()} Free Your Stuff - All Rights
-              Reserved
+              &copy;{new Date().getFullYear()} Freebay - All Rights Reserved
             </li>
           </ul>
         </section>

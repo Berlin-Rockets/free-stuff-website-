@@ -19,6 +19,9 @@ import Home from "./components/Homepage/Home";
 import Carousel from "./components/Carousel/Carousel";
 import PostItemmm from "./components/StepPages/PostItemmm";
 import Support from "./components/Support/Support";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Terms from "./components/Terms/Terms";
+import Privacy from "./components/PrivacyPolicy/Privacy";
 
 function App() {
   const [user, setUser] = useState();
@@ -39,6 +42,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar user={user} />
+
         {/* <Banner /> */}
 
         {/* <Categories /> */}
@@ -47,6 +51,7 @@ function App() {
         {/* <AllItems /> */}
         {/* <Accordion /> */}
         {/* <Carousel /> */}
+        {/* <AboutUs /> */}
 
         <Switch>
           <Route exact path="/" component={Home} />
@@ -62,7 +67,6 @@ function App() {
           <Route exact path="/items/:filter" component={FByCategory} />
           <Route exact path="/items/singleItem/:id" component={SingleItem} />
         </Switch>
-
         <Footer />
       </div>
     </BrowserRouter>
