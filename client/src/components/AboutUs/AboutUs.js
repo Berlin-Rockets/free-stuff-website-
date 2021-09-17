@@ -1,8 +1,7 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer";
-import "./AboutUs.css";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from '../Navbar/Navbar';
+import './AboutUs.css';
 
 function AboutUsPage() {
   return (
@@ -69,7 +68,6 @@ function AboutUsPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
