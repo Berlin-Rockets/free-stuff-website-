@@ -1,55 +1,55 @@
 const data = [
   {
     label: 'Auto',
-    url: '/auto',
+    url: 'Auto',
   },
   {
-    label: 'Electronics',
-    url: '/Electronics',
+    label: 'Electronics & Appliances',
+    url: 'Electronics & Appliances',
   },
   {
     label: 'Furniture',
-    url: '/Furniture',
+    url: 'Furniture',
   },
   {
     label: 'Clothing & Textiles',
-    url: '/Clothing & Textiles',
+    url: 'Clothing & Textiles',
   },
   {
     label: 'Pets',
-    url: '/Pets',
+    url: 'Pets',
   },
   {
     label: 'Gardening',
-    url: '/Gardening',
+    url: 'Gardening',
   },
   {
     label: 'Office Supplies',
-    url: '/Office Supplies',
+    url: 'Office Supplies',
   },
   {
     label: 'Sports & Leisure',
-    url: '/Sports & Leisure',
+    url: 'Sports & Leisure',
   },
   {
     label: 'Movies, Music & Books',
-    url: '/Movies, Music & Books',
+    url: 'Movies, Music & Books',
   },
   {
     label: 'Decoration',
-    url: '/Decoration',
+    url: 'Decoration',
   },
   {
     label: 'Beauty',
-    url: '/Beauty',
+    url: 'Beauty',
   },
   {
     label: 'Tools',
-    url: '/Tools',
+    url: 'Tools',
   },
   {
     label: 'Kitchen utensils',
-    url: '/Kitchen utensils',
+    url: 'Kitchen utensils',
   }
 ];
 

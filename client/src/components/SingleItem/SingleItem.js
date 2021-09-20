@@ -9,7 +9,7 @@ import './SingleItem.css';
 
 const SingleItem = () => {
   const [item, setItem] = useState();
-
+// console.log('run single item page');
   const { id } = useParams();
   console.log(id);
 
@@ -78,7 +78,7 @@ const SingleItem = () => {
       </div>
       <div className="container text-center px-0 pb-5 m-0 mx-auto">
         <a href="/" className="card-link">
-          <Link to="/allitems" className="btn btn-outline-success  me-2">
+          <Link to="/items" className="btn btn-outline-success  me-2">
             Back to Search Results
           </Link>
           {/* <Button> Back to Search Results</Button>  */}

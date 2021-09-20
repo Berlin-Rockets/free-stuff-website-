@@ -30,12 +30,12 @@ const AllItems = () => {
   return items ? (
     <div className="container-lg">
       <div className="categories">
-        <Categories items={items} />
+        <Categories />
       </div>
       <div className="row row-cols-1 row-cols-md-6 g-4">
         {items.map((item) => {
           return (
-            <Link to={'singleItem/' + item._id}>
+            <Link to={'items/singleItem/' + item._id}>
               <div className="col">
                 <div className="card mt-5 mb-4 mx-auto p-0">
                   <div className="img-container ">
