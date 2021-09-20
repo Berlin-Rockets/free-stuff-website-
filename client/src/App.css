@@ -2,7 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --main-green: #159957;
+  --main-blue: #155799;
+  --grey: #bdbdbd;
+  --dark: #383838;
+}
+
+.bg-color() {
+}
+
+body {
+  font-family: -apple-system, 'Open Sans', BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  color: red;
 }
 
 .App {

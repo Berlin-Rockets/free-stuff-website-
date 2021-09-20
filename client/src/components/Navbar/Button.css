@@ -8,8 +8,8 @@
   outline: none;
   border: none;
   cursor: pointer;
-  font-family: "Nunito", sans-serif;
-  text-transform: uppercase;
+  /* font-family: "Nunito", sans-serif; */
+  text-transform: lowercase;
   font-weight: 600;
 }
 
