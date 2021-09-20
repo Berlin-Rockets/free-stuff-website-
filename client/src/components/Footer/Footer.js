@@ -15,10 +15,10 @@ function Footer() {
             </h2>
             <ul>
               <li>
-                <a href="/ourMission">About Us</a>
+                <a href="/aboutUs">About Us</a>
               </li>
               <li>
-                <a href="careers">Careers</a>
+                <a href="/careers">Careers</a>
               </li>
               <li>
                 <a href="https://www.buymeacoffee.com/">Buy Me a Coffee</a>
@@ -104,10 +104,10 @@ function Footer() {
         <section className="ft-legal">
           <ul className="ft-legal-list">
             <li>
-              <a href="/term">Terms &amp; Conditions</a>
+              <a href="/Terms">Terms &amp; Conditions</a>
             </li>
             <li>
-              <a href="policy">Privacy Policy</a>
+              <a href="/Privacy">Privacy Policy</a>
             </li>
             <li>
               &copy;{new Date().getFullYear()} Freebay - All Rights Reserved
