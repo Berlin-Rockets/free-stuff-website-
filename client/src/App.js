@@ -17,12 +17,13 @@ import PostItemmm from "./components/StepPages/PostItemmm";
 import Support from "./components/Support/Support";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Terms from "./components/Terms/Terms";
-
+import Privacy from "./components/PrivacyPolicy/Privacy";
+import Advertise from "./components/Advertise/Advertise";
 import Banner from "./components/Banner/Banner";
 import FirstPostItem from "./components/test-components/PostItem";
 import Categories from "./components/Categories/Categories";
 import Accordion from "./components/Accordion/Accordion";
-import Privacy from "./components/PrivacyPolicy/Privacy";
+
 
 
 
@@ -66,6 +67,7 @@ function App() {
           <Route exact path="/aboutUs" component={AboutUs} />
           <Route exact path="/Terms" component={Terms} />
           <Route exact path="/Privacy" component={Privacy} />
+          <Route exact path="/advertise" component={Advertise} />
           <Route exact path="/carousel" component={Carousel} />
           <Route exact path="/items/:filter" component={FByCategory} />
           <Route exact path="/items/singleItem/:id" component={SingleItem} />
