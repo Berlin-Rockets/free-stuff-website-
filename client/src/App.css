@@ -6,17 +6,21 @@
 
 :root {
   --main-green: #159957;
+  --light-green: #31e38a;
   --main-blue: #155799;
-  --light-grey: #cacaca;
-  --grey: #bdbdbd;
+  --lighter-grey: #cacaca;
+  --light-grey: #bdbdbd;
   --dark: #383838;
   --black: #131313;
+  --light-blue: #318ae3;
+  --grey: #7e7e7e;
+  --dark: #333333;
+  --white: #ffffff;
 }
 
 body {
   font-family: -apple-system, 'Open Sans', BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  color: red;
 }
 
 .App {
