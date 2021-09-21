@@ -6,7 +6,6 @@ import data from "../Categories/CatData";
 import locData from '../Location/LocData';
 import baseURL from '../../config/baseUrl';
 import Moment from 'react-moment';
-import Categories from '../Categories/Categories';
 import { useParams } from 'react-router-dom';
 
 export default function FByCategory() {
@@ -73,7 +72,7 @@ export default function FByCategory() {
               return (
                 <div>
                 
-                <Link to={'singleItem/' + item._id}> 
+                <Link to={'singleItem/' + item._id} className='text-decoration-none'> 
                   <div className="col">
                     <div className="card mt-5 mb-4 mx-auto p-0">
                       <div className="img-container ">

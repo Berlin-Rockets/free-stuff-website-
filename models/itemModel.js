@@ -36,14 +36,8 @@ const itemSchema = new Schema({
     type:String,
     require:true
   }, // radius: need to get geolocation and publish it in form of radius instead of precise location
-  pickUp: {
-    type: Boolean,
-    default: true,
-  }, // pick-up or delivery
-  soldState: {
-    type: Boolean,
-    default: false,
-  },
+
+
   views: {
     type: Number,
     default: 0,

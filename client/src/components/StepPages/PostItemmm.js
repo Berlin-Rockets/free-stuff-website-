@@ -15,6 +15,7 @@ const Navigation = (props) => {
     button: {
       display: 'block',
       marginTop: theme.spacing(2),
+      
     },
     formControl: {
       margin: theme.spacing(1),
@@ -23,7 +24,7 @@ const Navigation = (props) => {
   }));
   // console.log( props.state);
   return (
-    <Row align="center">
+    <Row align="center" className='d-flex'>
       <Col>
         <Button
           className={useStyles.button}
@@ -63,7 +64,8 @@ function PostItemmm() {
   };
 
   return (
-    <FormControl className={useStyles.formControl}>
+    <div className='d-flex justify-content-center'>
+      <FormControl className={useStyles.formControl}>
       <br />
       <br />
 
@@ -74,6 +76,8 @@ function PostItemmm() {
         <Step component={FinalPage} />
       </Steps>
     </FormControl>
+    </div>
+  
   );
 }
 

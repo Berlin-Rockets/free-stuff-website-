@@ -33,7 +33,7 @@ export default function Carousel() {
       <div className="carousel-inner container w-75 mx-auto">
         <div className="carousel-item active">
           <div className="row row-cols-1 row-cols-md-3 g-4">
-          <Link to={'items/singleItem/' + items[0]._id}>
+          <Link to={'items/singleItem/' + items[0]._id} className='text-decoration-none'>
             <div className="col">
               <div className="card ">
                 <img
@@ -45,7 +45,7 @@ export default function Carousel() {
                 />
 
                 <div className="card-body">
-                  <h5 className="card-title">{items[0].name}</h5>
+                  <h5 className="card-title ">{items[0].name}</h5>
                 </div>
                 <div className="card-footer">
                   <small className="text-muted">
@@ -56,7 +56,7 @@ export default function Carousel() {
               </div>
             </div>
             </Link>
-            <Link to={'items/singleItem/' + items[1]._id}>
+            <Link to={'items/singleItem/' + items[1]._id} className='text-decoration-none'>
             
             <div className="col">
               <div className="card ">
@@ -79,7 +79,7 @@ export default function Carousel() {
               </div>
             </div>
             </Link>
-            <Link to={'items/singleItem/' + items[2]._id}>
+            <Link to={'items/singleItem/' + items[2]._id} className='text-decoration-none'>
             <div className="col">
               <div className="card ">
                 <img
@@ -107,7 +107,7 @@ export default function Carousel() {
 
         <div className="carousel-item">
           <div className="row row-cols-1 row-cols-md-3 g-4">
-          <Link to={'items/singleItem/' + items[3]._id}>
+          <Link to={'items/singleItem/' + items[3]._id} className='text-decoration-none'>
             <div className="col">
               <div className="card ">
                 <img
@@ -129,7 +129,7 @@ export default function Carousel() {
               </div>
             </div>
             </Link>
-            <Link to={'items/singleItem/' + items[4]._id}>
+            <Link to={'items/singleItem/' + items[4]._id} className='text-decoration-none'>
             <div className="col">
               <div className="card ">
                 <img
@@ -151,7 +151,7 @@ export default function Carousel() {
               </div>
             </div>
             </Link>
-            <Link to={'items/singleItem/' + items[5]._id}>
+            <Link to={'items/singleItem/' + items[5]._id} className='text-decoration-none'>
             <div className="col">
               <div className="card ">
                 <img
@@ -179,7 +179,7 @@ export default function Carousel() {
         <div className="carousel-item">
           <div className="row row-cols-1 row-cols-md-3 g-4">
 
-          <Link to={'items/singleItem/' + items[6]._id}>
+          <Link to={'items/singleItem/' + items[6]._id} className='text-decoration-none'>
             <div className="col">
               <div className="card ">
                 <img
@@ -201,7 +201,7 @@ export default function Carousel() {
               </div>
             </div>
             </Link>
-            <Link to={'items/singleItem/' + items[7]._id}>
+            <Link to={'items/singleItem/' + items[7]._id} className='text-decoration-none'>
             <div className="col">
               <div className="card ">
                 <img
@@ -223,7 +223,7 @@ export default function Carousel() {
               </div>
             </div>
             </Link>
-            <Link to={'items/singleItem/' + items[8]._id}>
+            <Link to={'items/singleItem/' + items[8]._id} className='text-decoration-none'>
             <div className="col">
               <div className="card ">
                 <img

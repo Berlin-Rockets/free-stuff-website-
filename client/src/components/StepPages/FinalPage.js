@@ -26,31 +26,10 @@ export default function FinalPage(props) {
     fd.append("name", props.state.name);
     fd.append("userId", localStorage.getItem("userId"));
     fd.append("description", props.state.description);
-    // fd.category=props.state.category
-    // fd.name=props.state.name
-    // fd.location=props.state.location
-    // fd.postOrSearch=props.state.PostOrSearch
-    // fd.usedState=props.state.usedState
-    // fd.description=props.state.discreption
-    // fd.file=image.raw, image.preview
+    
     fd.append("file", image.raw, image.preview);
 
-    console.log(fd);
-    // const itemData = {
-    //   name: props.state.name,
-    //   category: props.state.category,
-    //   discreption: props.state.discreption,
-    //   location:props.state.location,
-    //   PostOrSearch:props.state.PostOrSearch,
-    //   // file:{image.raw, image.preview}
-    // };
-    // console.log(itemData);
-    //       try{
-    //         const res = await axios.post(baseURL+'/items',fd)
-    // console.log('resssssssssssss',res);
-    //       }catch(e){
-    //         console.log(e);
-    //       }
+    console.log(fd)
 
     axios({
       method: "POST",
@@ -67,6 +46,8 @@ export default function FinalPage(props) {
       .catch((err) => {
         console.log(err);
       });
+
+      window.location.replace('/items');
   };
 
   // console.log('propssssss',props);

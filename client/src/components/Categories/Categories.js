@@ -9,11 +9,11 @@ function Categories({items}) {
 
 
   return (
-    <div className="cat-container">
+    <div className=" d-flex cat-container">
       <ul className="cat-list">
         {data.map((item) => (
           <li className="cat-item ">
-             <Link to={'/items/'+item.label} className="btn-circle text-uppercase" >
+             <Link to={'/items/'+item.label} className="btn-circle text-uppercase text-decoration-none" >
                {item.label}
             </Link>
           </li>

@@ -127,6 +127,21 @@ exports.getSingleItem = async (req, res, next) => {
   }
 };
 
+// get specific user Items
+exports.userItems = async (req, res, next) => {
+  const { id } = req.params;
+  // console.log({id});
+  try {
+    const items = await ItemModel.find({ userId: id });
+    res.json(items);
+    // console.log(Items);
+  } catch (err) {
+    console.log(err.message);
+    next(err);
+  }
+};
+
+
 // get sold/given Item
 exports.givenItem = async (req, res, next) => {
   console.log('start given controller');
