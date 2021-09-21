@@ -21,7 +21,9 @@ function Footer() {
                 <a href="/careers">Careers</a>
               </li>
               <li>
-                <a href="https://www.buymeacoffee.com/">Buy Me a Coffee</a>
+                <a href="https://www.buymeacoffee.com/" target="_blank">
+                  Buy Me a Coffee
+                </a>
               </li>
             </ul>
           </div>
@@ -43,22 +45,28 @@ function Footer() {
           </div>
           <div className="ft-main-item">
             <h2 className="ft-title">
-              <strong>Resources</strong>
+              <strong>Useful Links</strong>
             </h2>
             <ul>
               <li>
-                <a href="/" target="">
-                  Some link 1
+                <a href="https://www.berlin.de/en/" target="_blank">
+                  Official Website of Berlin
                 </a>
               </li>
               <li>
-                <a href="/" target="_blank">
-                  Some link 2
+                <a
+                  href="https://allaboutberlin.com/guides/moving-to-berlin"
+                  target="_blank"
+                >
+                  Moving to Berlin Guide
                 </a>
               </li>
               <li>
-                <a href="/" target="_blank">
-                  Some link 3
+                <a
+                  href="https://www.dw.com/en/guide-to-separating-trash-in-germany/g-38830796"
+                  target="_blank"
+                >
+                  Separating Trash in Germany
                 </a>
               </li>
             </ul>
