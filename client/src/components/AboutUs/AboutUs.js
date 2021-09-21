@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './AboutUs.css';
-=======
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./AboutUs.css";
->>>>>>> 00ed8e13a815d8598c021aece0c219cc9e6cf42f
 
 function AboutUsPage() {
   return (

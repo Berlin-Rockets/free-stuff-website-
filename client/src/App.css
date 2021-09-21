@@ -7,11 +7,10 @@
 :root {
   --main-green: #159957;
   --main-blue: #155799;
+  --light-grey: #cacaca;
   --grey: #bdbdbd;
   --dark: #383838;
-}
-
-.bg-color() {
+  --black: #131313;
 }
 
 body {
@@ -24,3 +23,11 @@ body {
   height: 100%;
   width: 100%;
 }
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
