@@ -16,7 +16,7 @@ function AboutUsPage() {
                 Our platform facilitates the exchange of items between people
                 living in Berlin or the Brandenburg region. After registering,
                 users can search for items they want or post their own items for
-                donation or exchange with other users.
+                donation or exchange with others.
               </p>
             </div>
             <div class="col-lg-4 col-sm-6">

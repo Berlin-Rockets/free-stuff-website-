@@ -31,16 +31,14 @@ import MyItem from "./components/My Item/MyItem";
 // import Accordion from "./components/Accordion/Accordion";
 
 
-
-
 function App() {
   const [user, setUser] = useState();
 
   const getUser = async () => {
-    const userId = localStorage.getItem("userId");
+    const userId = localStorage.getItem('userId');
     if (userId) {
       const userData = await axios.get(baseURL + "/users/" + userId);
-      console.log(userData.data);
+      // console.log(userData.data);
       setUser(userData.data);
     }
   };

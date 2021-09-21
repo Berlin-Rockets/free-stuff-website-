@@ -1,9 +1,9 @@
-:root {
+/* :root {
   --dark: #1e212d;
   --lighter: #b68973;
   --second: #eabf9f;
   --first: #faf3e0;
-}
+} */
 
 .NavbarItems {
   background: var(--first);
@@ -14,13 +14,13 @@
   font-size: 1rem;
 }
 
-.navbar-name {
+/* .navbar-name {
   color: var(--dark);
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
   font-family: 'Neucha', cursive;
-}
+} */
 
 .nav-menu {
   display: grid;
@@ -38,8 +38,8 @@
   color: var(--dark);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  font-family: 'Nunito', sans-serif;
-  text-transform: uppercase;
+  /* font-family: 'Nunito', sans-serif; */
+  /* text-transform: uppercase; */
   font-weight: 600;
 }
 
