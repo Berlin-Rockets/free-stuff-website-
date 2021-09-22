@@ -24,7 +24,10 @@ class Navbar extends React.Component {
     return (
       <nav className="NavbarItems">
         <div className="logo">
-          <img src={logo} alt="Logo" />
+        <Link to='/'  className="btn-circle">
+        <img src={logo} alt="Logo" />
+      </Link>
+         
         </div>
 
         <div className="menu-icon" onClick={this.handleClick}>
