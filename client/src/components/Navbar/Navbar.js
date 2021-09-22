@@ -24,10 +24,9 @@ class Navbar extends React.Component {
     return (
       <nav className="NavbarItems">
         <div className="logo">
-        <Link to='/'  className="btn-circle">
-        <img src={logo} alt="Logo" />
-      </Link>
-         
+          <Link to="/">
+            <img src={logo} alt="Logo" />
+          </Link>
         </div>
 
         <div className="menu-icon" onClick={this.handleClick}>
@@ -50,7 +49,10 @@ class Navbar extends React.Component {
             <div className="d-flex m-3 align-items-center">
               <div className="btn-login">
                 <Button>
-                  <Link to="/login" className="text-dark text-decoration-none fw-bolder fs-5">
+                  <Link
+                    to="/login"
+                    className="text-dark text-decoration-none fw-bolder fs-5"
+                  >
                     {' '}
                     login
                   </Link>
@@ -60,7 +62,10 @@ class Navbar extends React.Component {
 
               <div className="btn-register">
                 <Button>
-                  <Link to="/register" className="text-dark text-decoration-none fw-bolder fs-5">
+                  <Link
+                    to="/register"
+                    className="text-dark text-decoration-none fw-bolder fs-5"
+                  >
                     Register
                   </Link>
                 </Button>
@@ -69,50 +74,57 @@ class Navbar extends React.Component {
           )}
 
           {this.props.user && (
-           
             <li className="nav-item dropdown d-flex">
-            <a
-              className="nav-link dropdown-toggle text-dark  d-flex text-decoration-none align-items-center fw-bolder fs-5"
-              href="/"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-               {this.props.user.data.name}
-             
-            </a>
+              <a
+                className="nav-link dropdown-toggle text-dark  d-flex text-decoration-none align-items-center fw-bolder fs-5"
+                href="/"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                {this.props.user.data.name}
+              </a>
 
-            <ul
-              className="dropdown-menu text-white"
-              aria-labelledby="navbarDropdown"
-            >
-             
-              <li>
-                <a className="dropdown-item text-decoration-none" href="/myItem">
-                  My items
-                </a>
-              </li>
-              {this.props.user && this.props.user.data.isAdmin && (
+              <ul
+                className="dropdown-menu text-white"
+                aria-labelledby="navbarDropdown"
+              >
                 <li>
-                  <a className="dropdown-item text-decoration-none" href="/allItemsControl">
-                    All items
+                  <a
+                    className="dropdown-item text-decoration-none"
+                    href="/myItem"
+                  >
+                    My items
                   </a>
                 </li>
-              )}
-              {this.props.user && this.props.user.data.isAdmin && (
-                <li>
-                  <a className="dropdown-item text-decoration-none" href="/allUsers">
-                    All Users
-                  </a>
-                </li>
-              )}
-             
-            </ul>
-            <div className="btn-register">
-                <Button className='fw-bolder fs-5' onClick={this.onLogout}>logout</Button>
-               </div>
-          </li>
+                {this.props.user && this.props.user.data.isAdmin && (
+                  <li>
+                    <a
+                      className="dropdown-item text-decoration-none"
+                      href="/allItemsControl"
+                    >
+                      All items
+                    </a>
+                  </li>
+                )}
+                {this.props.user && this.props.user.data.isAdmin && (
+                  <li>
+                    <a
+                      className="dropdown-item text-decoration-none"
+                      href="/allUsers"
+                    >
+                      All Users
+                    </a>
+                  </li>
+                )}
+              </ul>
+              <div className="btn-register">
+                <Button className="fw-bolder fs-5" onClick={this.onLogout}>
+                  logout
+                </Button>
+              </div>
+            </li>
           )}
         </ul>
       </nav>
