@@ -35,7 +35,7 @@ span {
 .section-head h4 span {
   font-weight: 700;
   padding-bottom: 5px;
-  color: #2f2f2f;
+  color: var(--dark);
   font-size: 2rem;
 }
 

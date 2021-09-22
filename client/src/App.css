@@ -12,15 +12,18 @@
   --light-grey: #bdbdbd;
   --dark-one: #383838;
   --light-blue: #318ae3;
+  --fair-blue: #8bbdef;
   --grey: #7e7e7e;
+  --cultured: #f5f5f5;
+  --dark: #333333;
   --dark-two: #333333;
   --white: #ffffff;
   --black: #131313;
 }
 
 body {
-  font-family: -apple-system, 'Open Sans', BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, "Open Sans", BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .App {
