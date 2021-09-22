@@ -49,7 +49,7 @@ export default function Carousel() {
                       require(`../../../../images/${items[0].images[0]}`)
                         .default
                     }
-                    className="d-block w-100"
+                    className="d-block  carouselImg"
                     alt="pic2"
                   />
 
@@ -76,7 +76,7 @@ export default function Carousel() {
                       require(`../../../../images/${items[1].images[0]}`)
                         .default
                     }
-                    className="d-block w-100"
+                    className="d-block  carouselImg"
                     alt="pic2"
                   />
                   <div className="card-body">
@@ -102,7 +102,7 @@ export default function Carousel() {
                       require(`../../../../images/${items[2].images[0]}`)
                         .default
                     }
-                    className="d-block w-100"
+                    className="d-block  carouselImg"
                     alt="pic2"
                   />
                   <div className="card-body">
@@ -133,7 +133,7 @@ export default function Carousel() {
                       require(`../../../../images/${items[3].images[0]}`)
                         .default
                     }
-                    className="d-block w-100"
+                    className="d-block  carouselImg"
                     alt="pic2"
                   />
                   <div className="card-body">
@@ -159,7 +159,7 @@ export default function Carousel() {
                       require(`../../../../images/${items[4].images[0]}`)
                         .default
                     }
-                    className="d-block w-100"
+                    className="d-block  carouselImg"
                     alt="pic2"
                   />
                   <div className="card-body">
@@ -185,7 +185,7 @@ export default function Carousel() {
                       require(`../../../../images/${items[5].images[0]}`)
                         .default
                     }
-                    className="d-block w-100"
+                    className="d-block  carouselImg"
                     alt="pic2"
                   />
                   <div className="card-body">
@@ -216,7 +216,7 @@ export default function Carousel() {
                       require(`../../../../images/${items[6].images[0]}`)
                         .default
                     }
-                    className="d-block w-100"
+                    className="d-block  carouselImg"
                     alt="pic2"
                   />
                   <div className="card-body">
@@ -242,8 +242,9 @@ export default function Carousel() {
                       require(`../../../../images/${items[7].images[0]}`)
                         .default
                     }
-                    className="d-block w-100"
+                    className="d-block  carouselImg "
                     alt="pic2"
+
                   />
                   <div className="card-body">
                     <h5 className="card-title">{items[7].name}</h5>
@@ -268,7 +269,7 @@ export default function Carousel() {
                       require(`../../../../images/${items[8].images[0]}`)
                         .default
                     }
-                    className="d-block w-100"
+                    className="d-block  carouselImg"
                     alt="pic2"
                   />
                   <div className="card-body">
@@ -287,21 +288,21 @@ export default function Carousel() {
         </div>
       </div>
       <button
-        className="carousel-control-prev border-0  bg-dark "
+        className="carousel-control-prev border-0 carouselBtn "
         type="button"
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden text-warning">Previous</span>
+        <span className="carousel-control-prev-icon " aria-hidden="true"></span>
+        <span className=" text-dark ">Previous</span>
       </button>
       <button
-        className="carousel-control-next border-0 bg-dark"
+        className="carousel-control-next border-0"
         type="button"
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="next"
       >
-        <span className="visually-hidden text-warning ">Next</span>
+        <span className=" text-dark  ">Next</span>
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
       </button>
     </div>

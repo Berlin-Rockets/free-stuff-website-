@@ -11,3 +11,14 @@
     var(--light-green)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+
+.carouselImg{
+  width: auto;
+  height: 300px;
+  display: block;
+}
+
+.carouselBtn{
+  background-color: black;
+}
