@@ -1,6 +1,6 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './AboutUs.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./AboutUs.css";
 
 function AboutUsPage() {
   return (
@@ -14,9 +14,9 @@ function AboutUsPage() {
               </h4>
               <p>
                 Our platform facilitates the exchange of items between people
-                living in Berlin or the Brandenburg region. After registering,
-                users can search for items they want or post their own items for
-                donation or exchange with others.
+                living in Germany. After registering, users can search for items
+                they want or post their own items for donation or exchange with
+                others.
               </p>
             </div>
             <div class="col-lg-4 col-sm-6">
@@ -28,8 +28,7 @@ function AboutUsPage() {
                 <p>
                   This project was deployed and available for testing within 7
                   weeks of work. We are still working in the general improvement
-                  and to launch it as an active website for more regions in
-                  Germany.
+                  and we wish to add more features.
                 </p>
               </div>
             </div>

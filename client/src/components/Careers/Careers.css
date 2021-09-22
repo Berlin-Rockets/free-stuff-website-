@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 span {
   display: inline-block;
   text-decoration: none;
@@ -15,9 +9,9 @@ span {
 }
 
 .section-head h4 {
+  color: var(--dark);
   position: relative;
   padding: 0;
-  color: #f91942;
   line-height: 1;
   letter-spacing: 0.3px;
   font-weight: 700;
@@ -30,7 +24,7 @@ span {
   content: "";
   width: 60px;
   height: 3px;
-  background: #f91942;
+  background: var(--main-blue);
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -41,19 +35,19 @@ span {
 .section-head h4 span {
   font-weight: 700;
   padding-bottom: 5px;
-  color: #2f2f2f;
+  color: var(--dark);
   font-size: 2rem;
 }
 
 .section-head p {
-  color: #818181;
+  color: var(--grey);
   font-size: 1.2rem;
   line-height: 28px;
   text-align: center;
 }
 
 .item {
-  background: #fff;
+  background: var(--white);
   text-align: center;
   padding: 30px 25px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.07);
@@ -65,16 +59,18 @@ span {
 .item h6 {
   font-size: 1.2rem;
   font-weight: 700;
+  color: var(--dark);
 }
 
 .item p {
   line-height: 1.5rem;
+  color: var(--grey);
 }
 
 .item .icon {
+  color: var(--main-blue);
   font-size: 2rem;
   margin-bottom: 25px;
-  color: #f91942;
   width: 90px;
   height: 90px;
   line-height: 6rem;
