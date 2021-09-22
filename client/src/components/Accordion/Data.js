@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: "What is Freebay about?",
     answer:
-      "Freebay is a platform for people who live in Berlin and in the Brandenburg region. Here you can post items you wish to give away or exchange with something else. All you need to do is quickly register to post your item(s) and interact with the other users. You can also check the About Us section and our Terms & Conditions.",
+      "Freebay is a platform for people who live in Germany. Here you can post items you wish to give away or exchange with something else. All you need to do is quickly register to post your item(s) and interact with the other users. You can also check the About Us section and our Terms & Conditions.",
   },
 
   {
