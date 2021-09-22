@@ -3,17 +3,9 @@ import React from "react";
 export default function LocationAndDiscreption(props) {
   return (
     <div>
-      <p>
-        <input
-          type="text"
-          name="description"
-          placeholder="description"
-          defaultValue={props.getState("description", "")}
-          className="form-control mb-3 col-11 ml-3"
-          onChange={props.handleChange}
-        />
-      </p>
-
+      
+      <textarea className="form-control mb-3 col-11 ml-3" id="exampleFormControlTextarea1" rows="5" onChange={props.handleChange} name='description'>{props.getState("description", "")}</textarea>
+        
       <p>
         <select
           class="form-select"

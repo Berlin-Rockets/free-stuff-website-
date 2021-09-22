@@ -19,10 +19,16 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Terms from './components/Terms/Terms';
 import Privacy from './components/PrivacyPolicy/Privacy';
 import Advertise from './components/Advertise/Advertise';
-import Banner from './components/Banner/Banner';
-import FirstPostItem from './components/test-components/PostItem';
-import Categories from './components/Categories/Categories';
-import Accordion from './components/Accordion/Accordion';
+import setAuth from './config/AuthSetting';
+import AllUsers from './components/AllUsers/AllUsers';
+import AllItemsControl from './components/AllItemsControl/AllItemsControl';
+import EditItem from './components/Edit Item/EditItem';
+import MyItem from './components/My Item/MyItem';
+
+// import Banner from "./components/Banner/Banner";
+// import FirstPostItem from "./components/test-components/PostItem";
+// import Categories from "./components/Categories/Categories";
+// import Accordion from "./components/Accordion/Accordion";
 
 function App() {
   const [user, setUser] = useState();
@@ -35,8 +41,17 @@ function App() {
       setUser(userData.data);
     }
   };
+
+  const setAuthToken = async () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setAuth(token);
+    }
+  };
+
   useEffect(() => {
     getUser();
+    setAuthToken();
   }, []);
 
   return (
@@ -56,7 +71,9 @@ function App() {
 
         <Switch>
           <Route exact path="/" component={Home} />
+
           <Route exact path="/login" component={Login} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/items" component={AllItems} />
           <Route exact path="/postItemmm" component={PostItemmm} />
@@ -68,6 +85,10 @@ function App() {
           <Route exact path="/carousel" component={Carousel} />
           <Route exact path="/items/:filter" component={FByCategory} />
           <Route exact path="/items/singleItem/:id" component={SingleItem} />
+          <Route exact path="/myItem" component={MyItem} />
+          <Route exact path="/allusers" component={AllUsers} />
+          <Route exact path="/editItem/:id" component={EditItem} />
+          <Route exact path="/allItemsControl" component={AllItemsControl} />
         </Switch>
         <Footer />
       </div>

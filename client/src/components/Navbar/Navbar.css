@@ -1,17 +1,21 @@
-/* :root {
-  --dark: #1e212d;
-  --lighter: #b68973;
-  --second: #eabf9f;
-  --first: #faf3e0;
-} */
-
 .NavbarItems {
-  background: var(--first);
-  height: 80px;
+  background: var(--main-green); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* height: 80px; */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  padding: 20px 0;
 }
 
 /* .navbar-name {
@@ -30,17 +34,28 @@
   text-align: center;
   width: 70vw;
   justify-content: end;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   align-items: center;
+  margin: 0;
+}
+
+.logo {
+  height: 110px;
+}
+
+.logo img {
+  max-width: 100%;
+  height: 100%;
 }
 
 .nav-links {
-  color: var(--dark);
+  color: var(--dark-two);
   text-decoration: none;
   padding: 0.5rem 1rem;
   /* font-family: 'Nunito', sans-serif; */
   /* text-transform: uppercase; */
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .nav-links:hover {
@@ -105,6 +120,8 @@
     top: 0;
     left: 0;
     transform: translate(25%, 50%);
+    /* height: 60px;
+    width: 60px; */
   }
 
   .menu-icon {
@@ -126,7 +143,7 @@
     display: block;
     text-align: center;
     padding: 1.5rem;
-    margin: 2rem auto;
+    /* margin: 2rem auto; */
     border-radius: 4px;
     width: 80%;
     background-color: var(--first);

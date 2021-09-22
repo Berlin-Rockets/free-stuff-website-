@@ -5,7 +5,7 @@ export default function PostOrSearch(props) {
         <div>
         <label htmlFor="">if you want to post item please press true or if you search for it press false</label>
         <select
-          class="form-select"
+          className="form-select"
           aria-label="Default select example"
           name="PostOrSearch"
           onChange={props.handleChange}

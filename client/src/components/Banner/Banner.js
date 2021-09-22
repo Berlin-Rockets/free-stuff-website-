@@ -1,22 +1,25 @@
 import React from 'react';
-import LazyHero from 'react-lazy-hero';
 import './Banner.css';
 import Searchbar from '../Searchbar/Searchbar';
+import bannerPic from './../../banner-pic-2.jpg';
 
 function Banner() {
   return (
-    <div className="banner">
-      <LazyHero imageSrc="https://images.unsplash.com/photo-1501685532562-aa6846b14a0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80">
-        <div className="intro">
+    <div className="banner-container">
+      <div className="left-side">
+        <div className="intro-text">
           <p>
             Wanna get rid of those pants you've bought but never wear? Tired of
             reading the same book and wish to trade it?
           </p>
         </div>
-        <Searchbar />
-      </LazyHero>
-
-      {/* ... */}
+        <Searchbar className="search-bar" />
+      </div>
+      <div className="right-side">
+        <div className="banner-pic">
+          <img src={bannerPic} alt="receive a box" />
+        </div>
+      </div>
     </div>
   );
 }

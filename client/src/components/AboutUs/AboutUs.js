@@ -1,6 +1,6 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./AboutUs.css";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './AboutUs.css';
 
 function AboutUsPage() {
   return (

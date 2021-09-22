@@ -8,12 +8,17 @@
   --main-green: #159957;
   --light-green: #31e38a;
   --main-blue: #155799;
+  --lighter-grey: #cacaca;
+  --light-grey: #bdbdbd;
+  --dark-one: #383838;
   --light-blue: #318ae3;
   --fair-blue: #8bbdef;
   --grey: #7e7e7e;
   --cultured: #f5f5f5;
   --dark: #333333;
+  --dark-two: #333333;
   --white: #ffffff;
+  --black: #131313;
 }
 
 body {
@@ -25,3 +30,11 @@ body {
   height: 100%;
   width: 100%;
 }
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/

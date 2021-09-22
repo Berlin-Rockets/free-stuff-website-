@@ -39,7 +39,7 @@ function Footer() {
                 <a href="/support">Support</a>
               </li>
               <li>
-                <a href="/advertise">Advertise</a>
+                <a href="/Advertise">Advertise</a>
               </li>
             </ul>
           </div>
