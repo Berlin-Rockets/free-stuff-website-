@@ -18,7 +18,7 @@ function Footer() {
                 <a href="/aboutUs">About Us</a>
               </li>
               <li>
-                <a href="/careers">Careers</a>
+                <a href="/CareersPage">Careers</a>
               </li>
               <li>
                 <a href="https://www.buymeacoffee.com/" target="_blank">

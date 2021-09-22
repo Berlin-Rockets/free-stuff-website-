@@ -24,7 +24,7 @@ import AllUsers from './components/AllUsers/AllUsers';
 import AllItemsControl from './components/AllItemsControl/AllItemsControl';
 import EditItem from './components/Edit Item/EditItem';
 import MyItem from './components/My Item/MyItem';
-
+import CareersPage from './components/Careers/Careers';
 // import Banner from "./components/Banner/Banner";
 // import FirstPostItem from "./components/test-components/PostItem";
 // import Categories from "./components/Categories/Categories";
@@ -82,6 +82,7 @@ function App() {
           <Route exact path="/Terms" component={Terms} />
           <Route exact path="/Privacy" component={Privacy} />
           <Route exact path="/advertise" component={Advertise} />
+          <Route exact path="/CareersPage" component={CareersPage} />
           <Route exact path="/carousel" component={Carousel} />
           <Route exact path="/items/:filter" component={FByCategory} />
           <Route exact path="/items/singleItem/:id" component={SingleItem} />
