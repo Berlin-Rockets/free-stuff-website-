@@ -3,7 +3,7 @@ import { MenuItems } from './MenuItems';
 import { Button } from './Button';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import logo from '../../../src/freeBay_6_540_logo.png';
+import logo from '../../../src/freeBay_11_500_logo.png';
 
 class Navbar extends React.Component {
   state = {

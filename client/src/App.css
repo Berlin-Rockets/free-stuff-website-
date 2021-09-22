@@ -10,12 +10,12 @@
   --main-blue: #155799;
   --lighter-grey: #cacaca;
   --light-grey: #bdbdbd;
-  --dark: #383838;
-  --black: #131313;
+  --dark-one: #383838;
   --light-blue: #318ae3;
   --grey: #7e7e7e;
-  --dark: #333333;
+  --dark-two: #333333;
   --white: #ffffff;
+  --black: #131313;
 }
 
 body {

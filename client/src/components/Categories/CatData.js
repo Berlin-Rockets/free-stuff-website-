@@ -1,57 +1,69 @@
 const data = [
   {
+    img: 'car.png',
     label: 'Auto',
     url: 'Auto',
   },
   {
-    label: 'Electronics & Appliances',
+    img: '011-washing-machine.png',
+    label: 'Appliances',
     url: 'Electronics & Appliances',
   },
   {
+    img: '012-bed.png',
     label: 'Furniture',
     url: 'Furniture',
   },
   {
-    label: 'Clothing & Textiles',
+    img: 'tshirt.png',
+    label: 'Clothing',
     url: 'Clothing & Textiles',
   },
   {
+    img: '010-pawprint.png',
     label: 'Pets',
     url: 'Pets',
   },
   {
+    img: '013-watering-can.png',
     label: 'Gardening',
     url: 'Gardening',
   },
   {
-    label: 'Office Supplies',
+    img: '014-paper-clip.png',
+    label: 'Office',
     url: 'Office Supplies',
   },
   {
-    label: 'Sports & Leisure',
+    img: '016-basketball-1.png',
+    label: 'Free Time',
     url: 'Sports & Leisure',
   },
   {
-    label: 'Movies, Music & Books',
+    img: '018-movie.png',
+    label: 'Movies',
     url: 'Movies, Music & Books',
   },
   {
-    label: 'Decoration',
+    img: '019-decoration.png',
+    label: 'Deco',
     url: 'Decoration',
   },
   {
+    img: '021-comb-1.png',
     label: 'Beauty',
     url: 'Beauty',
   },
   {
+    img: '027-support.png',
     label: 'Tools',
     url: 'Tools',
   },
   {
-    label: 'Kitchen utensils',
+    img: '028-cutlery.png',
+    label: 'Kitchen',
     url: 'Kitchen utensils',
-  }
+  },
 ];
 
 export default data;
-
