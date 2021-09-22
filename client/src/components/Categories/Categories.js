@@ -8,7 +8,7 @@ console.log(data);
 
 function Categories({ items }) {
   return (
-    <div className=" d-flex cat-container">
+    <div className="cat-container">
       <ul className="cat-list">
         {data.map((item) => (
           <li className="cat-item">
