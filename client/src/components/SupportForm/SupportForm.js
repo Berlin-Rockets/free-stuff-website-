@@ -1,38 +1,39 @@
-import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
-import Grid from '@material-ui/core/Grid';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
+import React, { useState } from "react";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import Grid from "@material-ui/core/Grid";
+import FormControl from "@material-ui/core/FormControl";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormLabel from "@material-ui/core/FormLabel";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from "@material-ui/core/InputLabel";
+import "./SupportForm.css";
 
-// const useStyles = makeStyles({
-//   field: {
-//     marginTop: 20,
-//     marginBottom: 20,
-//     // display: 'block',
-//   },
-// });
+const useStyles = makeStyles({
+  field: {
+    marginTop: 20,
+    marginBottom: 20,
+    // display: 'block',
+  },
+});
 
 const SupportForm = () => {
-  // const classes = useStyles();
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [salutation, setSalutation] = useState('');
-  const [details, setDetails] = useState('');
+  const classes = useStyles();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [salutation, setSalutation] = useState("");
+  const [details, setDetails] = useState("");
   const [firstNameError, setFirstNameError] = useState(false);
   const [lastNameError, setLastNameError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
-  const [category, setCategory] = useState('Mr.');
+  const [category, setCategory] = useState("Mr.");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,13 +42,13 @@ const SupportForm = () => {
     setSalutation(false);
     setDetailsError(false);
 
-    if (firstName === '') {
+    if (firstName === "") {
       setFirstNameError(true);
     }
-    if (lastName === '') {
+    if (lastName === "") {
       setLastNameError(true);
     }
-    if (details === '') {
+    if (details === "") {
       setDetailsError(true);
     }
     // if (firstName && details) {
@@ -57,18 +58,13 @@ const SupportForm = () => {
 
   return (
     <Container>
-      <Typography
-        variant="h4"
-        // color="textSecondary"
-        component="h2"
-        gutterBottom
-      >
+      <Typography variant="h4" component="h2" gutterBottom>
         Contact Form
       </Typography>
 
       <FormLabel component="legend">
-        Please let us know about your request and we will get back to you within
-        72 hours.
+        Keep in mind that our Support team takes up to 72 hours to provide you
+        with a response.
       </FormLabel>
 
       <FormControl
@@ -86,7 +82,7 @@ const SupportForm = () => {
             value="mr"
             control={<Radio />}
             label="Mr."
-            style={{ paddingRight: '80px' }}
+            style={{ paddingRight: "80px" }}
           />
           <FormControlLabel
             value="mrs/ms"
@@ -106,15 +102,15 @@ const SupportForm = () => {
           value={salutation}
           onChange={(e) => setSalutation(e.target.value)}
           label="Salutation"
-          style={{ width: '120px' }}
+          style={{ width: "120px" }}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={'Dr.'}>Dr.</MenuItem>
-          <MenuItem value={'Prof.'}>Prof.</MenuItem>
-          <MenuItem value={'Dr. Dr.'}>Dr. Dr.</MenuItem>
-          <MenuItem value={'Prof. Dr.'}>Prof. Dr.</MenuItem>
+          <MenuItem value={"Dr."}>Dr.</MenuItem>
+          <MenuItem value={"Prof."}>Prof.</MenuItem>
+          <MenuItem value={"Dr. Dr."}>Dr. Dr.</MenuItem>
+          <MenuItem value={"Prof. Dr."}>Prof. Dr.</MenuItem>
         </Select>
       </FormControl>
 
@@ -159,9 +155,10 @@ const SupportForm = () => {
         />
         {/* <Radio value="hello" />
           <Radio value="goodbye" /> */}
+
         <Button
-          type="submit"
           color="secondary"
+          type="submit"
           variant="contained"
           endIcon={<KeyboardArrowRightIcon />}
         >
