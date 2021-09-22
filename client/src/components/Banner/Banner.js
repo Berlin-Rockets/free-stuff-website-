@@ -1,7 +1,8 @@
-import React from 'react';
-import './Banner.css';
-import Searchbar from '../Searchbar/Searchbar';
-import bannerPic from './../../banner-pic-2.jpg';
+import React from "react";
+import "./Banner.css";
+import Searchbar from "../Searchbar/Searchbar";
+// import bannerPic from './../../banner-pic-2.jpg';
+import bannerPic from "./../../banner-pic-4.jpg";
 
 function Banner() {
   return (
@@ -16,8 +17,8 @@ function Banner() {
         <Searchbar className="search-bar" />
       </div>
       <div className="right-side">
-        <div className="banner-pic">
-          <img src={bannerPic} alt="receive a box" />
+        <div className="banner-pic-4">
+          <img src={bannerPic} alt="boxes" />
         </div>
       </div>
     </div>
