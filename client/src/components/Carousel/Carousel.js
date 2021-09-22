@@ -1,11 +1,11 @@
-import axios from 'axios';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import baseURL from '../../config/baseUrl';
-import Moment from 'react-moment';
-import { Link } from 'react-router-dom';
-import './Carousel.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import baseURL from "../../config/baseUrl";
+import Moment from "react-moment";
+import { Link } from "react-router-dom";
+import "./Carousel.css";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 // import 'swiper/css';
@@ -15,7 +15,7 @@ export default function Carousel() {
 
   const getAllItems = async () => {
     try {
-      const res = await axios.get(baseURL + '/items');
+      const res = await axios.get(baseURL + "/items");
       // console.log(res.data);
       setItems(res.data.data);
     } catch (e) {
@@ -36,10 +36,14 @@ export default function Carousel() {
       data-bs-ride="carousel"
     >
       <div className="carousel-inner container w-75 mx-auto">
+        <h1 className="title" style={{ fontSize: "2rem" }}>
+          Latest Items
+        </h1>
+        <br />
         <div className="carousel-item active">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             <Link
-              to={'items/singleItem/' + items[0]._id}
+              to={"items/singleItem/" + items[0]._id}
               className="text-decoration-none"
             >
               <div className="col">
@@ -58,7 +62,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{' '}
+                      Last updated{" "}
                       <Moment format="DD/MM/YYYY">{items[0].createdAt}</Moment>
                     </small>
                   </div>
@@ -66,7 +70,7 @@ export default function Carousel() {
               </div>
             </Link>
             <Link
-              to={'items/singleItem/' + items[1]._id}
+              to={"items/singleItem/" + items[1]._id}
               className="text-decoration-none"
             >
               <div className="col">
@@ -84,15 +88,15 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{' '}
-                      <Moment format="DD/MM/YYYY">{items[1].createdAt}</Moment>{' '}
+                      Last updated{" "}
+                      <Moment format="DD/MM/YYYY">{items[1].createdAt}</Moment>{" "}
                     </small>
                   </div>
                 </div>
               </div>
             </Link>
             <Link
-              to={'items/singleItem/' + items[2]._id}
+              to={"items/singleItem/" + items[2]._id}
               className="text-decoration-none"
             >
               <div className="col">
@@ -110,7 +114,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{' '}
+                      Last updated{" "}
                       <Moment format="DD/MM/YYYY">{items[2].createdAt}</Moment>
                     </small>
                   </div>
@@ -123,7 +127,7 @@ export default function Carousel() {
         <div className="carousel-item">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             <Link
-              to={'items/singleItem/' + items[3]._id}
+              to={"items/singleItem/" + items[3]._id}
               className="text-decoration-none"
             >
               <div className="col">
@@ -141,7 +145,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{' '}
+                      Last updated{" "}
                       <Moment format="DD/MM/YYYY">{items[3].createdAt}</Moment>
                     </small>
                   </div>
@@ -149,7 +153,7 @@ export default function Carousel() {
               </div>
             </Link>
             <Link
-              to={'items/singleItem/' + items[4]._id}
+              to={"items/singleItem/" + items[4]._id}
               className="text-decoration-none"
             >
               <div className="col">
@@ -167,7 +171,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{' '}
+                      Last updated{" "}
                       <Moment format="DD/MM/YYYY">{items[4].createdAt}</Moment>
                     </small>
                   </div>
@@ -175,7 +179,7 @@ export default function Carousel() {
               </div>
             </Link>
             <Link
-              to={'items/singleItem/' + items[5]._id}
+              to={"items/singleItem/" + items[5]._id}
               className="text-decoration-none"
             >
               <div className="col">
@@ -193,7 +197,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{' '}
+                      Last updated{" "}
                       <Moment format="DD/MM/YYYY">{items[5].createdAt}</Moment>
                     </small>
                   </div>
@@ -206,7 +210,7 @@ export default function Carousel() {
         <div className="carousel-item">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             <Link
-              to={'items/singleItem/' + items[6]._id}
+              to={"items/singleItem/" + items[6]._id}
               className="text-decoration-none"
             >
               <div className="col">
@@ -224,7 +228,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{' '}
+                      Last updated{" "}
                       <Moment format="DD/MM/YYYY">{items[6].createdAt}</Moment>
                     </small>
                   </div>
@@ -232,7 +236,7 @@ export default function Carousel() {
               </div>
             </Link>
             <Link
-              to={'items/singleItem/' + items[7]._id}
+              to={"items/singleItem/" + items[7]._id}
               className="text-decoration-none"
             >
               <div className="col">
@@ -244,14 +248,13 @@ export default function Carousel() {
                     }
                     className="d-block  carouselImg "
                     alt="pic2"
-
                   />
                   <div className="card-body">
                     <h5 className="card-title">{items[7].name}</h5>
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{' '}
+                      Last updated{" "}
                       <Moment format="DD/MM/YYYY">{items[7].createdAt}</Moment>
                     </small>
                   </div>
@@ -259,7 +262,7 @@ export default function Carousel() {
               </div>
             </Link>
             <Link
-              to={'items/singleItem/' + items[8]._id}
+              to={"items/singleItem/" + items[8]._id}
               className="text-decoration-none"
             >
               <div className="col">
@@ -277,7 +280,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{' '}
+                      Last updated{" "}
                       <Moment format="DD/MM/YYYY">{items[8].createdAt}</Moment>
                     </small>
                   </div>
@@ -287,6 +290,7 @@ export default function Carousel() {
           </div>
         </div>
       </div>
+      <br />
       <button
         className="carousel-control-prev border-0 carouselBtn "
         type="button"
