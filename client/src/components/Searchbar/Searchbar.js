@@ -1,6 +1,5 @@
 import React from 'react';
 import 'react-bootstrap';
-import { Search } from '@material-ui/icons';
 import './Searchbar.css';
 import { Button } from './../Navbar/Button';
 

@@ -25,7 +25,7 @@ const AllItems = () => {
   useEffect(() => {
     getAllItems();
   }, []);
-  console.log(items);
+  // console.log(items);
 
   return items ? (
     <div className="container-lg">
@@ -35,7 +35,7 @@ const AllItems = () => {
       <div className="row row-cols-1 row-cols-md-6 g-4">
         {items.map((item) => {
           return (
-            <Link to={'items/singleItem/' + item._id}>
+            <Link to={'items/singleItem/' + item._id} className='text-decoration-none'>
               <div className="col">
                 <div className="card mt-5 mb-4 mx-auto p-0">
                   <div className="img-container ">

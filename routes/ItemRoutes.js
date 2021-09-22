@@ -1,11 +1,13 @@
 const express = require("express");
 const ItemRoute = express.Router();
 const multer = require("multer");
+const  auth  = require("../middleware/Auth");
 
 const {
   getItems,
   getAllItems,
   getSingleItem,
+  userItems,
   postItem,
   filterByOne,
   filterItems,
@@ -32,14 +34,14 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 
 ItemRoute.get("/", getItems);
-// ItemRoute.get("/", getAllItems);
 ItemRoute.get("/singleItem/:id", getSingleItem);
+ItemRoute.get("/userItem/:id", userItems);
 ItemRoute.post("/", upload.array("file"), postItem);
 ItemRoute.get("/:filter", filterByOne);
 ItemRoute.get("/filter/:filter/:both", filterItems);
 ItemRoute.get("/given", givenItem);
 ItemRoute.get("/needed", neededItem);
-ItemRoute.patch("/:id", editItem);
-ItemRoute.delete("/:id", deleteItem);
+ItemRoute.patch("/:id",auth, editItem);
+ItemRoute.delete("/:id",auth, deleteItem);
 
 module.exports = ItemRoute;

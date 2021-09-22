@@ -66,16 +66,59 @@ class Navbar extends React.Component {
           )}
 
           {this.props.user && (
-            <div className="d-flex m-3 align-items-center">
-              <div className="btn-login">
-                <span>welcome {this.props.user.data.name}</span>
-              </div>
-              <div className="divider" />
+            // <div className="d-flex m-3 align-items-center">
+            //   <div className="btn-login">
+            //     <span>welcome {this.props.user.data.name}</span>
+            //   </div>
+            //   <div className="divider" />
 
-              <div className="btn-register">
+            //   <div className="btn-register">
+            //     <Button onClick={this.onLogout}>logout</Button>
+            //   </div>
+            // </div>
+            <li className="nav-item dropdown d-flex">
+            <a
+              className="nav-link dropdown-toggle text-dark  d-flex text-decoration-none align-items-center"
+              href="/"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {this.props.user.data.name}
+             
+            </a>
+
+            <ul
+              className="dropdown-menu text-white"
+              aria-labelledby="navbarDropdown"
+            >
+             
+              <li>
+                <a className="dropdown-item text-decoration-none" href="/myItem">
+                  My items
+                </a>
+              </li>
+              {this.props.user.data.isAdmin && (
+                <li>
+                  <a className="dropdown-item text-decoration-none" href="/allItemsControl">
+                    All items
+                  </a>
+                </li>
+              )}
+              {this.props.user.data.isAdmin && (
+                <li>
+                  <a className="dropdown-item text-decoration-none" href="/allUsers">
+                    All Users
+                  </a>
+                </li>
+              )}
+             
+            </ul>
+            <div className="btn-register">
                 <Button onClick={this.onLogout}>logout</Button>
-              </div>
-            </div>
+               </div>
+          </li>
           )}
         </ul>
       </nav>
