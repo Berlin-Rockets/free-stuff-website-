@@ -21,7 +21,7 @@ span {
 }
 
 .section-head h4::before {
-  content: "";
+  background: var(--light-blue);
   width: 60px;
   height: 3px;
   position: absolute;
@@ -34,7 +34,6 @@ span {
 .section-head h4 span {
   font-weight: 700;
   padding-bottom: 5px;
-  color: var(--dark);
   font-size: 2rem;
 }
 
@@ -58,38 +57,23 @@ span {
 .item h6 {
   font-size: 1.2rem;
   font-weight: 700;
+  color: var(--dark);
 }
 
 .item p {
   line-height: 1.5rem;
+  color: var(--grey);
+}
+
+.fa {
+  color: var(--light-blue);
 }
 
 .item .icon {
   font-size: 2rem;
   margin-bottom: 25px;
-  color: var(--light-blue);
   width: 90px;
   height: 90px;
   line-height: 6rem;
   border-radius: 50px;
 }
-
-/* .item:hover {
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.07);
-  transition: all 0.5s ease 0s;
-}
-
-.item:hover .item,
-.item:hover span.icon {
-  background: #fff;
-  border-radius: 10px;
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-}
-
-.item:hover h6,
-.item:hover p {
-  color: #fff;
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-} */
