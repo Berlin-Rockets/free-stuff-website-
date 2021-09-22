@@ -59,7 +59,7 @@ export default function FByCategory() {
       <ul className="cat-list">
         {data.map((item) => (
           <li className="cat-item ">
-            <span className="btn-circle text-uppercase" onClick={()=>filterItems(item.label)} >{item.label}</span>
+            <span className="btn-circle text-uppercase" onClick={()=>filterItems(item.url)} >{item.label}</span>
           </li>
         ))}
       </ul>,

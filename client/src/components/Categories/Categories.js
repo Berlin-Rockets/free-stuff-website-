@@ -12,7 +12,7 @@ function Categories({ items }) {
       <ul className="cat-list">
         {data.map((item) => (
           <li className="cat-item">
-            <Link to={'/items/' + item.label} className="btn-circle">
+            <Link to={'/items/' + item.url} className="btn-circle">
               <img
                 src={require(`./img/${item.img}`).default}
                 alt={item.label}

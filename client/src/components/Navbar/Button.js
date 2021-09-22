@@ -18,7 +18,7 @@ export const Button = ({
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
   return (
     <button
-      className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+      className={`btn ${checkButtonStyle} ${checkButtonSize} fw-bolder fs-5`}
       onClick={onClick}
       type={type}
     >

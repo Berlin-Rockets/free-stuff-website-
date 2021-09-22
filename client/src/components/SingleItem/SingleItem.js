@@ -27,6 +27,10 @@ const SingleItem = () => {
     getSingleItem();
   }, []);
 
+  // const goBack =()=>{
+  //   window.history.back()
+  // }
+
   console.log('Item:', item);
 
   return item ? (
@@ -76,12 +80,12 @@ const SingleItem = () => {
         </ul>
       </div>
       <div className="container text-center px-0 pb-5 m-0 mx-auto">
-        <a href="/" className="card-link">
-          <Link to="/items" className="btn btn-outline-success  me-2">
+      
+     
+          <Link to={`/items/${item.category}`} className="btn btn-outline-success  me-2">
             Back to Search Results
           </Link>
-          {/* <Button> Back to Search Results</Button>  */}
-        </a>
+       
         <a href="/" className="card-link">
           <button type="button" className="btn btn--black">
             Back to Home Page

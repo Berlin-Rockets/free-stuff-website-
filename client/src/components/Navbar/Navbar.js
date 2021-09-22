@@ -47,7 +47,7 @@ class Navbar extends React.Component {
             <div className="d-flex m-3 align-items-center">
               <div className="btn-login">
                 <Button>
-                  <Link to="/login" className="text-dark">
+                  <Link to="/login" className="text-dark text-decoration-none fw-bolder fs-5">
                     {' '}
                     login
                   </Link>
@@ -57,7 +57,7 @@ class Navbar extends React.Component {
 
               <div className="btn-register">
                 <Button>
-                  <Link to="/register" className="text-dark">
+                  <Link to="/register" className="text-dark text-decoration-none fw-bolder fs-5">
                     Register
                   </Link>
                 </Button>
@@ -66,26 +66,17 @@ class Navbar extends React.Component {
           )}
 
           {this.props.user && (
-            // <div className="d-flex m-3 align-items-center">
-            //   <div className="btn-login">
-            //     <span>welcome {this.props.user.data.name}</span>
-            //   </div>
-            //   <div className="divider" />
-
-            //   <div className="btn-register">
-            //     <Button onClick={this.onLogout}>logout</Button>
-            //   </div>
-            // </div>
+           
             <li className="nav-item dropdown d-flex">
             <a
-              className="nav-link dropdown-toggle text-dark  d-flex text-decoration-none align-items-center"
+              className="nav-link dropdown-toggle text-dark  d-flex text-decoration-none align-items-center fw-bolder fs-5"
               href="/"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              {this.props.user.data.name}
+               {this.props.user.data.name}
              
             </a>
 
@@ -99,14 +90,14 @@ class Navbar extends React.Component {
                   My items
                 </a>
               </li>
-              {this.props.user.data.isAdmin && (
+              {this.props.user && this.props.user.data.isAdmin && (
                 <li>
                   <a className="dropdown-item text-decoration-none" href="/allItemsControl">
                     All items
                   </a>
                 </li>
               )}
-              {this.props.user.data.isAdmin && (
+              {this.props.user && this.props.user.data.isAdmin && (
                 <li>
                   <a className="dropdown-item text-decoration-none" href="/allUsers">
                     All Users
@@ -116,7 +107,7 @@ class Navbar extends React.Component {
              
             </ul>
             <div className="btn-register">
-                <Button onClick={this.onLogout}>logout</Button>
+                <Button className='fw-bolder fs-5' onClick={this.onLogout}>logout</Button>
                </div>
           </li>
           )}
