@@ -19,7 +19,7 @@ class Searchbar extends React.Component {
     return (
       <React.Fragment>
         <form className="d-flex flex-row ">
-          <div className="mb-3 col-sm-4 pl-0 pr-2">
+          <div className="mb-3 col-sm-9 pl-0 pr-2">
             <div className="input-group">
               <input
                 type="text"

@@ -115,25 +115,25 @@ export default function FinalPage(props) {
           <button type="submit">Post Item</button>
         </form>
       </div>
-      <p>
-        <b>Name:</b> {props.state.name}
-      </p>
-      <p>
-        <b>category:</b> {props.state.category}
-      </p>
-      <p>
-        <b>discreption:</b> {props.state.discreption}
-      </p>
-      <p>
-        <b>location:</b> {props.state.location}
-      </p>
-      <p>
-        <b>post or search for:</b> {props.state.PostOrSearch}
-      </p>
-      <p>
-        <b>Used or New:</b>
-        {props.state.usedState}
-      </p>
+      {/* // <p>
+      //   <b>Name:</b> {props.state.name}
+      // </p>
+      // <p>
+      //   <b>category:</b> {props.state.category}
+      // </p>
+      // <p>
+      //   <b>discreption:</b> {props.state.discreption}
+      // </p>
+      // <p>
+      //   <b>location:</b> {props.state.location}
+      // </p>
+      // <p>
+      //   <b>post or search for:</b> {props.state.PostOrSearch}
+      // </p>
+      // <p>
+      //   <b>Used or New:</b>
+      //   {props.state.usedState}
+      // </p> */}
     </div>
   );
 }

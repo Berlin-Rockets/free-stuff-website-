@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Steps, Step } from 'react-step-builder';
 import NameAndCategory from './NameAndCategory';
 import LocationAndDiscreption from './LocationAndDiscreption';
@@ -9,6 +8,8 @@ import { Col, Row } from 'antd';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
+import './postItem.css'
+
 
 const Navigation = (props) => {
   const useStyles = makeStyles((theme) => ({
@@ -64,7 +65,7 @@ function PostItemmm() {
   };
 
   return (
-    <div className='d-flex justify-content-center'>
+    <div className='d-flex justify-content-center height'>
       <FormControl className={useStyles.formControl}>
       <br />
       <br />

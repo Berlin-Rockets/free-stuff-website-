@@ -5,7 +5,7 @@ import baseURL from "../../config/baseUrl";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import "./Carousel.css";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 // import 'swiper/css';
@@ -32,7 +32,7 @@ export default function Carousel() {
   return items ? (
     <div
       id="carouselExampleCaptions"
-      className="carousel slide"
+      className="carousel slide "
       data-bs-ride="carousel"
     >
       <div className="carousel-inner container w-75 mx-auto">
