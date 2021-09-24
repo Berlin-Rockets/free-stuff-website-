@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 
 const Terms = () => {
   return (
@@ -740,7 +739,8 @@ const Terms = () => {
       <h2>CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to receive further
-        information regarding use of the Site, please contact us at:
+        information regarding use of the Site, please contact us through the
+        form in the Support page.
       </p>
       <p>
         <strong>Freebay</strong>
@@ -750,16 +750,6 @@ const Terms = () => {
       </p>
       <p>
         <strong>Germany</strong>
-      </p>
-      <p>
-        <strong>Phone: __________</strong>
-      </p>
-      <p>
-        <strong>nathaly@nathaly.net.br</strong>
-      </p>
-      <p>
-        These terms of use were created using Termly's Terms and Conditions
-        Generator.
       </p>
     </div>
   );

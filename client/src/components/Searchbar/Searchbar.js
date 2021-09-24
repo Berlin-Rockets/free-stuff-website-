@@ -1,10 +1,10 @@
-import React from 'react';
-import 'react-bootstrap';
-import './Searchbar.css';
-import { Button } from './../Navbar/Button';
+import React from "react";
+import "react-bootstrap";
+import "./Searchbar.css";
+import { Button } from "./../Navbar/Button";
 
 class Searchbar extends React.Component {
-  state = { term: ' ' };
+  state = { term: " " };
 
   onInputChange = (e) => {
     this.setState({ term: e.value.target });
