@@ -35,7 +35,7 @@ const AllItems = () => {
           {items.map((item) => {
             return (
               <div className="col">
-                <div className="card mx-auto border-0">
+                <div className="card card-style mx-auto border-0">
                   <Link
                     to={'items/singleItem/' + item._id}
                     className="text-decoration-none p-0"
