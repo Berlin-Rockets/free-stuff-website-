@@ -28,47 +28,50 @@ const AllItems = () => {
   // console.log(items);
 
   return items ? (
-    <div className="container-lg">
-      <div className="categories">
-        <Categories />
-      </div>
-      <div className="row row-cols-1 row-cols-md-6 g-4">
-        {items.map((item) => {
-          return (
-            <Link to={'items/singleItem/' + item._id} className='text-decoration-none'>
+    <React.Fragment>
+      <Categories />
+      <div className="item-container d-flex justify-content-around mx-0">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-4">
+          {items.map((item) => {
+            return (
               <div className="col">
-                <div className="card mt-5 mb-4 mx-auto p-0">
-                  <div className="img-container ">
-                    <img
-                      className="card-img-top img-style img-responsive img-resize"
-                      src={
-                        require(`../../../../images/${item.images[0]}`).default
-                      }
-                      alt="Card Item"
-                    />
-                  </div>
-
-                  <div className="card-body">
-                    <h5 className="card-title mb-0 font-weight-bold">
-                      {item.name}
-                    </h5>
-                    <p className="card-text mb-0">
-                      <small className="">Location: {item.location}</small>
-                    </p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">
-                      Published on:{' '}
-                      <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>
-                    </small>
-                  </div>
+                <div className="card mx-auto border-0">
+                  <Link
+                    to={'items/singleItem/' + item._id}
+                    className="text-decoration-none p-0"
+                  >
+                    <div className="img-container">
+                      <img
+                        className="card-img-top img-style img-resize img-responsive"
+                        src={
+                          require(`../../../../images/${item.images[0]}`)
+                            .default
+                        }
+                        alt="Card Item"
+                      />
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title mb-0 font-weight-bold">
+                        {item.name}
+                      </h5>
+                      <p className="card-text mb-0">
+                        <small className="">Location: {item.location}</small>
+                      </p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="">
+                        Published on:{' '}
+                        <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>
+                      </small>
+                    </div>
+                  </Link>
                 </div>
               </div>
-            </Link>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   ) : (
     <div>Loading...</div>
   );
