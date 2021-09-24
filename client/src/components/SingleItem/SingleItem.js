@@ -38,8 +38,9 @@ const SingleItem = () => {
       <div className="card card-styling mt-5 mb-4 mx-auto col-8 p-0">
         <img
           className="card-img-top"
-          src={require(`../../../../images/${item.images[0]}`).default}
+          src={item.images[0]}
           alt="Card Item"
+         
         />
         <div className="card-body">
           <h4 className="mb-0 card-title font-weight-bold">{item.name}</h4>
