@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "react-bootstrap";
+import { Link } from "react-router-dom";
 
-import './AllItems.css';
-import baseURL from '../../config/baseUrl';
-import Moment from 'react-moment';
-import Categories from '../Categories/Categories';
+import "./AllItems.css";
+import baseURL from "../../config/baseUrl";
+import Moment from "react-moment";
+import Categories from "../Categories/Categories";
 
 const AllItems = () => {
   const [items, setItems] = useState();
 
   const getAllItems = async () => {
     try {
-      const res = await axios.get(baseURL + '/items');
+      const res = await axios.get(baseURL + "/items");
       // console.log(res.data);
 
       setItems(res.data.data);
@@ -35,7 +35,10 @@ const AllItems = () => {
       <div className="row row-cols-1 row-cols-md-6 g-4">
         {items.map((item) => {
           return (
-            <Link to={'items/singleItem/' + item._id} className='text-decoration-none'>
+            <Link
+              to={"items/singleItem/" + item._id}
+              className="text-decoration-none"
+            >
               <div className="col">
                 <div className="card mt-5 mb-4 mx-auto p-0">
                   <div className="img-container ">
@@ -58,8 +61,8 @@ const AllItems = () => {
                   </div>
                   <div class="card-footer">
                     <small class="text-muted">
-                      Published on:{' '}
-                      <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>
+                      Published on{" "}
+                      <Moment format="DD/MM/YYYY">{item.createdAt}</Moment>
                     </small>
                   </div>
                 </div>

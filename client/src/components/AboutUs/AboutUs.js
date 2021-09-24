@@ -4,7 +4,7 @@ import "./AboutUs.css";
 
 function AboutUsPage() {
   return (
-    <div>
+    <div id="aboutus">
       <div class="pt-5 pb-5">
         <div class="container">
           <div class="row">

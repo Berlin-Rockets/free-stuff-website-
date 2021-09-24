@@ -4,7 +4,7 @@ import "./Advertise.css";
 
 function AdvertisePage() {
   return (
-    <div>
+    <div id="advertise">
       <div class="pt-5 pb-5">
         <div class="container">
           <div class="row">

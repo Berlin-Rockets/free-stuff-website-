@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Privacy = () => {
   return (
@@ -10,8 +10,8 @@ const Privacy = () => {
         ("Company," "we," "us," or "our"). We are committed to protecting your
         personal information and your right to privacy. If you have any
         questions or concerns about this privacy notice or our practices with
-        regard to your personal information, please contact us at
-        nathaly@nathaly.net.br.
+        regard to your personal information, please contact us through the form
+        in the Support page.
       </p>
       <p>
         This privacy notice describes how we might use your information if you:
@@ -365,8 +365,8 @@ const Privacy = () => {
         information from users less than 18 years of age has been collected, we
         will deactivate the account and take reasonable measures to promptly
         delete such data from our records. If you become aware of any data we
-        may have collected from children under age 18, please contact us at
-        __________.
+        may have collected from children under age 18, please contact us through
+        the form in the Support page.
       </p>
       <h2>10. WHAT ARE YOUR PRIVACY RIGHTS?</h2>
       <p>
@@ -455,7 +455,7 @@ const Privacy = () => {
         signals or any other mechanism that automatically communicates your
         choice not to be tracked online. If a standard for online tracking is
         adopted that we must follow in the future, we will inform you about that
-        practice in a revised version of this privacy notice.{' '}
+        practice in a revised version of this privacy notice.{" "}
       </p>
       <h2>12. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</h2>
       <p>
@@ -501,14 +501,11 @@ const Privacy = () => {
       </p>
       <h2>14. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
       <p>
-        If you have questions or comments about this notice, you may email us at
-        __________ or by post to:
+        If you have questions or comments about this notice, you may contact us
+        through the form in the Support page.
       </p>
       <p>
-        <strong>Freebay GmbH</strong>
-      </p>
-      <p>
-        <strong>__________</strong>
+        <strong>Freebay</strong>
       </p>
       <p>
         <strong>Berlin</strong>
