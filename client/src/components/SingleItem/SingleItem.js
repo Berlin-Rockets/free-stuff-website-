@@ -8,7 +8,7 @@ import './SingleItem.css';
 
 const SingleItem = () => {
   const [item, setItem] = useState();
-// console.log('run single item page');
+  // console.log('run single item page');
   const { id } = useParams();
   console.log(id);
 
@@ -35,7 +35,7 @@ const SingleItem = () => {
 
   return item ? (
     <React.Fragment>
-      <div className="card mt-5 mb-4 mx-auto col-8 p-0">
+      <div className="card card-styling mt-5 mb-4 mx-auto col-8 p-0">
         <img
           className="card-img-top"
           src={require(`../../../../images/${item.images[0]}`).default}
@@ -54,7 +54,8 @@ const SingleItem = () => {
               <ul className="list-group list-group-flush pl-2">
                 <li className="col">Location: {item.location}</li>
                 <li className="col ">
-                  Condition: {item.usedState ? <span>Used</span> : <span>New</span>}
+                  Condition:{' '}
+                  {item.usedState ? <span>Used</span> : <span>New</span>}
                 </li>
               </ul>
             </div>
@@ -80,12 +81,13 @@ const SingleItem = () => {
         </ul>
       </div>
       <div className="container text-center px-0 pb-5 m-0 mx-auto">
-      
-     
-          <Link to={`/items/${item.category}`} className="btn btn-outline-success  me-2">
-            Back to Search Results
-          </Link>
-       
+        <Link
+          to={`/items/${item.category}`}
+          className="btn btn-outline-success  me-2"
+        >
+          Back to Search Results
+        </Link>
+
         <a href="/" className="card-link">
           <button type="button" className="btn btn--black">
             Back to Home Page
