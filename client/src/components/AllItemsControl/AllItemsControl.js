@@ -51,7 +51,7 @@ export default function AllItemsControl() {
               <li className="d-flex m-3 justify-content-between border">
                 <div className="d-flex align-items-center">
                   <img
-                    src={require(`../../../../images/${el.images[0]}`).default}
+                    src={el.images[0]}
                     className=""
                     width="100"
                     alt="2"

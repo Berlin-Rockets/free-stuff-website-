@@ -28,14 +28,12 @@ const AllItems = () => {
   // console.log(items);
 
   return items ? (
-    <div className="container-lg">
-      <div className="categories">
-        <Categories />
-      </div>
-      <div className="row row-cols-1 row-cols-md-6 g-4">
-        {items.map((item) => {
-          return (
-            <Link to={'items/singleItem/' + item._id} className='text-decoration-none'>
+    <React.Fragment>
+      <Categories />
+      <div className="item-container d-flex justify-content-around mx-0">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-4">
+          {items.map((item) => {
+            return (
               <div className="col">
                 <div className="card mt-5 mb-4 mx-auto p-0">
                   <div className="img-container ">
@@ -62,11 +60,11 @@ const AllItems = () => {
                   </div>
                 </div>
               </div>
-            </Link>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   ) : (
     <div>Loading...</div>
   );

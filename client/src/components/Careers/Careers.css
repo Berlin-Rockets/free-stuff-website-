@@ -4,6 +4,20 @@ span {
   color: inherit;
 }
 
+#careers {
+  background: var(--fair-green); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    var(--fair-blue),
+    var(--fair-green)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--fair-blue),
+    var(--fair-green)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .section-head {
   margin-bottom: 60px;
 }
@@ -40,7 +54,7 @@ span {
 }
 
 .section-head p {
-  color: var(--grey);
+  color: var(--dark);
   font-size: 1.2rem;
   line-height: 28px;
   text-align: center;

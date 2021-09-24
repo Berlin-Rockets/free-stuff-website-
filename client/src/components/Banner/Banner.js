@@ -1,7 +1,6 @@
 import React from "react";
 import "./Banner.css";
 import Searchbar from "../Searchbar/Searchbar";
-// import bannerPic from './../../banner-pic-2.jpg';
 import bannerPic from "./../../banner-pic-4.jpg";
 
 function Banner() {

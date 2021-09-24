@@ -1,6 +1,6 @@
 body {
-  font-family: -apple-system, "Open Sans", BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, 'Open Sans', BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 /* body {
@@ -27,3 +27,8 @@ code {
 button.MuiButton-containedSecondary {
   margin-bottom: 10px;
 } */
+
+html,
+body {
+  overscroll-behavior: none;
+}

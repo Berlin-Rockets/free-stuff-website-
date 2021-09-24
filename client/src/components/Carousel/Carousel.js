@@ -36,9 +36,7 @@ export default function Carousel() {
       data-bs-ride="carousel"
     >
       <div className="carousel-inner container w-75 mx-auto">
-        <h1 className="title" style={{ fontSize: "2rem" }}>
-          Latest Items
-        </h1>
+        <h1 className="title">Latest Items</h1>
         <br />
         <div className="carousel-item active">
           <div className="row row-cols-1 row-cols-md-3 g-4">
@@ -55,11 +53,11 @@ export default function Carousel() {
                   />
 
                   <div className="card-body">
-                    <h5 className="card-title ">{items[0].name}</h5>
+                    <h5 className="card-title">{items[0].name}</h5>
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{" "}
+                      Last updated on{" "}
                       <Moment format="DD/MM/YYYY">{items[0].createdAt}</Moment>
                     </small>
                   </div>
@@ -82,7 +80,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{" "}
+                      Last updated on{" "}
                       <Moment format="DD/MM/YYYY">{items[1].createdAt}</Moment>{" "}
                     </small>
                   </div>
@@ -105,7 +103,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{" "}
+                      Last updated on{" "}
                       <Moment format="DD/MM/YYYY">{items[2].createdAt}</Moment>
                     </small>
                   </div>
@@ -133,7 +131,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{" "}
+                      Last updated on{" "}
                       <Moment format="DD/MM/YYYY">{items[3].createdAt}</Moment>
                     </small>
                   </div>
@@ -156,7 +154,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{" "}
+                      Last updated on{" "}
                       <Moment format="DD/MM/YYYY">{items[4].createdAt}</Moment>
                     </small>
                   </div>
@@ -179,7 +177,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{" "}
+                      Last updated on{" "}
                       <Moment format="DD/MM/YYYY">{items[5].createdAt}</Moment>
                     </small>
                   </div>
@@ -207,7 +205,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{" "}
+                      Last updated on{" "}
                       <Moment format="DD/MM/YYYY">{items[6].createdAt}</Moment>
                     </small>
                   </div>
@@ -230,7 +228,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{" "}
+                      Last updated on{" "}
                       <Moment format="DD/MM/YYYY">{items[7].createdAt}</Moment>
                     </small>
                   </div>
@@ -253,7 +251,7 @@ export default function Carousel() {
                   </div>
                   <div className="card-footer">
                     <small className="text-muted">
-                      Last updated{" "}
+                      Last updated on{" "}
                       <Moment format="DD/MM/YYYY">{items[8].createdAt}</Moment>
                     </small>
                   </div>

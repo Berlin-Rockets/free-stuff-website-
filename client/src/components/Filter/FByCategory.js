@@ -78,9 +78,7 @@ export default function FByCategory() {
                       <div className="img-container ">
                         <img
                           className="card-img-top img-style img-responsive img-resize"
-                          src={
-                            require(`../../../../images/${item.images[0]}`).default
-                          }
+                          src={item.images[0]}
                           alt="Card Item"
                         />
                       </div>
