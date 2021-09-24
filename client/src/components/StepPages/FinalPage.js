@@ -5,50 +5,52 @@ import axios from "axios";
 import baseURL from "../../config/baseUrl";
 
 export default function FinalPage(props) {
-  const [image, setImage] = useState({ preview: false, raw: "" });
+  const [imageSelected, setImageSelected] = useState({ preview: false, raw: "" });
   // console.log(baseURL);
   const fileHandler = (e) => {
+
     if (e.target.files.length) {
-      setImage({
+      setImageSelected({
         preview: URL.createObjectURL(e.target.files[0]),
         raw: e.target.files[0],
       });
     }
   };
 
-  const saveItem = async (e) => {
-    e.preventDefault();
-    let fd = new FormData();
-    fd.append("category", props.state.category);
-    fd.append("location", props.state.location);
-    fd.append("PostOrSearch", props.state.PostOrSearch);
-    fd.append("usedState", props.state.usedState);
-    fd.append("name", props.state.name);
-    fd.append("userId", localStorage.getItem("userId"));
-    fd.append("description", props.state.description);
-    
-    fd.append("file", image.raw, image.preview);
+  
+    const saveItem = async (e) => {
+      e.preventDefault();
+      let fd = new FormData();
+      fd.append("category", props.state.category);
+      fd.append("location", props.state.location);
+      fd.append("PostOrSearch", props.state.PostOrSearch);
+      fd.append("usedState", props.state.usedState);
+      fd.append("name", props.state.name);
+      fd.append("userId", localStorage.getItem("userId"));
+      fd.append("description", props.state.description);
+      fd.append("image",imageSelected.raw);
+      fd.append("upload_preset","ml_default");
+  //  console.log('fddddddddd...', fd);
 
-    console.log(fd)
-
-    axios({
-      method: "POST",
-      url: `${baseURL}/items`,
-      baseURL: baseURL,
-      data: fd,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-      .then((res) => {
-        console.log("resssssssssssss", res);
+   try{
+     axios({
+        method: "POST",
+        url: `${baseURL}/items`,
+        baseURL: baseURL,
+        data: fd,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       })
-      .catch((err) => {
-        console.log(err);
-      });
-
-      window.location.replace('/items');
+        .then((res) => {
+          console.log("resssssssssssss", res);
+        })
+   }catch(err) {
+          console.log(err);
+        };
+        window.location.replace('/items');
   };
+
 
   // console.log('propssssss',props);
   return (
@@ -60,10 +62,10 @@ export default function FinalPage(props) {
           encType="multipart/form-data"
         >
           <label htmlFor="upload-button" className="float-left mb-3">
-            {image.preview ? (
+            {imageSelected.preview ? (
               <div>
                 <img
-                  src={image.preview}
+                  src={imageSelected.preview}
                   alt="profile-pic"
                   className="rounded-circle ml-3"
                   style={{
@@ -102,7 +104,7 @@ export default function FinalPage(props) {
           </label>
           <input
             type="file"
-            name="multi-files"
+            name="image"
             accept="image/*"
             multiple
             style={{ display: "none" }}

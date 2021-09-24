@@ -28,6 +28,9 @@ const itemSchema = new Schema({
     type: Array,
     required: true,
   },
+  cloudinary_id:{
+   type: String 
+  },
   usedState: {
     type: Boolean,
     default: true,

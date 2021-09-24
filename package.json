@@ -23,6 +23,7 @@
     "bootstrap": "^5.1.0",
     "bootstrap-slider": "^11.0.2",
     "card-deck": "^1.0.1",
+    "cloudinary": "^1.27.0",
     "concurrently": "^6.2.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
