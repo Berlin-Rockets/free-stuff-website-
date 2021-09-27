@@ -57,6 +57,7 @@ body {
 
 .ft-main-item a:hover {
   text-decoration: underline;
+  color: var(--dark);
 }
 
 /* Footer main | Newsletter form */

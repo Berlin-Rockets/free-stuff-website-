@@ -31,8 +31,8 @@ export default function NameAndCategory(props) {
           <option>Pets</option>
           <option>Gardening</option>
           <option>Office Supplies</option>
-          <option>Sports & Leisure</option>
-          <option>Movies, Music & Books</option>
+          <option>Sports</option>
+          <option>Leisure</option>
           <option>Decoration</option>
           <option>Beauty</option>
           <option>Tools</option>
