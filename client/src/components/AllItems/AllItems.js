@@ -34,6 +34,7 @@ const AllItems = () => {
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-4">
           {items.map((item) => {
             return (
+              <Link to={'items/singleItem/' + item._id} className='text-decoration-none'> 
               <div className="col">
                 <div className="card mt-5 mb-4 mx-auto p-0">
                   <div className="img-container ">
@@ -60,7 +61,9 @@ const AllItems = () => {
                   </div>
                 </div>
               </div>
+              </Link>
             );
+           
           })}
         </div>
       </div>
