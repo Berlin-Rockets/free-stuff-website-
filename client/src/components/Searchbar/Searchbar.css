@@ -29,6 +29,6 @@ display: none;
     text-decoration: none;
 }
 
-a:hover {
+.dataItem:hover {
     background-color: lightgray;
 }
