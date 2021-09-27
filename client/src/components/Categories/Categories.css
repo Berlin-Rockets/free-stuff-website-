@@ -1,16 +1,16 @@
 .cat-container {
-  padding: 40px 0;
-  background: var(--fair-green); /* fallback for old browsers */
+  background: var(--light-green); /*fallback for old browsers*/
   background: -webkit-linear-gradient(
     to right,
-    var(--fair-blue),
-    var(--fair-green)
-  ); /* Chrome 10-25, Safari 5.1-6 */
+    var(--light-blue),
+    var(--light-green)
+  ); /*Chrome 10-25, Safari 5.1-6*/
   background: linear-gradient(
     to right,
-    var(--fair-blue),
-    var(--fair-green)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    var(--light-blue),
+    var(--light-green)
+  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+  padding: 40px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,10 +58,10 @@
   padding-top: 8px;
   text-align: center;
   text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.45);
-  color: var(--dark);
-  text-transform: uppercase;
+  color: var(--white);
+  /* text-transform: uppercase; */
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .btn-circle:link,
