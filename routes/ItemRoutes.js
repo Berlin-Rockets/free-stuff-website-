@@ -23,7 +23,6 @@ ItemRoute.get("/", getItems);
 ItemRoute.get("/singleItem/:id", getSingleItem);
 ItemRoute.get("/userItem/:id", userItems);
 ItemRoute.post("/", upload.single("image"), postItem);
-// ItemRoute.post("/cloud", upload.single('image'),postItemCloudinary);
 ItemRoute.get("/:filter", filterByOne);
 ItemRoute.get("/filter/:filter/:both", filterItems);
 ItemRoute.get("/given", givenItem);
