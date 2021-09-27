@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import 'react-bootstrap';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import baseURL from '../../config/baseUrl';
-import './SingleItem.css';
+import React, { useState, useEffect } from "react";
+import "react-bootstrap";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import baseURL from "../../config/baseUrl";
+import "./SingleItem.css";
 
 const SingleItem = () => {
   const [item, setItem] = useState();
@@ -14,7 +14,7 @@ const SingleItem = () => {
 
   const getSingleItem = async () => {
     try {
-      const res = await axios.get(baseURL + '/items/singleitem/' + id);
+      const res = await axios.get(baseURL + "/items/singleitem/" + id);
       console.log(res.data);
 
       setItem(res.data.data);
@@ -31,17 +31,12 @@ const SingleItem = () => {
   //   window.history.back()
   // }
 
-  console.log('Item:', item);
+  console.log("Item:", item);
 
   return item ? (
     <React.Fragment>
       <div className="card card-styling mt-5 mb-4 mx-auto col-8 p-0">
-        <img
-          className="card-img-top"
-          src={item.images[0]}
-          alt="Card Item"
-         
-        />
+        <img className="card-img-top" src={item.images[0]} alt="Card Item" />
         <div className="card-body">
           <h4 className="mb-0 card-title font-weight-bold">{item.name}</h4>
           <p className="mb-2">
@@ -55,7 +50,7 @@ const SingleItem = () => {
               <ul className="list-group list-group-flush pl-2">
                 <li className="col">Location: {item.location}</li>
                 <li className="col ">
-                  Condition:{' '}
+                  Condition:{" "}
                   {item.usedState ? <span>Used</span> : <span>New</span>}
                 </li>
               </ul>
@@ -83,12 +78,12 @@ const SingleItem = () => {
       </div>
       <div className="container text-center px-0 pb-5 m-0 mx-auto">
         <Link to={`/items/${item.category}`} className="btn btn-primary me-2">
-          Back to Search Results
+          Back to items
         </Link>
 
         <a href="/" className="card-link">
           <button type="button" className="btn btn-primary">
-            Back to Home Page
+            Go to Home Page
           </button>
         </a>
       </div>

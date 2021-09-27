@@ -102,7 +102,7 @@ input[type="submit"] {
 }
 
 a:hover i {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 /* Footer legal */
