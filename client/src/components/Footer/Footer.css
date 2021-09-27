@@ -57,6 +57,7 @@ body {
 
 .ft-main-item a:hover {
   text-decoration: underline;
+  color: var(--dark);
 }
 
 /* Footer main | Newsletter form */
@@ -102,7 +103,7 @@ input[type="submit"] {
 }
 
 a:hover i {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 /* Footer legal */
