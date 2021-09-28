@@ -3,24 +3,16 @@ ul {
   padding-left: 0;
   margin-left: -30px;
 }
+
 footer {
   color: var(--dark);
-  line-height: 1.5;
-}
-
-footer a {
-  text-decoration: none;
-  color: var(--dark);
-}
-
-a:hover {
-  color: var(--grey);
+  line-height: 1.2rem;
 }
 
 .ft-title {
   color: var(--dark);
   font-size: 1rem;
-  padding-bottom: 0.625rem;
+  padding-bottom: 0.5rem;
 }
 
 /* Sticks footer to bottom */
@@ -35,19 +27,8 @@ body {
 
 /* Footer main */
 .ft-main {
-  background: var(--light-green); /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    var(--light-blue),
-    var(--light-green)
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    var(--light-blue),
-    var(--light-green)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  padding: 1.25rem 1.875rem;
+  background: var(--light-grey);
+  padding: 1rem 1.5rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -76,7 +57,7 @@ body {
 
 .ft-main-item a:hover {
   text-decoration: underline;
-  color: var(--cultured);
+  color: var(--dark);
 }
 
 /* Footer main | Newsletter form */
@@ -92,8 +73,8 @@ input[type='email'] {
 }
 
 input[type='submit'] {
-  background-color: var(--dark);
-  color: var(--grey);
+  background: var(--dark);
+  color: var(--light-grey);
   cursor: pointer;
   border: 0;
   padding: 0.625rem 0.9375rem;
@@ -102,30 +83,19 @@ input[type='submit'] {
 
 /* Footer social */
 .ft-social {
-  background: var(--light-green); /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    var(--light-blue),
-    var(--light-green)
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    var(--light-blue),
-    var(--light-green)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: var(--light-grey);
   padding: 0 1.875rem 1.25rem;
 }
 
 .ft-social-list {
   display: flex;
   justify-content: center;
-  padding-top: 1.25rem;
+  padding-top: 1rem;
 }
 
 .ft-social-list li {
   margin: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 .ft-social-list li a {
@@ -133,15 +103,14 @@ input[type='submit'] {
 }
 
 a:hover i {
-  transform: scale(1.5);
-  color: var(--cultured);
+  transform: scale(1.2);
 }
 
 /* Footer legal */
 .ft-legal {
-  padding: 0.9375rem 1.875rem;
-  background-color: var(--dark);
-  color: var(--grey);
+  padding: 0.9rem 1.8rem;
+  background: var(--dark);
+  color: var(--light-grey);
 }
 
 .ft-legal-list {
@@ -162,10 +131,9 @@ a:hover i {
 
 .ft-legal-list li a {
   text-decoration: none;
-  color: var(--grey);
+  color: var(--light-grey);
 }
 
 .ft-legal-list li a:hover {
   text-decoration: underline;
-  color: var(--cultured);
 }

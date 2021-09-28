@@ -1,38 +1,76 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "react-bootstrap";
 import "./Searchbar.css";
 import { Button } from "./../Navbar/Button";
+import baseURL from '../../config/baseUrl';
+import axios from 'axios';
+import { Link } from "react-router-dom";
 
-class Searchbar extends React.Component {
-  state = { term: " " };
+export default function Searchbar() {
+const [data, setData] = useState([])
+const [filteredData, setFilteredData]= useState([])
 
-  onInputChange = (e) => {
-    this.setState({ term: e.value.target });
-  };
+const getAllItems = async () => {
+  try {
+    const res = await axios.get(baseURL + '/items');
+    console.log('searchbar dataaaa',res.data.data);
+    setData(res.data.data)
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-  onFormSubmit = (e) => {
-    e.preventDefault();
+useEffect(() => {
+  getAllItems();
+  
+}, []);
 
-    this.props.onFormSubmit(this.state.term);
-  };
-  render() {
+const handleFilter = (e) => {
+  const searchWord = e.target.value 
+  const newFilter = data.filter((value)=>{
+    return value.name.toLowerCase().includes(searchWord.toLowerCase())
+  })
+  if (searchWord === '') {
+    setFilteredData([])
+  }else{
+    setFilteredData(newFilter)
+  }
+ 
+ } 
+
     return (
-      <React.Fragment>
-        <form className="d-flex flex-row ">
+     <div>
+        
           <div className="mb-3 col-sm-9 pl-0 pr-2">
             <div className="input-group">
               <input
                 type="text"
                 className="form-control py-2"
                 placeholder="Type here what you are looking for"
+                onChange={handleFilter}
               />
               <Button className="btn">Search</Button>
             </div>
+{filteredData && filteredData.length !== 0 && (
+  <div className='dataResult'>
+  {filteredData.slice(0,5).map((value,key)=>{
+    return(
+      <Link
+      to={"items/singleItem/" + value._id}
+      className='dataItem'
+    > <p>{value.name}</p></Link>
+     
+    )
+  })}
+</div>
+)}
+          
+
           </div>
-        </form>
-      </React.Fragment>
+      
+        </div>
     );
-  }
+ 
 }
 
-export default Searchbar;
+

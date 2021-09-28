@@ -1,6 +1,6 @@
 const express = require("express");
 const ItemRoute = express.Router();
-const multer = require("multer");
+// const multer = require("multer");
 const  auth  = require("../middleware/Auth");
 
 const {
@@ -15,28 +15,14 @@ const {
   neededItem,
   editItem,
   deleteItem,
+  // postItemCloudinary
 } = require("../controllers/ItemController");
-
-let storage = multer.diskStorage({
-  destination: "images/",
-  filename: function (req, file, cb) {
-    let picName =
-      file.originalname.split(".")[0] +
-      "-" +
-      Date.now() +
-      "." +
-      file.mimetype.split("/")[1];
-    cb(null, picName);
-    req.picName = picName;
-  },
-});
-
-let upload = multer({ storage: storage });
+const upload = require('../utils/multer')
 
 ItemRoute.get("/", getItems);
 ItemRoute.get("/singleItem/:id", getSingleItem);
 ItemRoute.get("/userItem/:id", userItems);
-ItemRoute.post("/", upload.array("file"), postItem);
+ItemRoute.post("/", upload.single("image"), postItem);
 ItemRoute.get("/:filter", filterByOne);
 ItemRoute.get("/filter/:filter/:both", filterItems);
 ItemRoute.get("/given", givenItem);

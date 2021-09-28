@@ -1,4 +1,6 @@
 const ItemModel = require('../models/itemModel');
+const cloudinary = require('../utils/cloudinary')
+const upload = require('../utils/multer')
 
 exports.getAllItems = async (req, res, next) => {
   try {
@@ -16,7 +18,7 @@ exports.getAllItems = async (req, res, next) => {
     // limiting fields
     if (req.query.fields) {
       const fields = req.query.fields.split(',').join(' ');
-      console.log(fields);
+      // console.log(fields);
       query = query.select(fields);
     }
     // else {
@@ -57,11 +59,14 @@ exports.getItems = async (req, res, next) => {
 // post item
 exports.postItem = async (req, res, next) => {
   // console.log(req.body);
-  // console.log(req.picName);
+  console.log('paaaaath',req.file.path);
   try {
     const item = new ItemModel(req.body);
-    // item.images=req.picName
-    item.images=[...item.images,req.picName]
+    const result = await cloudinary.uploader.upload(req.file.path)
+console.log('result', result);
+    item.images=[...item.images,result.secure_url],
+    item.cloudinary_id=  result.public_id
+
     await item.save();
 
     res.send({ success: true, data: item });
@@ -69,6 +74,18 @@ exports.postItem = async (req, res, next) => {
     console.log(err.message);
   }
 };
+
+
+// // post item with cloudinary
+// exports.postItemCloudinary = async (req, res, next) => {
+ 
+//   try {
+//     const result = await cloudinary.uploader.upload(req.file.path)
+//     res.send({ success: true, data: result });
+//   } catch (err) {
+//     console.log('error is:',err);
+//   }
+// };
 
 
 
@@ -144,7 +161,7 @@ exports.userItems = async (req, res, next) => {
 
 // get sold/given Item
 exports.givenItem = async (req, res, next) => {
-  console.log('start given controller');
+  // console.log('start given controller');
   try {
     const givenItems = await ItemModel.find({ soldState: false });
     res.json({ success: true, items: givenItems.length, data: givenItems });
@@ -156,7 +173,7 @@ exports.givenItem = async (req, res, next) => {
 
 // get needed item - As a user, if I don’t find what I search, then I want to be provided with a suggestion to post my need for a specific item that I’m looking for.
 exports.neededItem = async (req, res, next) => {
-  console.log('start given controller');
+  // console.log('start given controller');
   try {
     const neededItems = await ItemModel.find({ postOrSearch: false });
     res.json({ success: true, items: neededItems.length, data: neededItems });
@@ -204,7 +221,7 @@ exports.deleteItem = async (req, res, next) => {
 // post/patch item (edit)
 exports.editItem = async (req, res, next) => {
   const id = req.params.id;
-  console.log(req.params.id);
+  // console.log(req.params.id);
   try {
     const item = await ItemModel.findByIdAndUpdate(id, req.body, {
       new: true,

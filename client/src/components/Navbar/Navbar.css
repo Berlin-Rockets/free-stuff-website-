@@ -59,9 +59,8 @@
 }
 
 .nav-links:hover {
-  background-color: var(--second);
   color: var(--dark);
-  text-decoration: none;
+  text-decoration: underline;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }

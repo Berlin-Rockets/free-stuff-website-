@@ -47,10 +47,7 @@ export default function Carousel() {
               <div className="col">
                 <div className="card ">
                   <img
-                    src={
-                      require(`../../../../images/${items[0].images[0]}`)
-                        .default
-                    }
+                    src={items[0].images[0]}
                     className="d-block  carouselImg"
                     alt="pic2"
                   />
@@ -74,10 +71,7 @@ export default function Carousel() {
               <div className="col">
                 <div className="card ">
                   <img
-                    src={
-                      require(`../../../../images/${items[1].images[0]}`)
-                        .default
-                    }
+                    src={items[1].images[0]}
                     className="d-block  carouselImg"
                     alt="pic2"
                   />
@@ -100,10 +94,7 @@ export default function Carousel() {
               <div className="col">
                 <div className="card ">
                   <img
-                    src={
-                      require(`../../../../images/${items[2].images[0]}`)
-                        .default
-                    }
+                    src={items[2].images[0]}
                     className="d-block  carouselImg"
                     alt="pic2"
                   />
@@ -131,10 +122,7 @@ export default function Carousel() {
               <div className="col">
                 <div className="card ">
                   <img
-                    src={
-                      require(`../../../../images/${items[3].images[0]}`)
-                        .default
-                    }
+                    src={items[3].images[0]}
                     className="d-block  carouselImg"
                     alt="pic2"
                   />
@@ -157,10 +145,7 @@ export default function Carousel() {
               <div className="col">
                 <div className="card ">
                   <img
-                    src={
-                      require(`../../../../images/${items[4].images[0]}`)
-                        .default
-                    }
+                    src={items[4].images[0]}
                     className="d-block  carouselImg"
                     alt="pic2"
                   />
@@ -183,10 +168,7 @@ export default function Carousel() {
               <div className="col">
                 <div className="card ">
                   <img
-                    src={
-                      require(`../../../../images/${items[5].images[0]}`)
-                        .default
-                    }
+                    src={items[5].images[0]}
                     className="d-block  carouselImg"
                     alt="pic2"
                   />
@@ -214,10 +196,7 @@ export default function Carousel() {
               <div className="col">
                 <div className="card ">
                   <img
-                    src={
-                      require(`../../../../images/${items[6].images[0]}`)
-                        .default
-                    }
+                    src={items[6].images[0]}
                     className="d-block  carouselImg"
                     alt="pic2"
                   />
@@ -240,10 +219,7 @@ export default function Carousel() {
               <div className="col">
                 <div className="card ">
                   <img
-                    src={
-                      require(`../../../../images/${items[7].images[0]}`)
-                        .default
-                    }
+                    src={items[7].images[0]}
                     className="d-block  carouselImg "
                     alt="pic2"
                   />
@@ -266,10 +242,7 @@ export default function Carousel() {
               <div className="col">
                 <div className="card ">
                   <img
-                    src={
-                      require(`../../../../images/${items[8].images[0]}`)
-                        .default
-                    }
+                    src={items[8].images[0]}
                     className="d-block  carouselImg"
                     alt="pic2"
                   />
