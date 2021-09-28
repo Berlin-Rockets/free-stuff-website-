@@ -33,7 +33,7 @@ function Footer() {
             </h2>
             <ul>
               <li>
-                <a href="/support">FAQ</a>
+                <a href="/Accordion">FAQ</a>
               </li>
               <li>
                 <a href="/support">Support</a>

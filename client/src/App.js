@@ -23,6 +23,7 @@ import AllItemsControl from './components/AllItemsControl/AllItemsControl';
 import EditItem from './components/Edit Item/EditItem';
 import MyItem from './components/My Item/MyItem';
 import CareersPage from './components/Careers/Careers';
+import Accordion from './components/Accordion/Accordion';
 
 
 function App() {
@@ -54,16 +55,6 @@ function App() {
       <div className="App">
         <Navbar user={user} />
 
-        {/* <Banner /> */}
-
-        {/* <Categories /> */}
-        {/* <SingleItem /> */}
-        {/* <UserForm /> */}
-        {/* <AllItems /> */}
-        {/* <Accordion /> */}
-        {/* <Carousel /> */}
-        {/* <AboutUs /> */}
-
         <Switch>
           <Route exact path="/" component={Home} />
 
@@ -78,7 +69,7 @@ function App() {
           <Route exact path="/Privacy" component={Privacy} />
           <Route exact path="/advertise" component={Advertise} />
           <Route exact path="/CareersPage" component={CareersPage} />
-          {/* <Route exact path="/carousel" component={Carousel} /> */}
+          <Route exact path="/Accordion" component={Accordion} />
           <Route exact path="/items/:filter" component={FByCategory} />
           <Route exact path="/items/singleItem/:id" component={SingleItem} />
           <Route exact path="/myItem" component={MyItem} />
