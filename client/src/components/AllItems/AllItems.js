@@ -31,7 +31,7 @@ const AllItems = () => {
     <React.Fragment>
       <Categories />
       <div className="item-container d-flex justify-content-around mx-0">
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-4">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8">
           {items.map((item) => {
             return (
               <div className="col">
