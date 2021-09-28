@@ -1,16 +1,16 @@
 .cat-container {
-  background: var(--light-green); /*fallback for old browsers*/
+  padding: 40px 0;
+  background: var(--main-green); /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
     var(--light-blue),
     var(--light-green)
-  ); /*Chrome 10-25, Safari 5.1-6*/
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     var(--light-blue),
     var(--light-green)
-  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
-  padding: 40px 0;
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,9 +57,8 @@
   padding-top: 8px;
   text-align: center;
   text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.45);
-  color: var(--cultured);
-  font-weight: 500;
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
 }
 
 .btn-circle:link,
