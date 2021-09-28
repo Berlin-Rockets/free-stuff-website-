@@ -4,6 +4,7 @@ import React from "react";
 export default function NameAndCategory(props) {
   return (
     <div>
+    <label htmlFor="">Name</label>
       <input
         type="text"
         name="name"
@@ -15,7 +16,7 @@ export default function NameAndCategory(props) {
       />
 
       <p>
-        <label htmlFor="">Open the categories</label>
+        <label htmlFor="">categories</label>
         <select
           class="form-select"
           aria-label="Default select example"

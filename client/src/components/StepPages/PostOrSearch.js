@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function PostOrSearch(props) {
     return (
-        <div>
-        <label htmlFor="">if you want to post item please press true or if you search for it press false</label>
+        <div className=''>
+        <label htmlFor="">post item or search for</label>
         <select
           className="form-select"
           aria-label="Default select example"
@@ -12,11 +12,14 @@ export default function PostOrSearch(props) {
           defaultValue={props.getState("PostOrSearch", "")}
         >
           <option selected></option>
-          <option>true</option>
-          <option>false</option>
+          <option>Post item</option>
+          <option>Search for</option>
          
         </select>
         <br />
+        <p>
+
+       
         <label htmlFor="">if the item is used please press true ,if new press false</label>
         <select
           class="form-select"
@@ -26,10 +29,11 @@ export default function PostOrSearch(props) {
           defaultValue={props.getState("usedState", "")}
         >
           <option selected></option>
-          <option>true</option>
-          <option>false</option>
+          <option>Used</option>
+          <option>New</option>
          
         </select>
+        </p>
         </div>
     )
 }

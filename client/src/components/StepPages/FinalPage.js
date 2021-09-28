@@ -23,8 +23,18 @@ export default function FinalPage(props) {
       let fd = new FormData();
       fd.append("category", props.state.category);
       fd.append("location", props.state.location);
-      fd.append("PostOrSearch", props.state.PostOrSearch);
-      fd.append("usedState", props.state.usedState);
+      if (props.state.PostOrSearch === 'Post item') {
+        fd.append("usedState", true);
+      }else{
+        fd.append("usedState", false);
+      }
+      // fd.append("PostOrSearch", props.state.PostOrSearch);
+      if (props.state.usedState === 'Used') {
+        fd.append("usedState", true);
+      }else{
+        fd.append("usedState", false);
+      }
+      
       fd.append("name", props.state.name);
       fd.append("userId", localStorage.getItem("userId"));
       fd.append("description", props.state.description);
@@ -57,7 +67,7 @@ export default function FinalPage(props) {
     <div>
       <div className="">
         <form
-          className="form m-5"
+          className="form m-5 border"
           onSubmit={saveItem}
           encType="multipart/form-data"
         >
