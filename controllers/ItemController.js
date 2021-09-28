@@ -98,7 +98,7 @@ exports.filterByOne = async (req, res, next) => {
   try {
     const filterByOneItems = await ItemModel.find({
       $or: [{ category: filterItem }, { location: filterItem }],
-    });
+    }).sort("-createdAt");
     res.json({
       success: true,
       items: filterByOneItems.length,
@@ -123,7 +123,7 @@ exports.filterItems = async (req, res, next) => {
         { $and: [{ category: filterItem }, { location: secFilterItem }] },
         { $and: [{ location: filterItem }, { category: secFilterItem }] },
       ],
-    });
+    }).sort("-createdAt");
     res.json({ success: true, items: filterItems.length, data: filterItems });
   } catch (err) {
     console.log(err.message);
@@ -149,7 +149,7 @@ exports.userItems = async (req, res, next) => {
   const { id } = req.params;
   // console.log({id});
   try {
-    const items = await ItemModel.find({ userId: id });
+    const items = await ItemModel.find({ userId: id }).sort("-createdAt");
     res.json(items);
     // console.log(Items);
   } catch (err) {
