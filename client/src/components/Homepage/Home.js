@@ -8,7 +8,7 @@ function Home() {
     <div>
       <Banner />
       <Categories />
-      <Carousel />
+      {/* <Carousel /> */}
     </div>
   );
 }

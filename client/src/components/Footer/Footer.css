@@ -35,16 +35,16 @@ body {
 
 /* Footer main */
 .ft-main {
-  background: var(--fair-green); /* fallback for old browsers */
+  background: var(--light-green); /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    var(--fair-blue),
-    var(--fair-green)
+    var(--light-blue),
+    var(--light-green)
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    var(--fair-blue),
-    var(--fair-green)
+    var(--light-blue),
+    var(--light-green)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   padding: 1.25rem 1.875rem;
@@ -85,13 +85,13 @@ form {
   flex-wrap: wrap;
 }
 
-input[type="email"] {
+input[type='email'] {
   border: 0;
   padding: 0.625rem;
   margin-top: 0.3125rem;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   background-color: var(--dark);
   color: var(--grey);
   cursor: pointer;
@@ -102,16 +102,16 @@ input[type="submit"] {
 
 /* Footer social */
 .ft-social {
-  background: var(--fair-green); /* fallback for old browsers */
+  background: var(--light-green); /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    var(--fair-blue),
-    var(--fair-green)
+    var(--light-blue),
+    var(--light-green)
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    var(--fair-blue),
-    var(--fair-green)
+    var(--light-blue),
+    var(--light-green)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   padding: 0 1.875rem 1.25rem;
