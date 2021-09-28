@@ -14,17 +14,23 @@ const Accordion = () => {
   };
 
   return (
-    <ul className="accordion">
-      <h1 className="heading">Frequently Asked Questions</h1>
-      {faqs.map((faq, index) => (
-        <AccordionItem
-          onToggle={() => handleToggle(index)}
-          active={clicked === index}
-          key={index}
-          faq={faq}
-        />
-      ))}
-    </ul>
+    <div className="container">
+      <div class="section-head col-sm-12">
+        <h4>
+          <span>Frequently Asked Questions</span>
+        </h4>
+        <ul className="accordion">
+          {faqs.map((faq, index) => (
+            <AccordionItem
+              onToggle={() => handleToggle(index)}
+              active={clicked === index}
+              key={index}
+              faq={faq}
+            />
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 

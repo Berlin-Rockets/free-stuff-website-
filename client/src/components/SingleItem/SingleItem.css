@@ -1,0 +1,20 @@
+.btn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Doesn't work */
+.btn-primary {
+  text-transform: uppercase;
+  background-color: var(--light-blue);
+  color: var(--cultured);
+}
+
+.btn-primary:hover {
+  background-color: var(--fair-blue);
+}

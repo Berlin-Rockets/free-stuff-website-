@@ -1,0 +1,38 @@
+.carousel {
+  background: var(--light-green); /*fallback for old browsers*/
+  background: -webkit-linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /*Chrome 10-25, Safari 5.1-6*/
+  background: linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+}
+
+.carouselImg {
+  width: auto;
+  height: 300px;
+  display: block;
+}
+
+.carouselBtn {
+  background-color: black;
+}
+
+.title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.card-title {
+  text-transform: capitalize;
+  color: var(--dark);
+}
+
+.card-title:hover {
+  text-decoration: underline;
+  color: var(--grey);
+}

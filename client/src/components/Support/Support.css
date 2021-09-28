@@ -1,0 +1,61 @@
+span {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+#support {
+  background: var(--light-green); /*fallback for old browsers*/
+  background: -webkit-linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /*Chrome 10-25, Safari 5.1-6*/
+  background: linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+}
+
+.section-head {
+  margin-bottom: 60px;
+}
+
+.section-head h4 {
+  color: var(--dark);
+  position: relative;
+  padding: 0;
+  line-height: 1;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: none;
+  margin-bottom: 30px;
+}
+
+.section-head h4::before {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--light-blue);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.section-head h4 span {
+  font-weight: 700;
+  padding-bottom: 5px;
+  color: var(--dark);
+  font-size: 2rem;
+}
+
+.section-head p {
+  color: var(--grey);
+  font-size: 1.5rem;
+  line-height: 28px;
+  text-align: center;
+}

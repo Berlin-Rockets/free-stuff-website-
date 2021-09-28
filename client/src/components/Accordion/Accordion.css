@@ -1,49 +1,43 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   line-height: 1.4;
-  background: #fff;
-  color: #1e212d;
+  background: var(--white);
+  color: var(--dark);
 }
 
 .container {
-  max-width: 600px;
-  margin: 6rem auto 4rem;
+  max-width: 60%;
   padding: 0 10px;
 }
 
-.heading {
+.section-head {
   font-size: 2rem;
-  font-weight: bold;
-  position: relative;
   margin-bottom: 20px;
-  font-family: "Open Sans", sans-serif;
-  color: #1e212d;
+  color: var(--dark);
+  text-align: center;
 }
 
 .accordion {
+  color: var(--dark);
   list-style: none;
-  position: absolute;
-  width: 50%;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  overflow: hidden;
+  margin-bottom: 40px;
+  /* position: absolute; */
+  /* width: 50%; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* margin-right: -50%; */
+  /* transform: translate(-50%, -50%); */
+  /* width: 60%; */
 }
 
 .accordion_item {
-  border-top: 1px solid #eabf9f;
-  font-family: "Open Sans", sans-serif;
+  border-top: 1px solid var(--light-grey);
 }
 
 .button {
-  font-size: 16px;
-  background-color: #eabf9f;
-  color: #1e212d;
+  font-size: 1rem;
+  background-color: var(--light-grey);
+  color: var(--dark);
   text-align: left;
   font-weight: 700;
   display: flex;
@@ -51,28 +45,28 @@ body {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 8px;
+  padding: 18px;
   cursor: pointer;
   border: none;
-  font-family: "Open Sans", sans-serif;
   font-size: 1.2rem;
 }
 
 .control {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 .answer {
-  background-color: #faf3e0;
+  background-color: var(--lighter-grey);
   padding: 20px;
-  font-family: "Open Sans", sans-serif;
   font-size: 1.2rem;
+  text-align: left;
 }
 
-/* activate toggle */
+/* Activate toggle */
 .accordion_item.active .button {
-  background-color: #b68973;
+  background-color: var(--light-grey);
 }
+
 .answer_wrapper {
   height: 0;
   overflow: hidden;

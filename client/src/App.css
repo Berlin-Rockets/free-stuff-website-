@@ -2,5 +2,41 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
 }
+
+:root {
+  --main-green: #159957;
+  --light-green: #31e38a;
+  --fair-green: #8befbd;
+  --main-blue: #155799;
+  --light-blue: #318ae3;
+  --fair-blue: #8bbdef;
+  --black: #131313;
+  --dark: #383838;
+  --dark-two: #333333;
+  --grey: #7e7e7e;
+  --dim-grey: #6d6d64;
+  --granite-grey: #616161;
+  --lighter-grey: #f2f2f2;
+  --light-grey: #d3d3d3;
+  --cultured: #f5f5f5;
+  --white: #ffffff;
+}
+
+body {
+  font-family: -apple-system, "Open Sans", BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
