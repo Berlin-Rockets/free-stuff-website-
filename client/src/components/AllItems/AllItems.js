@@ -34,36 +34,38 @@ const AllItems = () => {
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8 g-4">
           {items.map((item) => {
             return (
-              <Link to={'items/singleItem/' + item._id} className='text-decoration-none'> 
               <div className="col">
-                <div className="card mt-5 mb-4 mx-auto p-0">
-                  <div className="img-container ">
-                    <img
-                      className="card-img-top img-style img-responsive img-resize"
-                      src= {item.images[0]}
-                      alt="Card Item"
-                    />
-                  </div>
+                <div className="card card-style mx-auto border-0">
+                  <Link
+                    to={'items/singleItem/' + item._id}
+                    className="text-decoration-none p-0"
+                  >
+                    <div className="img-container">
+                      <img
+                        className="card-img-top img-style img-responsive img-resize"
+                        src={item.images[0]}
+                        alt="Card Item"
+                      />
+                    </div>
 
-                  <div className="card-body">
-                    <h5 className="card-title mb-0 font-weight-bold">
-                      {item.name}
-                    </h5>
-                    <p className="card-text mb-0">
-                      <small className="">Location: {item.location}</small>
-                    </p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">
-                      Published on:{' '}
-                      <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>
-                    </small>
-                  </div>
+                    <div className="card-body">
+                      <h5 className="card-title mb-0 font-weight-bold">
+                        {item.name}
+                      </h5>
+                      <p className="card-text mb-0">
+                        <small className="">Location: {item.location}</small>
+                      </p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">
+                        Published on:{' '}
+                        <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>
+                      </small>
+                    </div>
+                  </Link>
                 </div>
               </div>
-              </Link>
             );
-           
           })}
         </div>
       </div>
