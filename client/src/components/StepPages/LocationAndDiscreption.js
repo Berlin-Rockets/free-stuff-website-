@@ -3,10 +3,11 @@ import React from "react";
 export default function LocationAndDiscreption(props) {
   return (
     <div>
-      
+      <label htmlFor="">description</label>
       <textarea className="form-control mb-3 col-11 ml-3" id="exampleFormControlTextarea1" rows="5" onChange={props.handleChange} name='description'>{props.getState("description", "")}</textarea>
         
       <p>
+      <label htmlFor="">location</label>
         <select
           class="form-select"
           aria-label="Default select example"
