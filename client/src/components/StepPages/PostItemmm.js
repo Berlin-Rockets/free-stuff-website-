@@ -24,8 +24,8 @@ const Navigation = (props) => {
   }));
   // console.log( props.state);
   return (
-    <div className="d-flex w-100">
-      <div>
+    <div className="d-flex w-100 my-5">
+      <div className=''>
         <Button
           variant="contained"
           size="large"
@@ -73,7 +73,7 @@ function PostItemmm() {
   };
 
   return userId ? (
-    <div className="d-flex justify-content-center height w-100 mt-5 ">
+    <div className="d-flex justify-content-center  mt-5 ">
       <br />
       <br />
       <div className="w-25">

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { BiImageAdd } from "react-icons/bi";
 import axios from "axios";
 import baseURL from "../../config/baseUrl";
 
@@ -67,7 +67,7 @@ export default function FinalPage(props) {
     <div>
       <div className="">
         <form
-          className="form m-5 border"
+          className="form my-5  w-100"
           onSubmit={saveItem}
           encType="multipart/form-data"
         >
@@ -77,10 +77,10 @@ export default function FinalPage(props) {
                 <img
                   src={imageSelected.preview}
                   alt="profile-pic"
-                  className="rounded-circle ml-3"
+                  className=" ml-3"
                   style={{
-                    width: "100px",
-                    height: "100px",
+                    width: "70%",
+                    height: "50%",
                     boxShadow: "3px 3px 6px 2px #173F5F",
                   }}
                 />
@@ -88,8 +88,8 @@ export default function FinalPage(props) {
                   style={{ float: "left" }}
                   className="ml-3 mb-4 d-flex flex-direction-column align-items-start"
                 >
-                  <span className="text-dark col-3">
-                    <FaUserCircle
+                  <span className="text-dark col-3 ">
+                    <BiImageAdd
                       style={{ fontSize: "xxx-large", float: "left" }}
                     />
                   </span>
@@ -100,15 +100,15 @@ export default function FinalPage(props) {
             ) : (
               <span
                 style={{ float: "left" }}
-                className="ml-3 mb-4 d-flex flex-direction-column align-items-start "
+                className="ml-3 mb-4 d-flex flex-direction-column  "
               >
-                <span className="text-dark col-3">
-                  <FaUserCircle
+                <span className="text-dark col-6 ">
+                  <BiImageAdd
                     style={{ fontSize: "xxx-large", float: "left" }}
                   />
                 </span>
                 <br />
-                <h6 className="text-secondary col-7 m-3">Upload photo</h6>
+                <h6 className="text-secondary col-6 m-3">Upload photo</h6>
               </span>
             )}
           </label>
@@ -124,7 +124,7 @@ export default function FinalPage(props) {
 
           <br />
           <br />
-          <button type="submit">Post Item</button>
+          <button className='btn btn-primary' type="submit">Post Item</button>
         </form>
       </div>
       {/* // <p>
