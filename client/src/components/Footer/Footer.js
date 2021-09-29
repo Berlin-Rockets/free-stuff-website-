@@ -34,13 +34,13 @@ function Footer() {
             </h2>
             <ul>
               <li>
-                <a href="/Accordion">FAQ</a>
+                <a href="/accordion">FAQ</a>
               </li>
               <li>
                 <a href="/support">Support</a>
               </li>
               <li>
-                <a href="/Advertise">Advertise</a>
+                <a href="/advertise">Advertise</a>
               </li>
             </ul>
           </div>
