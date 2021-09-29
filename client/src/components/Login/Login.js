@@ -4,6 +4,7 @@ import baseURL from '../../config/baseUrl';
 import './Login.css';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
+import { Button } from '../Button/Button';
 
 export default function Login() {
   const [error, setError] = useState();
@@ -164,8 +165,8 @@ export default function Login() {
               <a href="/register">register here</a>{' '}
             </p>
 
-            <input
-              className="btn btn-primary mt-3 mb-4"
+            <Button
+              className="btn-log-modal mt-3 mb-4"
               type="submit"
               value="login"
             />
