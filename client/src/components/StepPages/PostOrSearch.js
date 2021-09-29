@@ -3,7 +3,7 @@ import React from 'react'
 export default function PostOrSearch(props) {
     return (
         <div className=''>
-        <label htmlFor="">post item or search for</label>
+        <label htmlFor="">post item or search for:</label>
         <select
           className="form-select"
           aria-label="Default select example"
@@ -20,7 +20,7 @@ export default function PostOrSearch(props) {
         <p>
 
        
-        <label htmlFor="">if the item is used please press true ,if new press false</label>
+        <label htmlFor="">used item or new: </label>
         <select
           class="form-select"
           aria-label="Default select example"
