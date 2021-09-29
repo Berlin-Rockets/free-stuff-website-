@@ -57,8 +57,6 @@ function AboutUsPage() {
                 <p>
                   We are three students who have completed a one-year Full Stack
                   web development course at Digital Career Institute in Berlin.
-                  If you wish to contact us, please send a message through the
-                  Support page.
                 </p>
               </div>
             </div>

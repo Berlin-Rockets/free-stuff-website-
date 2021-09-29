@@ -55,11 +55,8 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="https://allaboutberlin.com/guides/moving-to-berlin"
-                  target="_blank"
-                >
-                  Moving to Berlin Guide
+                <a href="https://tierschutz-berlin.de/" target="_blank">
+                  Tierheim Berlin
                 </a>
               </li>
               <li>
@@ -119,7 +116,27 @@ function Footer() {
               <a href="/Privacy">Privacy Policy</a>
             </li>
             <li>
-              &copy;{new Date().getFullYear()} Freebay - All Rights Reserved
+              &copy;{new Date().getFullYear()} Freebay is made by{" "}
+              <a
+                href="https://www.linkedin.com/in/ahmad-suliman-19ba37214/"
+                target="_blank"
+              >
+                Ahmad
+              </a>
+              ,{" "}
+              <a
+                href="https://www.linkedin.com/in/nathaly-colombo/"
+                target="_blank"
+              >
+                Nathaly
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://www.linkedin.com/in/stanislavgenunchi/"
+                target="_blank"
+              >
+                Stanislav
+              </a>
             </li>
           </ul>
         </section>
