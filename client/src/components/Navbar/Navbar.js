@@ -126,6 +126,11 @@ class Navbar extends React.Component {
               </div>
             </li>
           )} */}
+           <div className="btn-register">
+                <Button className="fw-bolder fs-5" onClick={this.onLogout}>
+                  logout
+                </Button>
+              </div>
         </ul>
       </nav>
     );
