@@ -159,3 +159,13 @@ a:hover i {
 .ft-legal-list li a:hover {
   text-decoration: underline;
 }
+
+.subscribe-style-input {
+  border-top-left-radius: 3.5px;
+  border-bottom-left-radius: 3.5px;
+}
+
+.subscribe-style-submit {
+  border-top-right-radius: 3.5px;
+  border-bottom-right-radius: 3.5px;
+}

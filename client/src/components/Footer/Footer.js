@@ -1,6 +1,6 @@
-import React from "react";
-import "react-bootstrap";
-import "./Footer.css";
+import React from 'react';
+import 'react-bootstrap';
+import './Footer.css';
 
 function Footer() {
   return (
@@ -81,8 +81,13 @@ function Footer() {
                 type="email"
                 name="email"
                 placeholder="Enter email address"
+                className="subscribe-style-input"
               />
-              <input type="submit" value="Subscribe" />
+              <input
+                type="submit"
+                value="Subscribe"
+                className="subscribe-style-submit"
+              />
             </form>
           </div>
         </section>
