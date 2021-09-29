@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import baseURL from "../../config/baseUrl";
 import "./SingleItem.css";
+import Moment from "react-moment";
 
 const SingleItem = () => {
   const [item, setItem] = useState();
@@ -40,7 +41,10 @@ const SingleItem = () => {
         <div className="card-body">
           <h4 className="mb-0 card-title font-weight-bold">{item.name}</h4>
           <p className="mb-2">
-            <small className="text-muted">Published on {item.createdAt}</small>
+          <small className="text-muted">
+          Published on: 
+          <Moment format="DD/MM/YYYY">{item.createdAt}</Moment>{" "}
+        </small>
           </p>
           <p className="card-text">{item.description}</p>
         </div>
