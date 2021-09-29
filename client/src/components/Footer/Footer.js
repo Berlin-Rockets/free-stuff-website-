@@ -115,8 +115,8 @@ function Footer() {
             <li>
               <a href="/Privacy">Privacy Policy</a>
             </li>
-            <li>
-              &copy;{new Date().getFullYear()} Freebay is made by{" "}
+            <li className='text-center'>
+              &copy;{new Date().getFullYear()}  made by{" "}
               <a
                 href="https://www.linkedin.com/in/ahmad-suliman-19ba37214/"
                 target="_blank"
@@ -130,7 +130,7 @@ function Footer() {
               >
                 Nathaly
               </a>{" "}
-              and{" "}
+              
               <a
                 href="https://www.linkedin.com/in/stanislavgenunchi/"
                 target="_blank"

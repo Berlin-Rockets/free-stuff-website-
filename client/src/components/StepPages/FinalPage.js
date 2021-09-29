@@ -24,9 +24,9 @@ export default function FinalPage(props) {
       fd.append("category", props.state.category);
       fd.append("location", props.state.location);
       if (props.state.PostOrSearch === 'Post item') {
-        fd.append("usedState", true);
+        fd.append("PostOrSearch", true);
       }else{
-        fd.append("usedState", false);
+        fd.append("PostOrSearch", false);
       }
       // fd.append("PostOrSearch", props.state.PostOrSearch);
       if (props.state.usedState === 'Used') {
