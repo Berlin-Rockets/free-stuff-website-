@@ -1,0 +1,30 @@
+.item-container-filter {
+  background: var(--main-green); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  padding: 30px 100px;
+}
+
+.btn-circle-location {
+  /* height: 75px; */
+  /* width: 75px; */
+  border-radius: 15px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.07);
+  font-size: 1rem;
+  font-weight: 600;
+  flex-direction: column;
+  padding: 15px;
+  cursor: pointer;
+}
