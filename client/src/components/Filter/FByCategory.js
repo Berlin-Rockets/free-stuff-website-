@@ -18,7 +18,7 @@ export default function FByCategory() {
 
     const getItems = async () => {
         try {
-          const res = await axios.get(baseURL + '/items/'+ label.filter);
+          const res = await axios.get(baseURL + '/api/items/'+ label.filter);
           // console.log(res.data);
           setItems(res.data.data);
           setCategory(label.filter)
@@ -35,7 +35,7 @@ export default function FByCategory() {
       
         
         try {
-          const res = await axios.get(baseURL + '/items/' + cat);
+          const res = await axios.get(baseURL + '/api/items/' + cat);
           console.log(res.data);
           setItems(res.data.data);
           setCategory(cat)
@@ -45,7 +45,7 @@ export default function FByCategory() {
       };
 
       const filterItemsByLoc=async(loc)=>{
-        const res=await axios.get(baseURL+'/items/filter/'+ category +'/'+ loc)
+        const res=await axios.get(baseURL+'/api/items/filter/'+ category +'/'+ loc)
         console.log(res.data.data);
         setItems(res.data.data);
        setLocation(loc)

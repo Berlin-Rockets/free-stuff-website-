@@ -18,14 +18,14 @@ export default function MyItem() {
 
   const getUserItem = async () => {
     const userId = localStorage.getItem("userId");
-    const userItems = await axios.get(baseURL + "/items/userItem/" + userId);
+    const userItems = await axios.get(baseURL + "/api/items/userItem/" + userId);
     console.log('user items ------>',userItems.data);
     setItems(userItems.data);
   };
 
   const deleteItem = async (id) => {
     console.log(id);
-    await axios.delete(baseURL + "/items/" + id);
+    await axios.delete(baseURL + "/api/items/" + id);
 
     window.location.reload();
   };

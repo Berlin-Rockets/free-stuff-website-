@@ -12,7 +12,7 @@ const [filteredData, setFilteredData]= useState([])
 
 const getAllItems = async () => {
   try {
-    const res = await axios.get(baseURL + '/items');
+    const res = await axios.get(baseURL + '/api/items');
     console.log('searchbar dataaaa',res.data.data);
     setData(res.data.data)
   } catch (e) {

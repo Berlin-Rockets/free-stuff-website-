@@ -45,7 +45,7 @@ export default function FinalPage(props) {
    try{
      axios({
         method: "POST",
-        url: `${baseURL}/items`,
+        url: `${baseURL}/api/items`,
         baseURL: baseURL,
         data: fd,
         headers: {

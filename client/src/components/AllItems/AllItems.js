@@ -13,7 +13,7 @@ const AllItems = () => {
 
   const getAllItems = async () => {
     try {
-      const res = await axios.get(baseURL + '/items');
+      const res = await axios.get(baseURL + '/api/items');
       // console.log(res.data);
 
       setItems(res.data.data);
