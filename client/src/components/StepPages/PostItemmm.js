@@ -1,20 +1,20 @@
-import React from "react";
-import { Steps, Step } from "react-step-builder";
-import NameAndCategory from "./NameAndCategory";
-import LocationAndDiscreption from "./LocationAndDiscreption";
-import PostOrSearch from "./PostOrSearch";
-import FinalPage from "./FinalPage";
-import { Col, Row } from "antd";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import FormControl from "@material-ui/core/FormControl";
-import "./postItem.css";
-import Login from "../Login/Login";
+import React from 'react';
+import { Steps, Step } from 'react-step-builder';
+import NameAndCategory from './NameAndCategory';
+import LocationAndDiscreption from './LocationAndDiscreption';
+import PostOrSearch from './PostOrSearch';
+import FinalPage from './FinalPage';
+import { Col, Row } from 'antd';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import './postItem.css';
+import Login from '../Login/Login';
 
 const Navigation = (props) => {
   const useStyles = makeStyles((theme) => ({
     button: {
-      display: "block",
+      display: 'block',
       marginTop: theme.spacing(2),
     },
     formControl: {
@@ -24,20 +24,20 @@ const Navigation = (props) => {
   }));
   // console.log( props.state);
   return (
-    <div className="d-flex w-100">
-      <div>
+    <div className="d-flex w-100 justify-content-center flex-wrap">
+      <div style={{ margin: '20px 10px' }}>
         <Button
           variant="contained"
           size="large"
           className={useStyles.button}
           color="primary"
           onClick={props.prev}
-          style={{ marginRight: 10 }}
+          // style={{ marginRight: 10 }}
         >
           Previous
         </Button>
       </div>
-      <div>
+      <div style={{ margin: '20px 10px' }}>
         <Button
           variant="contained"
           color="primary"
@@ -52,11 +52,11 @@ const Navigation = (props) => {
 };
 
 function PostItemmm() {
-  const userId = localStorage.getItem("userId");
+  const userId = localStorage.getItem('userId');
 
   const useStyles = makeStyles((theme) => ({
     button: {
-      display: "block",
+      display: 'block',
       marginTop: theme.spacing(2),
     },
     formControl: {
@@ -68,12 +68,12 @@ function PostItemmm() {
   const config = {
     navigation: {
       component: Navigation, // a React component with special props provided automatically
-      location: "after", // or before
+      location: 'after', // or before
     },
   };
 
   return userId ? (
-    <div className="d-flex justify-content-center height w-100 mt-5 ">
+    <div className="d-flex justify-content-center height w-100 py-5 post-item-container">
       <br />
       <br />
       <div className="w-25">
@@ -86,8 +86,10 @@ function PostItemmm() {
       </div>
     </div>
   ) : (
-    <div>
-      <h4>please login</h4>
+    <div className="login-require-container">
+      <h2 className="require-title text-center">
+        Please login to post an item
+      </h2>
 
       <Login />
     </div>
