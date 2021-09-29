@@ -35,55 +35,54 @@ const SingleItem = () => {
 
   return item ? (
     <React.Fragment>
-      <div className="card card-styling mt-5 mx-auto col-8 p-0 border-0">
-        <img className="card-img-top" src={item.images[0]} alt="Card Item" />
-        <div className="card-body">
-          <ul className="list-group-flush mb-0">
-            <li className="list-group-item">
-              <h4 className="mb-0 card-title font-weight-bold">{item.name}</h4>
-              <p className="mb-2">
-                <small className="text-muted">
-                  Published on {item.createdAt}
-                </small>
-              </p>
-            </li>
-            <li className="list-group-item">
-              <p className="card-text">{item.description}</p>
-            </li>
-
-            <li className="list-group-item">
-              <li>Location: {item.location}</li>
-              <li>
-                Condition:{' '}
-                {item.usedState ? <span>Used</span> : <span>New</span>}
+      <div className="banner-container d-flex flex-column  p-0 ">
+        <div className="card card-styling mt-5 mx-auto col-8 p-0 border-0">
+          <img className="card-img-top" src={item.images[0]} alt="Card Item" />
+          <div className="card-body">
+            <ul className="list-group-flush mb-0">
+              <li className="list-group-item">
+                <h4 className="mb-0 card-title font-weight-bold">
+                  {item.name}
+                </h4>
+                <p className="mb-2">
+                  <small className="text-muted">
+                    Published on {item.createdAt}
+                  </small>
+                </p>
               </li>
-            </li>
-
-            <li className="list-group-item">
-              <p className="m-0 font-weight-bold">Contact details:</p>
-
-              <p className="m-0 pl-3">Phone: 123-456-7890</p>
-
-              <p className="m-0">
-                <a href={`mailto:${item.userId.email}`} className="card-link">
-                  Send email to:
-                </a>
-                &nbsp; {item.userId.email}
-              </p>
-            </li>
-          </ul>
+              <li className="list-group-item">
+                <p className="card-text">{item.description}</p>
+              </li>
+              <li className="list-group-item">
+                <li>Location: {item.location}</li>
+                <li>
+                  Condition:{' '}
+                  {item.usedState ? <span>Used</span> : <span>New</span>}
+                </li>
+              </li>
+              <li className="list-group-item">
+                <p className="m-0 font-weight-bold">Contact details:</p>
+                <p className="m-0 pl-3">Phone: 123-456-7890</p>
+                <p className="m-0">
+                  <a href={`mailto:${item.userId.email}`} className="card-link">
+                    Send email to:
+                  </a>
+                  &nbsp; {item.userId.email}
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div className="container text-center px-0 pb-5 m-0 mx-auto">
-        <Link to={`/items/${item.category}`} className="btn btn-primary me-2">
-          Back to items
-        </Link>
-
-        <a href="/" className="card-link">
-          <button type="button" className="btn btn-primary">
-            Go to Home Page
-          </button>
-        </a>
+        <div className="container text-center px-0 pb-5 m-0 mx-auto">
+          <Link to={`/items/${item.category}`} className="btn btn-primary me-2">
+            Back to items
+          </Link>
+          <a href="/" className="card-link">
+            <button type="button" className="btn btn-primary">
+              Go to Home Page
+            </button>
+          </a>
+        </div>
       </div>
     </React.Fragment>
   ) : (
