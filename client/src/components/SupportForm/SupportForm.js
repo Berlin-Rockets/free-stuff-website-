@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
-import Container from "@material-ui/core/Container";
-import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
-import Grid from "@material-ui/core/Grid";
-import FormControl from "@material-ui/core/FormControl";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormLabel from "@material-ui/core/FormLabel";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import InputLabel from "@material-ui/core/InputLabel";
-import "./SupportForm.css";
+import React, { useState } from 'react';
+import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+import Grid from '@material-ui/core/Grid';
+import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormLabel from '@material-ui/core/FormLabel';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import './SupportForm.css';
 
 const useStyles = makeStyles({
   field: {
@@ -26,14 +26,14 @@ const useStyles = makeStyles({
 
 const SupportForm = () => {
   const classes = useStyles();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [salutation, setSalutation] = useState("");
-  const [details, setDetails] = useState("");
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [salutation, setSalutation] = useState('');
+  const [details, setDetails] = useState('');
   const [firstNameError, setFirstNameError] = useState(false);
   const [lastNameError, setLastNameError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
-  const [category, setCategory] = useState("Mr.");
+  const [category, setCategory] = useState('Mr.');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,13 +42,13 @@ const SupportForm = () => {
     setSalutation(false);
     setDetailsError(false);
 
-    if (firstName === "") {
+    if (firstName === '') {
       setFirstNameError(true);
     }
-    if (lastName === "") {
+    if (lastName === '') {
       setLastNameError(true);
     }
-    if (details === "") {
+    if (details === '') {
       setDetailsError(true);
     }
     // if (firstName && details) {
@@ -69,6 +69,7 @@ const SupportForm = () => {
 
       <FormControl
         fullWidth
+        color="primary"
         // className={classes.field}
       >
         <RadioGroup
@@ -77,12 +78,15 @@ const SupportForm = () => {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           name="row-radio-buttons-groups"
+          color="primary"
         >
           <FormControlLabel
             value="mr"
             control={<Radio />}
             label="Mr."
-            style={{ paddingRight: "80px" }}
+            style={{ paddingRight: '80px' }}
+            color="primary"
+            variant="primary"
           />
           <FormControlLabel
             value="mrs/ms"
@@ -102,15 +106,15 @@ const SupportForm = () => {
           value={salutation}
           onChange={(e) => setSalutation(e.target.value)}
           label="Salutation"
-          style={{ width: "120px" }}
+          style={{ width: '120px' }}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={"Dr."}>Dr.</MenuItem>
-          <MenuItem value={"Prof."}>Prof.</MenuItem>
-          <MenuItem value={"Dr. Dr."}>Dr. Dr.</MenuItem>
-          <MenuItem value={"Prof. Dr."}>Prof. Dr.</MenuItem>
+          <MenuItem value={'Dr.'}>Dr.</MenuItem>
+          <MenuItem value={'Prof.'}>Prof.</MenuItem>
+          <MenuItem value={'Dr. Dr.'}>Dr. Dr.</MenuItem>
+          <MenuItem value={'Prof. Dr.'}>Prof. Dr.</MenuItem>
         </Select>
       </FormControl>
 
@@ -122,11 +126,12 @@ const SupportForm = () => {
           id="firstName"
           name="firstName"
           label="First Name"
-          color="secondary"
+          color="primary"
           fullWidth
           error={firstNameError}
           autoComplete="given-name"
           variant="standard"
+          className="TextField"
         />
         <TextField
           required
@@ -135,7 +140,7 @@ const SupportForm = () => {
           id="lastName"
           name="lastName"
           label="Last Name"
-          color="secondary"
+          color="primary"
           fullWidth
           error={lastNameError}
           autoComplete="family-name"
@@ -146,7 +151,7 @@ const SupportForm = () => {
           onChange={(e) => setDetails(e.target.value)}
           label="Details"
           variant="outlined"
-          color="secondary"
+          color="primary"
           multiline
           rows={4}
           fullWidth
@@ -157,7 +162,7 @@ const SupportForm = () => {
           <Radio value="goodbye" /> */}
 
         <Button
-          color="secondary"
+          color="primary"
           type="submit"
           variant="contained"
           endIcon={<KeyboardArrowRightIcon />}
