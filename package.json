@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  
   "scripts": {
     "client": "npm run start --prefix client",
     "server": "nodemon app.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
