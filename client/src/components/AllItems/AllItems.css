@@ -62,7 +62,7 @@
   white-space: nowrap;
 }
 
-.card-text {
+.card-text-style {
   color: var(--main-blue);
   /* text-decoration: underline; */
   /* font-size: 1vw; */

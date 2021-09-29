@@ -52,7 +52,7 @@ const AllItems = () => {
                       <h5 className="card-title mb-0 font-weight-bold">
                         {item.name}
                       </h5>
-                      <p className="card-text mb-0">
+                      <p className="card-text card-text-style mb-0">
                         <small className="">Location: {item.location}</small>
                       </p>
                     </div>
