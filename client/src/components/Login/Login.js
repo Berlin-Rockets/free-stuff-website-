@@ -49,7 +49,9 @@ export default function Login() {
       url: 'http://localhost:4000/users/googlelogin',
       data: { tokenId: response.tokenId },
     }).then((response) => {
-      console.log(response.data);
+      console.log('responseeeee',response.data);
+      if (response.data.success) {
+        console.log('responseeeee',response.data);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.userId);
       setError(null);
@@ -59,6 +61,11 @@ export default function Login() {
       setTimeout(() => {
         window.location.replace('/');
       }, 500);
+      }else{
+        setError("NO such user found in DB. Email or password is invalid");
+        setSuccess(null);
+      }
+      
     });
   };
 
@@ -74,7 +81,8 @@ export default function Login() {
       url: 'http://localhost:4000/users/facebooklogin',
       data: { accessToken: response.accessToken, userID: response.userID },
     }).then((response) => {
-      console.log('responseeeee', response.data);
+      if (response.data.success) {
+         console.log('responseeeee', response.data);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.userId);
       setError(null);
@@ -82,6 +90,11 @@ export default function Login() {
       setTimeout(() => {
         window.location.replace('/');
       }, 500);
+      }else{
+        setError("NO such user found in DB. Email or password is invalid");
+        setSuccess(null);
+      }
+     
     });
   };
 

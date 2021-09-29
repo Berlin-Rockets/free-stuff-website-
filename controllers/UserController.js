@@ -133,7 +133,7 @@ exports.googlelogin = (req, res, next) => {
                 { expiresIn: 2592000000 }
               );
               const { name, email, password } = user;
-              res.json({ success: true, data: user, userId: user._id, token });
+              res.json({ success:true, data: user, userId: user._id, token });
             } else {
               let userPassword = email + "123";
 
