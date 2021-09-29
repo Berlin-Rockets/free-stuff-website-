@@ -35,8 +35,8 @@ const SingleItem = () => {
 
   return item ? (
     <React.Fragment>
-      <div className="banner-container d-flex flex-column  p-0 ">
-        <div className="card card-styling mt-5 mx-auto col-8 p-0 border-0">
+      <div className="banner-container d-flex flex-column p-0">
+        <div className="card card-styling mt-0 mx-auto col-8 p-0 border-0">
           <img className="card-img-top" src={item.images[0]} alt="Card Item" />
           <div className="card-body">
             <ul className="list-group-flush mb-0">
@@ -62,7 +62,7 @@ const SingleItem = () => {
               </li>
               <li className="list-group-item">
                 <p className="m-0 font-weight-bold">Contact details:</p>
-                <p className="m-0 pl-3">Phone: 123-456-7890</p>
+                <p className="m-0">Phone: 123-456-7890</p>
                 <p className="m-0">
                   <a href={`mailto:${item.userId.email}`} className="card-link">
                     Send email to:
