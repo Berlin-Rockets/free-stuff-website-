@@ -4,7 +4,7 @@ import baseURL from '../../config/baseUrl';
 import './Login.css';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
-import { Button } from '../Button/Button';
+import '../Button/Button.css';
 
 export default function Login() {
   const [error, setError] = useState();
@@ -99,15 +99,15 @@ export default function Login() {
         </div>
       )}
       <div className="card-container card">
-        <div className="card-header header-style text-center mt-2">
-          <h5>Log in with your account!</h5>
+        <div className="card-header header-style text-center">
+          <h5 className="pt-2">Log in with your account!</h5>
         </div>
         <div className="card-body ">
           <div className="card-title mt-3">
             Please enter your credentials below:
           </div>
           <form
-            className="d-flex  flex-column"
+            className="d-flex flex-column"
             action="/login"
             method="POST"
             onSubmit={loginHandler}
@@ -165,8 +165,8 @@ export default function Login() {
               <a href="/register">register here</a>{' '}
             </p>
 
-            <Button
-              className="btn-log-modal mt-3 mb-4"
+            <input
+              className="btn-dark btn-log-modal mt-3 mb-4 py-0"
               type="submit"
               value="login"
             />
