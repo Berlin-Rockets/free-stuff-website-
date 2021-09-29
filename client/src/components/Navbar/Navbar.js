@@ -73,7 +73,7 @@ class Navbar extends React.Component {
             </div>
           )}
 
-          {this.props.user && (
+          {/* {this.props.user && (
             <li className="nav-item dropdown d-flex">
               <a
                 className="nav-link dropdown-toggle text-dark  d-flex text-decoration-none align-items-center fw-bolder fs-5"
@@ -125,7 +125,7 @@ class Navbar extends React.Component {
                 </Button>
               </div>
             </li>
-          )}
+          )} */}
         </ul>
       </nav>
     );
