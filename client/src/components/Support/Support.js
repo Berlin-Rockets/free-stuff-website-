@@ -20,15 +20,15 @@ function Support() {
                 <span>Support</span>
               </h4>
               <p>
-                Need help? Please read through the FAQ section to check if your
-                question is not already answered. If you still require
+                Need help? Please read through the FAQ section first to check if
+                your question is not already answered. If you still require
                 assistance after it, fill out the form above describing us your
                 concerns.
               </p>
             </div>
           </div>
         </div>
-        <Accordion />
+        {/* <Accordion /> */}
         <SupportForm />
       </div>
     </React.Fragment>
