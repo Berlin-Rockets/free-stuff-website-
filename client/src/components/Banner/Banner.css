@@ -10,17 +10,17 @@
 } */
 
 .banner-container {
-  background: var(--light-green); /*fallback for old browsers*/
+  background: var(--main-green); /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
     var(--light-blue),
     var(--light-green)
-  ); /*Chrome 10-25, Safari 5.1-6*/
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     var(--light-blue),
     var(--light-green)
-  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   display: flex;
   justify-content: center;

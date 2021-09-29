@@ -15,7 +15,7 @@ const Accordion = () => {
 
   return (
     <div className="container">
-      <div class="section-head col-sm-12">
+      <div class="section-head col-sm-12 pt-5 ">
         <h4>
           <span>Frequently Asked Questions</span>
         </h4>
