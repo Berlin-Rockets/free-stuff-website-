@@ -61,12 +61,12 @@ export default function Carousel() {
         <div className="carousel-inner container inner-style mx-auto">
           <h1 className="title-car pb-4">Latest Items</h1>
           <div className="carousel-item active">
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
               <Link
                 to={'items/singleItem/' + items[0]._id}
                 className="text-decoration-none"
               >
-                <div className="col">
+                <div className="col d-flex justify-content-center">
                   <div className="card card-style-car border-0">
                     <img
                       src={items[0].images[0]}
@@ -91,7 +91,7 @@ export default function Carousel() {
                 to={'items/singleItem/' + items[1]._id}
                 className="text-decoration-none"
               >
-                <div className="col">
+                <div className="col d-flex justify-content-center">
                   <div className="card card-style-car border-0">
                     <img
                       src={items[1].images[0]}
@@ -116,7 +116,7 @@ export default function Carousel() {
                 to={'items/singleItem/' + items[2]._id}
                 className="text-decoration-none"
               >
-                <div className="col">
+                <div className="col d-flex justify-content-center">
                   <div className="card card-style-car border-0">
                     <img
                       src={items[2].images[0]}
@@ -140,7 +140,7 @@ export default function Carousel() {
             </div>
           </div>
           <div className="carousel-item">
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
               <Link
                 to={'items/singleItem/' + items[3]._id}
                 className="text-decoration-none"
@@ -219,7 +219,7 @@ export default function Carousel() {
             </div>
           </div>
           <div className="carousel-item">
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
               <Link
                 to={'items/singleItem/' + items[6]._id}
                 className="text-decoration-none"
@@ -306,7 +306,7 @@ export default function Carousel() {
           data-bs-slide="prev"
         >
           <span
-            className="carousel-control-prev-icon "
+            className="carousel-control-prev-icon"
             aria-hidden="true"
           ></span>
           <span className="visually-hidden">Previous</span>
@@ -326,6 +326,6 @@ export default function Carousel() {
       </div>
     </div>
   ) : (
-    <div>Loading</div>
+    <div className="loading">Loading</div>
   );
 }

@@ -15,6 +15,9 @@
 }
 
 .carousel {
+  /* background: red; */
+  width: 100%;
+  justify-content: center;
 }
 
 .inner-style {
@@ -34,7 +37,7 @@
   min-height: 150px;
   max-width: 300px;
   min-width: 150px;
-  /* box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.5); */
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
   margin-bottom: 40px;
 }
 
