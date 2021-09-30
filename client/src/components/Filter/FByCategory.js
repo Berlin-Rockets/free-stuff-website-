@@ -32,7 +32,7 @@ export default function FByCategory() {
 
   useEffect(() => {
     getItems();
-  });
+  },[]);
 
 
       const filterItems = async (cat) => {
@@ -49,6 +49,7 @@ export default function FByCategory() {
       };
 
       const filterItemsByLoc=async(loc)=>{
+        console.log('filter by location');
         const res=await axios.get(baseURL+'/api/items/filter/'+ category +'/'+ loc)
         console.log(res.data.data);
         setItems(res.data.data);
