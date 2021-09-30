@@ -41,6 +41,11 @@
   margin-bottom: 40px;
 }
 
+.card-style-car:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
 .carouselBtn {
   background-color: black;
 }
