@@ -36,7 +36,7 @@
   margin-bottom: 40px;
 }
 
-.card:hover {
+.card-style:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
 }
