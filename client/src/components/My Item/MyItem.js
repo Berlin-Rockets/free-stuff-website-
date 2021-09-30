@@ -46,21 +46,26 @@ return user ? (
         Items.map((el) => {
           //  console.log(el);
           return (
-            <div key={el.id} className='bg-light rounded w-75 my-2'>
-              <li className="d-flex m-3 justify-content-between ">
-                <div className="d-flex align-items-center">
+            <div key={el.id} className='d-flex justify-content-between bg-light rounded w-100 my-2'>
+          
+           
+                <div className="d-flex align-items-center m-2 ">
                   <img
                     src={el.images[0]}
                     className=""
-                    width="100"
+                    width="35%"
                     alt="2"
                   />
-                  <p className="bg-white ms-2">{el.name}</p>
+                  <p className=" m-2">{el.name}</p>
                 </div>
-                <div className="d-flex align-items-center">
+               
+             
+           
+             
+               <div className="my-auto d-block">
                   <Link
                     to={"/editItem/" + el._id}
-                    className="btn btn-outline-success me-2"
+                    className="btn btn-outline-success m-2"
                   >
                     Edit
                   </Link>
@@ -74,7 +79,6 @@ return user ? (
                     Delete
                   </button>
                 </div>
-              </li>
             </div>
           );
         })
