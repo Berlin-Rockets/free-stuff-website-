@@ -46,6 +46,7 @@
   font-size: 0.8rem;
   flex-direction: column;
   text-decoration: none;
+  background: var(--lighter-grey);
 }
 
 .cat-icon {
@@ -57,6 +58,7 @@
   text-align: center;
   text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.45);
   color: rgba(255, 255, 255, 0.8);
+  /* color: var(--dark); */
   font-size: 0.9rem;
 }
 
@@ -67,6 +69,8 @@
 }
 
 .btn-circle:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
 }
 
 .btn-circle:active,
