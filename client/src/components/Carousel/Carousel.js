@@ -300,7 +300,7 @@ export default function Carousel() {
         </div>
         <br />
         <button
-          className="carousel-control-prev border-0 carouselBtn "
+          className="carousel-control-prev border-0 carouselBtn justify-content-end"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev"
@@ -312,7 +312,7 @@ export default function Carousel() {
           <span className="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next border-0"
+          className="carousel-control-next border-0 justify-content-start"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="next"
