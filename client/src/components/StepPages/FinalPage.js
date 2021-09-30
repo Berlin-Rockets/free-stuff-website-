@@ -19,46 +19,51 @@ export default function FinalPage(props) {
     }
   };
 
-  const saveItem = async (e) => {
-    e.preventDefault();
-    let fd = new FormData();
-    fd.append('category', props.state.category);
-    fd.append('location', props.state.location);
-    if (props.state.PostOrSearch === 'Post item') {
-      fd.append('PostOrSearch', true);
-    } else {
-      fd.append('PostOrSearch', false);
-    }
-    // fd.append("PostOrSearch", props.state.PostOrSearch);
-    if (props.state.usedState === 'Used') {
-      fd.append('usedState', true);
-    } else {
-      fd.append('usedState', false);
-    }
 
-    fd.append('name', props.state.name);
-    fd.append('userId', localStorage.getItem('userId'));
-    fd.append('description', props.state.description);
-    fd.append('image', imageSelected.raw);
-    fd.append('upload_preset', 'ml_default');
-    //  console.log('fddddddddd...', fd);
+  
+    const saveItem = async (e) => {
+      e.preventDefault();
+      let fd = new FormData();
+      fd.append("category", props.state.category);
+      fd.append("location", props.state.location);
+      if (props.state.PostOrSearch === 'Post item') {
+        fd.append("PostOrSearch", true);
+      }else{
+        fd.append("PostOrSearch", false);
+      }
+      // fd.append("PostOrSearch", props.state.PostOrSearch);
+      if (props.state.usedState === 'Used') {
+        fd.append("usedState", true);
+      }else{
+        fd.append("usedState", false);
+      }
+      
+      fd.append("name", props.state.name);
+      fd.append("userId", localStorage.getItem("userId"));
+      fd.append("description", props.state.description);
+      fd.append("image",imageSelected.raw);
+      fd.append("upload_preset","ml_default");
+  //  console.log('fddddddddd...', fd);
 
-    try {
-      axios({
-        method: 'POST',
-        url: `${baseURL}/items`,
+   try{
+     axios({
+        method: "POST",
+        url: `${baseURL}/api/items`,
         baseURL: baseURL,
         data: fd,
         headers: {
           'Content-Type': 'multipart/form-data',
         },
-      }).then((res) => {
-        console.log('resssssssssssss', res);
-      });
-    } catch (err) {
-      console.log(err);
-    }
-    window.location.replace('/items');
+
+      })
+        .then((res) => {
+          console.log("resssssssssssss", res);
+        })
+   }catch(err) {
+          console.log(err);
+        };
+        window.location.replace('/allItems');
+
   };
 
   // console.log('propssssss',props);

@@ -1,6 +1,9 @@
-import React from 'react';
-import 'react-bootstrap';
-import './Footer.css';
+
+import React from "react";
+import "react-bootstrap";
+import "./Footer.css";
+import { Link } from 'react-router-dom';
+
 
 function Footer() {
   return (
@@ -16,15 +19,15 @@ function Footer() {
             </h2>
             <ul>
               <li>
-                <a href="/aboutUs">About Us</a>
+                <Link to="/aboutUs">About Us</Link>
               </li>
               <li>
-                <a href="/CareersPage">Careers</a>
+                <Link to="/CareersPage">Careers</Link>
               </li>
               <li>
-                <a href="https://www.buymeacoffee.com/" target="_blank">
+                <Link to="https://www.buymeacoffee.com/" target="_blank">
                   Buy Me a Coffee
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -34,13 +37,13 @@ function Footer() {
             </h2>
             <ul>
               <li>
-                <a href="/Accordion">FAQ</a>
+                <Link to="/accordion">FAQ</Link>
               </li>
               <li>
-                <a href="/support">Support</a>
+                <Link to="/support">Support</Link>
               </li>
               <li>
-                <a href="/Advertise">Advertise</a>
+                <Link to="/advertise">Advertise</Link>
               </li>
             </ul>
           </div>
@@ -50,22 +53,26 @@ function Footer() {
             </h2>
             <ul>
               <li>
-                <a href="https://www.berlin.de/en/" target="_blank">
+                <Link to="https://www.berlin.de/en/" target="_blank">
                   Official Website of Berlin
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="https://tierschutz-berlin.de/" target="_blank">
-                  Tierheim Berlin
-                </a>
+
+                <Link
+                 to="https://allaboutberlin.com/guides/moving-to-berlin"
+                  target="_blank"
+                >
+                  Moving to Berlin Guide
+                </Link>
+
               </li>
               <li>
-                <a
-                  href="https://www.dw.com/en/guide-to-separating-trash-in-germany/g-38830796"
+                <Link to="https://www.dw.com/en/guide-to-separating-trash-in-germany/g-38830796"
                   target="_blank"
                 >
                   Separating Trash in Germany
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -94,19 +101,19 @@ function Footer() {
         <section className="ft-social">
           <ul className="ft-social-list">
             <li>
-              <a href="https://www.facebook.com/">
+              <Link to="https://www.facebook.com/">
                 <i className="fab fa-facebook"></i>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="https://twitter.com/" target="">
+              <Link to="https://twitter.com/" target="">
                 <i className="fab fa-twitter"></i>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="https://www.instagram.com/" target="">
+              <Link to="https://www.instagram.com/" target="">
                 <i className="fab fa-instagram"></i>
-              </a>
+              </Link>
             </li>
           </ul>
         </section>
@@ -115,10 +122,10 @@ function Footer() {
         <section className="ft-legal">
           <ul className="ft-legal-list">
             <li>
-              <a href="/Terms">Terms &amp; Conditions</a>
+              <Link to="/Terms">Terms &amp; Conditions</Link>
             </li>
             <li>
-              <a href="/Privacy">Privacy Policy</a>
+              <Link to="/Privacy">Privacy Policy</Link>
             </li>
             <li className="text-center">
               freeBay&copy; {new Date().getFullYear()} made by{' '}

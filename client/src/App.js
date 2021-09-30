@@ -62,7 +62,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Home} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/items" component={AllItems} />
+          <Route exact path="/allItems" component={AllItems} />
           <Route exact path="/postItemmm" component={PostItemmm} />
           <Route exact path="/support" component={Support} />
           <Route exact path="/aboutUs" component={AboutUs} />
@@ -70,7 +70,7 @@ function App() {
           <Route exact path="/Privacy" component={Privacy} />
           <Route exact path="/advertise" component={Advertise} />
           <Route exact path="/CareersPage" component={CareersPage} />
-          <Route exact path="/Accordion" component={Accordion} />
+          <Route exact path="/accordion" component={Accordion} />
           <Route exact path="/items/:filter" component={FByCategory} />
           <Route exact path="/items/singleItem/:id" component={SingleItem} />
           <Route exact path="/myItem" component={MyItem} />

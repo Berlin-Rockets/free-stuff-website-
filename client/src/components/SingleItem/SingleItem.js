@@ -15,7 +15,9 @@ const SingleItem = () => {
 
   const getSingleItem = async () => {
     try {
-      const res = await axios.get(baseURL + '/items/singleitem/' + id);
+
+      const res = await axios.get(baseURL + "/api/items/singleitem/" + id);
+
       console.log(res.data);
 
       setItem(res.data.data);
