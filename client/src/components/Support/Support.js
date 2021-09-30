@@ -1,21 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Support.css";
-import Accordion from "../Accordion/Accordion";
 import SupportForm from "../SupportForm/SupportForm";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
+
 
 function Support() {
   return (
     <React.Fragment>
       <div id="support">
         {" "}
-        <div class="pt-5 pb-5">
-          <div class="container">
-            <div class="section-head col-sm-12">
+        <div className="pt-5 pb-5">
+          <div className="container">
+            <div className="section-head col-sm-12">
               <h4>
                 <span>Support</span>
               </h4>

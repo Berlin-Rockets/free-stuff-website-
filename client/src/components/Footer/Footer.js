@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <div class="pt-5">
+    <div className="pt-5">
       <hr className="mx-auto hr-line" />
       <div className="container"></div>
       <div className="footer">
@@ -131,7 +131,7 @@ function Footer() {
               freeBay&copy; {new Date().getFullYear()} made by{' '}
               <a
                 href="https://www.linkedin.com/in/ahmad-suliman-19ba37214/"
-                target="_blank"
+                
                 className="text-decoration-underline"
               >
                 Ahmad
@@ -139,7 +139,7 @@ function Footer() {
               ,{' '}
               <a
                 href="https://www.linkedin.com/in/nathaly-colombo/"
-                target="_blank"
+                
                 className="text-decoration-underline"
               >
                 Nathaly
@@ -147,7 +147,7 @@ function Footer() {
               and{' '}
               <a
                 href="https://www.linkedin.com/in/stanislavgenunchi/"
-                target="_blank"
+                
                 className="text-decoration-underline"
               >
                 Stanislav

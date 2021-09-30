@@ -32,7 +32,7 @@ export default function FByCategory() {
 
   useEffect(() => {
     getItems();
-  }, []);
+  });
 
 
       const filterItems = async (cat) => {

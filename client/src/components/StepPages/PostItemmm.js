@@ -4,10 +4,8 @@ import NameAndCategory from './NameAndCategory';
 import LocationAndDiscreption from './LocationAndDiscreption';
 import PostOrSearch from './PostOrSearch';
 import FinalPage from './FinalPage';
-import { Col, Row } from 'antd';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
 import './postItem.css';
 import Login from '../Login/Login';
 
@@ -54,17 +52,17 @@ const Navigation = (props) => {
 function PostItemmm() {
   const userId = localStorage.getItem('userId');
 
-  const useStyles = makeStyles((theme) => ({
-    button: {
-      display: 'block',
-      marginTop: theme.spacing(2),
-    },
-    formControl: {
-      margin: theme.spacing(1),
-      minWidth: 120,
-      maxWidth: 800,
-    },
-  }));
+  // const useStyles = makeStyles((theme) => ({
+  //   button: {
+  //     display: 'block',
+  //     marginTop: theme.spacing(2),
+  //   },
+  //   formControl: {
+  //     margin: theme.spacing(1),
+  //     minWidth: 120,
+  //     maxWidth: 800,
+  //   },
+  // }));
   const config = {
     navigation: {
       component: Navigation, // a React component with special props provided automatically

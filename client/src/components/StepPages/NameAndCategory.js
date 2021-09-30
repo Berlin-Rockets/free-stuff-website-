@@ -18,13 +18,13 @@ export default function NameAndCategory(props) {
       <p>
         <label htmlFor="">Choose a category for your item</label>
         <select
-          class="form-select"
+          className="form-select"
           aria-label="Default select example"
           name="category"
           onChange={props.handleChange}
           defaultValue={props.getState('category', '')}
         >
-          <option selected></option>
+          <option></option>
           <option>Auto</option>
           <option>Electronics & Appliances</option>
           <option>Furniture</option>

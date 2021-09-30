@@ -24,7 +24,7 @@ const getItem = async () => {
   };
   useEffect(() => {
     getItem();
-  }, []);
+  });
 
   const updateItem = async (e) => {
     e.preventDefault();

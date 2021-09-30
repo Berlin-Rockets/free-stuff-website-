@@ -34,7 +34,7 @@ const AllItems = () => {
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8">
           {items.map((item) => {
             return (
-              <div className="col">
+              <div className="col" key={item._id}>
                 <div className="card card-style mx-auto border-0">
                   <Link
                     to={'items/singleItem/' + item._id}
@@ -56,8 +56,8 @@ const AllItems = () => {
                         <small className="">Location: {item.location}</small>
                       </p>
                     </div>
-                    <div class="card-footer">
-                      <small class="text-muted">
+                    <div className="card-footer">
+                      <small className="text-muted">
                         Published on:{' '}
                         <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>
                       </small>

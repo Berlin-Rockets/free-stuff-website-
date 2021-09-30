@@ -3,9 +3,9 @@ import React from 'react';
 function SupportForm() {
   return (
     <div>
-      <div class="container">
+      <div className="container">
         {' '}
-        <div class="section-head col-sm-12">
+        <div className="section-head col-sm-12">
           <h4>
             <span>Contact Form</span>
           </h4>
@@ -14,38 +14,38 @@ function SupportForm() {
             inquire.
           </p>
         </div>
-        <div class="row">
-          <div class="col-lg-7 mx-auto">
-            <div class="card mt-2 mx-auto p-4 bg-light">
-              <div class="card-body bg-light">
-                <div class="container">
-                  <form id="contact-form" role="form">
-                    <div class="controls">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
+        <div className="row">
+          <div className="col-lg-7 mx-auto">
+            <div className="card mt-2 mx-auto p-4 bg-light">
+              <div className="card-body bg-light">
+                <div className="container">
+                  <form id="contact-form" >
+                    <div className="controls">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="form-group">
                             {' '}
-                            <label for="form_name">Firstname *</label>{' '}
+                            <label htmlFor="form_name">Firstname *</label>{' '}
                             <input
                               id="form_name"
                               type="text"
                               name="name"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Please enter your firstname *"
                               required="required"
                               data-error="Firstname is required."
                             />{' '}
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
+                        <div className="col-md-6">
+                          <div className="form-group">
                             {' '}
-                            <label for="form_lastname">Lastname *</label>{' '}
+                            <label htmlFor="form_lastname">Lastname *</label>{' '}
                             <input
                               id="form_lastname"
                               type="text"
                               name="surname"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Please enter your lastname *"
                               required="required"
                               data-error="Lastname is required."
@@ -53,36 +53,36 @@ function SupportForm() {
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="form-group">
                             {' '}
-                            <label for="form_email">Email *</label>{' '}
+                            <label htmlFor="form_email">Email *</label>{' '}
                             <input
                               id="form_email"
                               type="email"
                               name="email"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Please enter your email *"
                               required="required"
                               data-error="Valid email is required."
                             />{' '}
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
+                        <div className="col-md-6">
+                          <div className="form-group">
                             {' '}
-                            <label for="form_need">
+                            <label htmlFor="form_need">
                               Please specify your need *
                             </label>{' '}
                             <select
                               id="form_need"
                               name="need"
-                              class="form-control"
+                              className="form-control"
                               required="required"
                               data-error="Please specify your need."
                             >
-                              <option value="" selected disabled>
+                              <option value=""  disabled>
                                 --Select Your Issue--
                               </option>
                               <option>Advertise</option>
@@ -93,15 +93,15 @@ function SupportForm() {
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group">
+                      <div className="row">
+                        <div className="col-md-12">
+                          <div className="form-group">
                             {' '}
-                            <label for="form_message">Message *</label>{' '}
+                            <label htmlFor="form_message">Message *</label>{' '}
                             <textarea
                               id="form_message"
                               name="message"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Write your message here."
                               rows="4"
                               required="required"
@@ -110,10 +110,10 @@ function SupportForm() {
                           </div>
                         </div>
 
-                        <div class="col-md-12 pt-2">
+                        <div className="col-md-12 pt-2">
                           <input
                             type="submit"
-                            class="btn btn-success btn-send pt-2 btn-block float:right"
+                            className="btn btn-success btn-send pt-2 btn-block float:right"
                             value="Submit"
                           />{' '}
                         </div>

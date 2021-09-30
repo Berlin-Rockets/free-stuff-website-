@@ -28,7 +28,7 @@ const SingleItem = () => {
 
   useEffect(() => {
     getSingleItem();
-  }, []);
+  });
 
   // const goBack =()=>{
   //   window.history.back()

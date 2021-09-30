@@ -5,10 +5,10 @@ import "./AboutUs.css";
 function AboutUsPage() {
   return (
     <div id="aboutus">
-      <div class="pt-5 pb-5">
-        <div class="container">
-          <div class="row">
-            <div class="section-head col-sm-12">
+      <div className="pt-5 pb-5">
+        <div className="container">
+          <div className="row">
+            <div className="section-head col-sm-12">
               <h4>
                 <span>About Us</span>
               </h4>
@@ -19,10 +19,10 @@ function AboutUsPage() {
                 others.
               </p>
             </div>
-            <div class="col-lg-4 col-sm-6">
-              <div class="item">
-                <span class="icon feature_box_col_one">
-                  <i class="fa fa-feather"></i>
+            <div className="col-lg-4 col-sm-6">
+              <div className="item">
+                <span className="icon feature_box_col_one">
+                  <i className="fa fa-feather"></i>
                 </span>
                 <h6>Story</h6>
                 <p>
@@ -32,10 +32,10 @@ function AboutUsPage() {
                 </p>
               </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-              <div class="item">
-                <span class="icon feature_box_col_one">
-                  <i class="fa fa-lightbulb"></i>
+            <div className="col-lg-4 col-sm-6">
+              <div className="item">
+                <span className="icon feature_box_col_one">
+                  <i className="fa fa-lightbulb"></i>
                 </span>
                 <h6>Motivation</h6>
                 <p>
@@ -48,10 +48,10 @@ function AboutUsPage() {
                 </p>
               </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-              <div class="item">
-                <span class="icon feature_box_col_one">
-                  <i class="fa fa-laptop-code"></i>
+            <div className="col-lg-4 col-sm-6">
+              <div className="item">
+                <span className="icon feature_box_col_one">
+                  <i className="fa fa-laptop-code"></i>
                 </span>
                 <h6>Who We Are</h6>
                 <p>

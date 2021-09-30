@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'react-bootstrap';
 import './Searchbar.css';
-import { Button } from '../Button/Button';
+
 import baseURL from '../../config/baseUrl';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ export default function Searchbar() {
 const getAllItems = async () => {
   try {
     const res = await axios.get(baseURL + '/api/items');
-    console.log('searchbar dataaaa',res.data.data);
+    
     setData(res.data.data)
   } catch (e) {
     console.log(e);

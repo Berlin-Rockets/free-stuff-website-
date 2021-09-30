@@ -1,10 +1,8 @@
-import React from 'react';
-import { MenuItems } from './MenuItems';
-import { Button } from '../Button/Button';
-import './Navbar.css';
-import { Link } from 'react-router-dom';
-import logo from '../../../src/freeBay_11_500_logo.png';
-import { Container } from 'react-bootstrap';
+import React from "react";
+import { MenuItems } from "./MenuItems";
+import "./Navbar.css";
+import { Link } from "react-router-dom";
+import logo from "../../../src/freeBay_11_500_logo.png";
 
 class Navbar extends React.Component {
   state = {
@@ -15,9 +13,9 @@ class Navbar extends React.Component {
     this.setState({ clicked: !this.state.clicked });
   };
   onLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userId');
-    window.location.replace('/');
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    window.location.replace("/");
   };
 
   render() {
@@ -32,10 +30,10 @@ class Navbar extends React.Component {
 
         <div className="menu-icon" onClick={this.handleClick}>
           <i
-            className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}
+            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
           ></i>
         </div>
-        <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu '}>
+        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu "}>
           {MenuItems.map((item, index) => {
             return (
               <li key={index}>
