@@ -17,7 +17,7 @@ export default function AllItemsControl() {
   };
   const getItems = async (e) => {
     try {
-      const allItemsData = await axios.get(baseURL + "/items");
+      const allItemsData = await axios.get(baseURL + "/api/items");
       console.log('all items...............',allItemsData.data);
       setAllItems(allItemsData.data.data);
     } catch (e) {
@@ -32,7 +32,7 @@ export default function AllItemsControl() {
 
   const deleteItem = async (id) => {
     console.log(id);
-    await axios.delete(baseURL + "/items/" + id);
+    await axios.delete(baseURL + "/api/items/" + id);
 
     window.location.reload();
   };

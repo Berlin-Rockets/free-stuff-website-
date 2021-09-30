@@ -10,15 +10,17 @@ export default function Searchbar() {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
 
-  const getAllItems = async () => {
-    try {
-      const res = await axios.get(baseURL + '/items');
-      console.log('searchbar dataaaa', res.data.data);
-      setData(res.data.data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+
+const getAllItems = async () => {
+  try {
+    const res = await axios.get(baseURL + '/api/items');
+    console.log('searchbar dataaaa',res.data.data);
+    setData(res.data.data)
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 
   useEffect(() => {
     getAllItems();

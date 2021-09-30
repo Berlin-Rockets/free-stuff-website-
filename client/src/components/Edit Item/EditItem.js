@@ -14,7 +14,7 @@ console.log(id);
 const getItem = async () => {
     try {
       //  const userId =localStorage.getItem('userId')
-      const userItemData = await axios.get(baseURL + "/items/singleItem/" + id);
+      const userItemData = await axios.get(baseURL + "/api/items/singleItem/" + id);
     //   console.log('item data ------>>',userItemData.data.data);
       setItem(userItemData.data.data);
       
@@ -41,7 +41,7 @@ const getItem = async () => {
     console.log('item data ------>>',itemData);
     try {
       await axios.patch(
-        baseURL + "/items/" + id,
+        baseURL + "/api/items/" + id,
        itemData
       );
       

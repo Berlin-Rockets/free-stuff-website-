@@ -17,40 +17,44 @@ export default function FByCategory() {
   const label = useParams();
   // console.log(label.filter);
 
-  const getItems = async () => {
-    try {
-      const res = await axios.get(baseURL + '/items/' + label.filter);
-      // console.log(res.data);
-      setItems(res.data.data);
-      setCategory(label.filter);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+
+    const getItems = async () => {
+        try {
+          const res = await axios.get(baseURL + '/api/items/'+ label.filter);
+          // console.log(res.data);
+          setItems(res.data.data);
+          setCategory(label.filter)
+        } catch (e) {
+          console.log(e);
+        }
+      };
+
 
   useEffect(() => {
     getItems();
   }, []);
 
-  const filterItems = async (cat) => {
-    try {
-      const res = await axios.get(baseURL + '/items/' + cat);
-      console.log(res.data);
-      setItems(res.data.data);
-      setCategory(cat);
-    } catch (e) {
-      console.log(e);
-    }
-  };
 
-  const filterItemsByLoc = async (loc) => {
-    const res = await axios.get(
-      baseURL + '/items/filter/' + category + '/' + loc
-    );
-    console.log(res.data.data);
-    setItems(res.data.data);
-    setLocation(loc);
-  };
+      const filterItems = async (cat) => {
+      
+        
+        try {
+          const res = await axios.get(baseURL + '/api/items/' + cat);
+          console.log(res.data);
+          setItems(res.data.data);
+          setCategory(cat)
+        } catch (e) {
+          console.log(e);
+        }
+      };
+
+      const filterItemsByLoc=async(loc)=>{
+        const res=await axios.get(baseURL+'/api/items/filter/'+ category +'/'+ loc)
+        console.log(res.data.data);
+        setItems(res.data.data);
+       setLocation(loc)
+      }
+
 
   //   console.log('itemmmmmmmmmm',items);
   return items ? (
