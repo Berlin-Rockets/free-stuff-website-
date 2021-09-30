@@ -5,7 +5,7 @@ import './Footer.css';
 function Footer() {
   return (
     <div class="pt-5">
-      <hr />
+      <hr className="mx-auto hr-line" />
       <div className="container"></div>
       <div className="footer">
         {/* Footer main */}
@@ -120,25 +120,28 @@ function Footer() {
             <li>
               <a href="/Privacy">Privacy Policy</a>
             </li>
-            <li className='text-center'>
-              &copy;{new Date().getFullYear()}  made by{" "}
+            <li className="text-center">
+              freeBay&copy; {new Date().getFullYear()} made by{' '}
               <a
                 href="https://www.linkedin.com/in/ahmad-suliman-19ba37214/"
                 target="_blank"
+                className="text-decoration-underline"
               >
                 Ahmad
               </a>
-              ,{" "}
+              ,{' '}
               <a
                 href="https://www.linkedin.com/in/nathaly-colombo/"
                 target="_blank"
+                className="text-decoration-underline"
               >
                 Nathaly
-              </a>{" "}
-              
+              </a>{' '}
+              and{' '}
               <a
                 href="https://www.linkedin.com/in/stanislavgenunchi/"
                 target="_blank"
+                className="text-decoration-underline"
               >
                 Stanislav
               </a>

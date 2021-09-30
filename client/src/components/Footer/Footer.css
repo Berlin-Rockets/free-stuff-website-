@@ -88,13 +88,13 @@ form {
   flex-wrap: wrap;
 }
 
-input[type="email"] {
+input[type='email'] {
   border: 0;
   padding: 0.625rem;
   margin-top: 0.3125rem;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   background: var(--dark);
   color: var(--light-grey);
   cursor: pointer;
@@ -179,4 +179,10 @@ a:hover i {
 .subscribe-style-submit {
   border-top-right-radius: 3.5px;
   border-bottom-right-radius: 3.5px;
+}
+
+.hr-line {
+  width: 81%;
+
+  border: 1px solid black;
 }
