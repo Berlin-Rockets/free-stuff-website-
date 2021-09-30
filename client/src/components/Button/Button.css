@@ -13,12 +13,12 @@
   font-weight: 600;
 }
 
-.btn:hover {
+/* .btn:hover {
   padding: 8px 20px;
   transition: all 0.3s ease-out;
   color: var(--primary);
   transition: 250ms;
-}
+} */
 
 .btn--primary {
   background-color: var(--primary);
@@ -41,10 +41,43 @@
   color: #1e212d;
 }
 
-.btn-large {
+.btn--large {
   padding: 12px 26px;
   border-radius: 4px;
   font-size: 1rem;
   background-color: #eabf9f;
   color: #1e212d;
+}
+
+.btn--log-reg {
+  background-color: var(--dark-two);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.btn-log-modal {
+  background: var(--dark-two);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.btn--search {
+  /* background-color: var(--dark-two); */
+  color: var(--black);
+  padding: 8px 20px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
 }

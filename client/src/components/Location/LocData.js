@@ -1,24 +1,20 @@
 const locData = [
-
-    'Berlin',
-  'Hamburg',
+  'Berlin',
   'Baden-Württemberg',
   'Bayern',
   'Brandenburg',
   'Bremen',
+  'Hamburg',
   'Hessen',
-  'Niedersachsen',
   'Mecklenburg-Vorpommern',
+  'Niedersachsen',
   'Nordrhein-Westfalen',
   'Rheinland-Pfalz',
   'Saarland',
-  'Sachsen',
   'Sachsen-Anhalt',
+  'Sachsen',
   'Schleswig-Holstein',
- 'Thüringen'
-  ];
-  
-  export default locData;
+  'Thüringen',
+];
 
-
-
+export default locData;

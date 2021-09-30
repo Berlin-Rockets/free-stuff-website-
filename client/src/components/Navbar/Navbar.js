@@ -1,9 +1,10 @@
 import React from 'react';
 import { MenuItems } from './MenuItems';
-import { Button } from './Button';
+import { Button } from '../Button/Button';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import logo from '../../../src/freeBay_11_500_logo.png';
+import { Container } from 'react-bootstrap';
 
 class Navbar extends React.Component {
   state = {
@@ -46,30 +47,21 @@ class Navbar extends React.Component {
           })}
 
           {!this.props.user && (
-            <div className="d-flex m-3 align-items-center">
-              <div className="btn-login">
-                <Button>
-                  <Link
-                    to="/login"
-                    className="text-dark text-decoration-none fw-bolder fs-5"
-                  >
-                    {' '}
-                    login
-                  </Link>
-                </Button>
-              </div>
+            <div className="btn-container d-flex">
+              <Link
+                to="/login"
+                className="text-dark text-decoration-none fw-bolder fs-5"
+              >
+                <div className="btn--log-reg">login</div>
+              </Link>
               <div className="divider" />
 
-              <div className="btn-register">
-                <Button>
-                  <Link
-                    to="/register"
-                    className="text-dark text-decoration-none fw-bolder fs-5"
-                  >
-                    Register
-                  </Link>
-                </Button>
-              </div>
+              <Link
+                to="/register"
+                className="text-dark text-decoration-none fw-bolder fs-5"
+              >
+                <div className="btn--log-reg">register</div>
+              </Link>
             </div>
           )}
 
@@ -120,9 +112,9 @@ class Navbar extends React.Component {
                 )}
               </ul>
               <div className="btn-register">
-                <Button className="fw-bolder fs-5" onClick={this.onLogout}>
+                <div className="btn--log-reg" onClick={this.onLogout}>
                   logout
-                </Button>
+                </div>
               </div>
             </li>
           )}

@@ -1,12 +1,14 @@
+
 import React from "react";
 import "react-bootstrap";
 import "./Footer.css";
 import { Link } from 'react-router-dom';
 
+
 function Footer() {
   return (
     <div class="pt-5">
-      <hr />
+      <hr className="mx-auto hr-line" />
       <div className="container"></div>
       <div className="footer">
         {/* Footer main */}
@@ -56,12 +58,14 @@ function Footer() {
                 </Link>
               </li>
               <li>
+
                 <Link
                  to="https://allaboutberlin.com/guides/moving-to-berlin"
                   target="_blank"
                 >
                   Moving to Berlin Guide
                 </Link>
+
               </li>
               <li>
                 <Link to="https://www.dw.com/en/guide-to-separating-trash-in-germany/g-38830796"
@@ -82,8 +86,13 @@ function Footer() {
                 type="email"
                 name="email"
                 placeholder="Enter email address"
+                className="subscribe-style-input"
               />
-              <input type="submit" value="Subscribe" />
+              <input
+                type="submit"
+                value="Subscribe"
+                className="subscribe-style-submit"
+              />
             </form>
           </div>
         </section>
@@ -118,8 +127,31 @@ function Footer() {
             <li>
               <Link to="/Privacy">Privacy Policy</Link>
             </li>
-            <li>
-              &copy;{new Date().getFullYear()} Freebay - All Rights Reserved
+            <li className="text-center">
+              freeBay&copy; {new Date().getFullYear()} made by{' '}
+              <a
+                href="https://www.linkedin.com/in/ahmad-suliman-19ba37214/"
+                target="_blank"
+                className="text-decoration-underline"
+              >
+                Ahmad
+              </a>
+              ,{' '}
+              <a
+                href="https://www.linkedin.com/in/nathaly-colombo/"
+                target="_blank"
+                className="text-decoration-underline"
+              >
+                Nathaly
+              </a>{' '}
+              and{' '}
+              <a
+                href="https://www.linkedin.com/in/stanislavgenunchi/"
+                target="_blank"
+                className="text-decoration-underline"
+              >
+                Stanislav
+              </a>
             </li>
           </ul>
         </section>

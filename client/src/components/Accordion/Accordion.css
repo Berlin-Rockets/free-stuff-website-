@@ -30,7 +30,7 @@ body {
   color: var(--dark);
   list-style: none;
   overflow: hidden;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   /* position: absolute; */
   /* width: 50%; */
   /* top: 50%; */
@@ -38,6 +38,7 @@ body {
   /* margin-right: -50%; */
   /* transform: translate(-50%, -50%); */
   /* width: 60%; */
+  border-radius: 3.5px;
 }
 
 .accordion_item {

@@ -1,4 +1,4 @@
-.register{
+/* .register{
     width: 50%;
      height: 65%; 
     background: rgba(29, 27, 27, 0.8);
@@ -17,4 +17,36 @@ form{
 .par{
     width: 5%;
     border-radius: 50%;
+} */
+
+.register-container {
+  background: var(--light-green); /*fallback for old browsers*/
+  background: -webkit-linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /*Chrome 10-25, Safari 5.1-6*/
+  background: linear-gradient(
+    to right,
+    var(--light-blue),
+    var(--light-green)
+  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap-reverse;
+  padding: 30px 0 50px 0;
+}
+
+.card-container-reg {
+  width: 50%;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.5);
+}
+
+.input-style {
+  height: 2.5rem;
+  /* width: 90%; */
+  /* display: block; */
+  /* margin: 0 auto; */
 }

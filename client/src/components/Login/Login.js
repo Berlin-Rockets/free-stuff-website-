@@ -4,6 +4,7 @@ import baseURL from '../../config/baseUrl';
 import './Login.css';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
+import '../Button/Button.css';
 
 export default function Login() {
   const [error, setError] = useState();
@@ -99,7 +100,7 @@ export default function Login() {
   };
 
   return (
-    <div className="login d-flex  flex-column align-items-center  height rounded">
+    <div className="login-container d-flex justify-content-center mx-0">
       {error && (
         <div className="alert alert-danger" role="alert">
           {error}
@@ -110,80 +111,97 @@ export default function Login() {
           {success}
         </div>
       )}
-      <form
-        className="d-flex  flex-column mt-5 "
-        action="/login"
-        method="POST"
-        onSubmit={loginHandler}
-      >
-        <input
-          className="form-control   m-3 border"
-          type="email"
-          name="email"
-          aria-label="email"
-          id="inputEmail3"
-          placeholder="email"
-          required
-        />
-
-        <input
-          type="password"
-          className="form-control m-3"
-          name="password"
-          aria-label="password"
-          id="inputPassword3"
-          placeholder="Password"
-          required
-        />
-
-        <div className="form-check mt-2">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label className="form-check-label" for="flexCheckDefault">
-            Keep me logged in
-          </label>
+      <div className="card-container card">
+        <div className="card-header header-style text-center">
+          <h5 className="pt-2">Log in with your account!</h5>
         </div>
+        <div className="card-body ">
+          <div className="card-title mt-3">
+            Please enter your credentials below:
+          </div>
+          <form
+            className="d-flex flex-column"
+            action="/login"
+            method="POST"
+            onSubmit={loginHandler}
+          >
+            <input
+              className="form-control border mb-3"
+              type="email"
+              name="email"
+              aria-label="email"
+              id="inputEmail3"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              aria-label="password"
+              id="inputPassword3"
+              placeholder="Password"
+              required
+            />
+            <div className="form-check mt-2">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label
+                className="form-check-label text-color"
+                for="flexCheckDefault"
+              >
+                Keep me logged in
+              </label>
+            </div>
+            <div className="form-check mt-2 ">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="CheckDefault"
+                required
+              />
+              <label
+                className="form-check-label text-color"
+                for="flexCheckDefault"
+              >
+                I am not a robot - reCAPTCHA
+              </label>
+            </div>
 
-        <div className="form-check mt-2 ">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            value=""
-            id="CheckDefault"
-            required
-          />
-          <label className="form-check-label" for="flexCheckDefault">
-            I am not a robot - reCAPTCHA
-          </label>
-        </div>
-        <div className="my=4">
-          <p className="my=4">
-            If you don't have an account, please{' '}
-            <a href="/register">register here</a>{' '}
-          </p>
-        </div>
+            <p className="my-4 text-color">
+              If you don't have an account, please{' '}
+              <a href="/register">register here</a>{' '}
+            </p>
 
-        <input className="btn btn-primary  my-3 " type="submit" value="login" />
-      </form>
-      <div className="d-flex flex-column ">
-        <GoogleLogin
-          clientId="353102265666-7892m1a66n2nim7n9alca66ctocb62bf.apps.googleusercontent.com"
-          buttonText="Login with Google"
-          onSuccess={responseSuccessGoogle}
-          onFailure={responseErrorGoogle}
-          cookiePolicy={'single_host_origin'}
-        />
-        ,
-        <FacebookLogin
-          appId="211939294322602"
-          autoLoad={false}
-          callback={responseFacebook}
-        />
-        ,
+            <input
+              className="btn-dark btn-log-modal mt-3 mb-4 py-0"
+              type="submit"
+              value="login"
+            />
+          </form>
+          <div className="d-flex flex-row justify-content-between">
+            <div className="btn-google">
+              <GoogleLogin
+                clientId="353102265666-7892m1a66n2nim7n9alca66ctocb62bf.apps.googleusercontent.com"
+                buttonText="Login with Google"
+                onSuccess={responseSuccessGoogle}
+                onFailure={responseErrorGoogle}
+                cookiePolicy={'single_host_origin'}
+              />
+            </div>
+            <FacebookLogin
+              appId="211939294322602"
+              autoLoad={false}
+              callback={responseFacebook}
+              cssClass="my-facebook-button-class"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

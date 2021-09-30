@@ -37,30 +37,35 @@ export default function MyItem() {
 
 // console.log(Item);
 return user ? (
-    <div className="container ">
-      <h1>All Items</h1>
-      <h4>Hallo  {user.name}</h4>
-      <h4>{user.email}</h4>
+    <div className="container d-flex flex-column align-items-center ">
+      <h1 className='text-center'>My Items</h1>
+      <h4 className='text-center'>Hallo  {user.name}</h4>
+      <p className='text-center'>{user.email}</p>
 
       {Items && Items.length > 0 ? (
         Items.map((el) => {
           //  console.log(el);
           return (
-            <div key={el.id}>
-              <li className="d-flex m-3 justify-content-between border">
-                <div className="d-flex align-items-center">
+            <div key={el.id} className='d-flex justify-content-between bg-light rounded w-100 my-2'>
+          
+           
+                <div className="d-flex align-items-center m-2 ">
                   <img
                     src={el.images[0]}
                     className=""
-                    width="100"
+                    width="35%"
                     alt="2"
                   />
-                  <p className="bg-white ms-2">{el.name}</p>
+                  <p className=" m-2">{el.name}</p>
                 </div>
-                <div className="d-flex align-items-center">
+               
+             
+           
+             
+               <div className="my-auto d-block">
                   <Link
                     to={"/editItem/" + el._id}
-                    className="btn btn-outline-success me-2"
+                    className="btn btn-outline-success m-2"
                   >
                     Edit
                   </Link>
@@ -74,7 +79,6 @@ return user ? (
                     Delete
                   </button>
                 </div>
-              </li>
             </div>
           );
         })

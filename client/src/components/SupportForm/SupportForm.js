@@ -1,232 +1,133 @@
-import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
-import Container from "@material-ui/core/Container";
-import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
-import Grid from "@material-ui/core/Grid";
-import FormControl from "@material-ui/core/FormControl";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormLabel from "@material-ui/core/FormLabel";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import InputLabel from "@material-ui/core/InputLabel";
-import "./SupportForm.css";
+import React from 'react';
 
-const useStyles = makeStyles({
-  field: {
-    marginTop: 20,
-    marginBottom: 20,
-    // display: 'block',
-  },
-});
-
-const SupportForm = () => {
-  const classes = useStyles();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [salutation, setSalutation] = useState("");
-  const [details, setDetails] = useState("");
-  const [firstNameError, setFirstNameError] = useState(false);
-  const [lastNameError, setLastNameError] = useState(false);
-  const [detailsError, setDetailsError] = useState(false);
-  const [category, setCategory] = useState("Mr.");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFirstNameError(false);
-    setLastNameError(false);
-    setSalutation(false);
-    setDetailsError(false);
-
-    if (firstName === "") {
-      setFirstNameError(true);
-    }
-    if (lastName === "") {
-      setLastNameError(true);
-    }
-    if (details === "") {
-      setDetailsError(true);
-    }
-    // if (firstName && details) {
-    //   console.log(firstName, details, category);
-    // }
-  };
-
+function SupportForm() {
   return (
-    <Container>
-      <Typography variant="h4" component="h2" gutterBottom>
-        Contact Form
-      </Typography>
+    <div>
+      <div class="container">
+        {' '}
+        <div class="section-head col-sm-12">
+          <h4>
+            <span>Contact Form</span>
+          </h4>
+          <p>
+            Keep in mind that our team takes up to 72 hours to respond your
+            inquire.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+              <div class="card-body bg-light">
+                <div class="container">
+                  <form id="contact-form" role="form">
+                    <div class="controls">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            {' '}
+                            <label for="form_name">Firstname *</label>{' '}
+                            <input
+                              id="form_name"
+                              type="text"
+                              name="name"
+                              class="form-control"
+                              placeholder="Please enter your firstname *"
+                              required="required"
+                              data-error="Firstname is required."
+                            />{' '}
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            {' '}
+                            <label for="form_lastname">Lastname *</label>{' '}
+                            <input
+                              id="form_lastname"
+                              type="text"
+                              name="surname"
+                              class="form-control"
+                              placeholder="Please enter your lastname *"
+                              required="required"
+                              data-error="Lastname is required."
+                            />{' '}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            {' '}
+                            <label for="form_email">Email *</label>{' '}
+                            <input
+                              id="form_email"
+                              type="email"
+                              name="email"
+                              class="form-control"
+                              placeholder="Please enter your email *"
+                              required="required"
+                              data-error="Valid email is required."
+                            />{' '}
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            {' '}
+                            <label for="form_need">
+                              Please specify your need *
+                            </label>{' '}
+                            <select
+                              id="form_need"
+                              name="need"
+                              class="form-control"
+                              required="required"
+                              data-error="Please specify your need."
+                            >
+                              <option value="" selected disabled>
+                                --Select Your Issue--
+                              </option>
+                              <option>Advertise</option>
+                              <option>My Account</option>
+                              <option>Post Item</option>
+                              <option>Other</option>
+                            </select>{' '}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            {' '}
+                            <label for="form_message">Message *</label>{' '}
+                            <textarea
+                              id="form_message"
+                              name="message"
+                              class="form-control"
+                              placeholder="Write your message here."
+                              rows="4"
+                              required="required"
+                              data-error="Please, leave us a message."
+                            ></textarea>{' '}
+                          </div>
+                        </div>
 
-      <FormLabel component="legend">
-        Keep in mind that our Support team takes up to 72 hours to provide you
-        with a response.
-      </FormLabel>
-
-      <FormControl
-        fullWidth
-        // className={classes.field}
-      >
-        <RadioGroup
-          row
-          aria-label="gender"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          name="row-radio-buttons-groups"
-        >
-          <FormControlLabel
-            value="mr"
-            control={<Radio />}
-            label="Mr."
-            style={{ paddingRight: "80px" }}
-          />
-          <FormControlLabel
-            value="mrs/ms"
-            control={<Radio />}
-            label="Mrs. / Ms."
-          />
-        </RadioGroup>
-      </FormControl>
-
-      <FormControl>
-        <InputLabel id="demo-simple-select-standard-label">
-          Salutation
-        </InputLabel>
-        <Select
-          labelId="demo-simple-select-standard-label"
-          id="demo-simple-select-standard"
-          value={salutation}
-          onChange={(e) => setSalutation(e.target.value)}
-          label="Salutation"
-          style={{ width: "120px" }}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={"Dr."}>Dr.</MenuItem>
-          <MenuItem value={"Prof."}>Prof.</MenuItem>
-          <MenuItem value={"Dr. Dr."}>Dr. Dr.</MenuItem>
-          <MenuItem value={"Prof. Dr."}>Prof. Dr.</MenuItem>
-        </Select>
-      </FormControl>
-
-      <form noValidate onSubmit={handleSubmit}>
-        <TextField
-          required
-          // className={classes.field}
-          onChange={(e) => setFirstName(e.target.value)}
-          id="firstName"
-          name="firstName"
-          label="First Name"
-          color="secondary"
-          fullWidth
-          error={firstNameError}
-          autoComplete="given-name"
-          variant="standard"
-        />
-        <TextField
-          required
-          // className={classes.field}
-          onChange={(e) => setLastName(e.target.value)}
-          id="lastName"
-          name="lastName"
-          label="Last Name"
-          color="secondary"
-          fullWidth
-          error={lastNameError}
-          autoComplete="family-name"
-          variant="standard"
-        />
-        <TextField
-          // className={classes.field}
-          onChange={(e) => setDetails(e.target.value)}
-          label="Details"
-          variant="outlined"
-          color="secondary"
-          multiline
-          rows={4}
-          fullWidth
-          required
-          error={detailsError}
-        />
-        {/* <Radio value="hello" />
-          <Radio value="goodbye" /> */}
-
-        <Button
-          color="secondary"
-          type="submit"
-          variant="contained"
-          endIcon={<KeyboardArrowRightIcon />}
-        >
-          Submit
-        </Button>
-      </form>
-    </Container>
+                        <div class="col-md-12 pt-2">
+                          <input
+                            type="submit"
+                            class="btn btn-success btn-send pt-2 btn-block float:right"
+                            value="Submit"
+                          />{' '}
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
-
-// const SupportForm = () => {
-//   return (
-//     <React.Fragment>
-//       <Typography variant="h4">Contact Form</Typography>
-//       <form>
-//         <FormControl component="fieldset">
-//           <FormLabel component="legend">
-//             Please let us know about your request. We will get back to you
-//             within 3 days.
-//           </FormLabel>
-//           <Grid container spacing={3}>
-//             <Grid item xs={12} sm={6}>
-//               <RadioGroup
-//                 aria-label="quiz"
-//                 name="quiz"
-//                 // value={value}
-//                 // onChange={handleRadioChange}
-//               >
-//                 <FormControlLabel
-//                   value="best"
-//                   control={<Radio />}
-//                   label="The best!"
-//                 />
-//                 <FormControlLabel
-//                   value="worst"
-//                   control={<Radio />}
-//                   label="The worst."
-//                 />
-//               </RadioGroup>
-//             </Grid>
-
-//             <Grid item xs={12} sm={6}>
-//               <TextField
-//                 required
-//                 id="firstName"
-//                 name="firstName"
-//                 label="First Name"
-//                 fullWidth
-//                 autoComplete="given-name"
-//                 variant="standard"
-//               />
-//             </Grid>
-//             <Grid item xs={12} sm={6}>
-//               <TextField
-//                 required
-//                 id="lastName"
-//                 name="lastName"
-//                 label="Last Name"
-//                 fullWidth
-//                 autoComplete="family-name"
-//                 variant="standard"
-//               />
-//             </Grid>
-//           </Grid>
-//         </FormControl>
-//       </form>
-//     </React.Fragment>
-//   );
-// };
+}
 
 export default SupportForm;

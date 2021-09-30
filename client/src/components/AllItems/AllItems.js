@@ -49,10 +49,10 @@ const AllItems = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title mb-0 font-weight-bold">
+                      <h5 className="card-title-style mb-0 font-weight-bold">
                         {item.name}
                       </h5>
-                      <p className="card-text mb-0">
+                      <p className="card-text card-text-style mb-0">
                         <small className="">Location: {item.location}</small>
                       </p>
                     </div>
@@ -71,7 +71,7 @@ const AllItems = () => {
       </div>
     </React.Fragment>
   ) : (
-    <div>Loading...</div>
+    <div className="loading">Loading...</div>
   );
 };
 

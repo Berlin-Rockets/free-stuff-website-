@@ -38,17 +38,17 @@ export default function AllItemsControl() {
   };
   // console.log(allItem.data);
   return user ? (
-    <div className="container ">
+    <div className="container d-flex flex-column align-items-center">
       <h1>All Items</h1>
       <h4>Hallo Admin: {user.name}</h4>
-      <h4>{user.email}</h4>
+      <p>{user.email}</p>
 
       {allItems && allItems.length > 0 ? (
         allItems.map((el) => {
           //  console.log(el);
           return (
-            <div key={el.id}>
-              <li className="d-flex m-3 justify-content-between border">
+            <div key={el.id} className='bg-light rounded w-75 my-2'>
+              <li className="d-flex m-3 justify-content-between">
                 <div className="d-flex align-items-center">
                   <img
                     src={el.images[0]}
