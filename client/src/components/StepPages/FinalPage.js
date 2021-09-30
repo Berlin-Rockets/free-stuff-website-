@@ -73,7 +73,7 @@ export default function FinalPage(props) {
           onSubmit={saveItem}
           encType="multipart/form-data"
         >
-          <label htmlFor="upload-button" className="mx-auto mb-3 border">
+          <label htmlFor="upload-button" className="mx-auto mb-3">
             {imageSelected.preview ? (
               <div>
                 <img
@@ -81,12 +81,12 @@ export default function FinalPage(props) {
                   alt="profile-pic"
                   className=" ml-3"
                   style={{
-                    width: '100px',
-                    height: '100px',
+                    width: '70%',
+                    height: '50%',
                     boxShadow: '3px 3px 6px 2px #173F5F',
                   }}
                 />
-                <span
+                {/* <span
                   // style={{ float: 'left' }}
                   className="ml-3 mb-4 d-flex flex-direction-column justify-items-center"
                 >
@@ -97,7 +97,7 @@ export default function FinalPage(props) {
                   </span>
                   <br />
                   <h6 className="text-secondary">Upload photo</h6>
-                </span>
+                </span> */}
               </div>
             ) : (
               <div
