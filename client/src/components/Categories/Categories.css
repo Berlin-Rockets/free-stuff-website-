@@ -47,6 +47,7 @@
   flex-direction: column;
   text-decoration: none;
   background: var(--lighter-grey);
+  cursor: pointer;
 }
 
 .cat-icon {

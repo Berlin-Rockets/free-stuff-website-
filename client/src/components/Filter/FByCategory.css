@@ -27,4 +27,10 @@
   flex-direction: column;
   padding: 15px;
   cursor: pointer;
+  background: white;
+}
+
+.btn-circle-location:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
 }
