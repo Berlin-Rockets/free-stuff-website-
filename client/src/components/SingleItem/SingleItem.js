@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import baseURL from '../../config/baseUrl';
 import './SingleItem.css';
+import Moment from 'react-moment';
 
 const SingleItem = () => {
   const [item, setItem] = useState();
@@ -46,7 +47,7 @@ const SingleItem = () => {
                 </h4>
                 <p className="mb-2">
                   <small className="text-muted">
-                    Published on {item.createdAt}
+                    <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>{' '}
                   </small>
                 </p>
               </li>

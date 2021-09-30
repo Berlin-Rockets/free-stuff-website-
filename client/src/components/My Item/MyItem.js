@@ -37,17 +37,17 @@ export default function MyItem() {
 
 // console.log(Item);
 return user ? (
-    <div className="container ">
-      <h1>All Items</h1>
-      <h4>Hallo  {user.name}</h4>
-      <h4>{user.email}</h4>
+    <div className="container d-flex flex-column align-items-center ">
+      <h1 className='text-center'>My Items</h1>
+      <h4 className='text-center'>Hallo  {user.name}</h4>
+      <p className='text-center'>{user.email}</p>
 
       {Items && Items.length > 0 ? (
         Items.map((el) => {
           //  console.log(el);
           return (
-            <div key={el.id}>
-              <li className="d-flex m-3 justify-content-between border">
+            <div key={el.id} className='bg-light rounded w-75 my-2'>
+              <li className="d-flex m-3 justify-content-between ">
                 <div className="d-flex align-items-center">
                   <img
                     src={el.images[0]}

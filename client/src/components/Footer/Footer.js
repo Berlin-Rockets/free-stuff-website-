@@ -4,7 +4,8 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <div>
+    <div class="pt-5">
+      <hr />
       <div className="container"></div>
       <div className="footer">
         {/* Footer main */}
@@ -54,11 +55,8 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="https://allaboutberlin.com/guides/moving-to-berlin"
-                  target="_blank"
-                >
-                  Moving to Berlin Guide
+                <a href="https://tierschutz-berlin.de/" target="_blank">
+                  Tierheim Berlin
                 </a>
               </li>
               <li>
@@ -122,8 +120,28 @@ function Footer() {
             <li>
               <a href="/Privacy">Privacy Policy</a>
             </li>
-            <li>
-              &copy;{new Date().getFullYear()} Freebay - All Rights Reserved
+            <li className='text-center'>
+              &copy;{new Date().getFullYear()}  made by{" "}
+              <a
+                href="https://www.linkedin.com/in/ahmad-suliman-19ba37214/"
+                target="_blank"
+              >
+                Ahmad
+              </a>
+              ,{" "}
+              <a
+                href="https://www.linkedin.com/in/nathaly-colombo/"
+                target="_blank"
+              >
+                Nathaly
+              </a>{" "}
+              
+              <a
+                href="https://www.linkedin.com/in/stanislavgenunchi/"
+                target="_blank"
+              >
+                Stanislav
+              </a>
             </li>
           </ul>
         </section>

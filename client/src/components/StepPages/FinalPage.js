@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { FaUserCircle } from 'react-icons/fa';
+import { BiImageAdd } from 'react-icons/bi';
 import axios from 'axios';
 import baseURL from '../../config/baseUrl';
 
@@ -79,7 +79,7 @@ export default function FinalPage(props) {
                 <img
                   src={imageSelected.preview}
                   alt="profile-pic"
-                  className="rounded-circle ml-3"
+                  className=" ml-3"
                   style={{
                     width: '100px',
                     height: '100px',
@@ -90,8 +90,8 @@ export default function FinalPage(props) {
                   // style={{ float: 'left' }}
                   className="ml-3 mb-4 d-flex flex-direction-column justify-items-center"
                 >
-                  <span className="text-dark col-3">
-                    <FaUserCircle
+                  <span className="text-dark col-3 ">
+                    <BiImageAdd
                       style={{ fontSize: 'xxx-large', float: 'left' }}
                     />
                   </span>
@@ -105,7 +105,7 @@ export default function FinalPage(props) {
                 className="ml-3 mb-4 d-flex flex-direction-column justify-content-center "
               >
                 <div className="text-dark col-3">
-                  <FaUserCircle style={{ fontSize: 'xxx-large' }} />
+                  <BiImageAdd style={{ fontSize: 'xxx-large' }} />
                 </div>
                 <br />
                 <h5 className="text-dark col-7 m-3">Upload Photo</h5>

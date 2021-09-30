@@ -1,3 +1,14 @@
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -77,15 +88,15 @@ form {
   flex-wrap: wrap;
 }
 
-input[type='email'] {
+input[type="email"] {
   border: 0;
   padding: 0.625rem;
   margin-top: 0.3125rem;
 }
 
-input[type='submit'] {
-  background-color: var(--dark);
-  color: var(--grey);
+input[type="submit"] {
+  background: var(--dark);
+  color: var(--light-grey);
   cursor: pointer;
   border: 0;
   padding: 0.625rem 0.9375rem;

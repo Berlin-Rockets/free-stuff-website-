@@ -32,11 +32,11 @@ export default function AllUsers() {
 
   return user ? (
     <div className="container Page ">
-      <h1>All Users</h1>
-      <h4>Hallo {user.name}</h4>
-      <h4>{user.email}</h4>
+      
+      <h4 className='text-center'>Hallo {user.name}</h4>
+      <h4 className='text-center'>{user.email}</h4>
       {users && users.length > 0 ? (
-        <h5 className="m-5 bg-info text-center p-3">{users.length} Users</h5>
+        <h5 className="m-5 bg-secondary text-center p-3 rounded-pill text-white">{users.length} Users</h5>
       ) : (
         <div>Loading</div>
       )}
@@ -45,10 +45,10 @@ export default function AllUsers() {
         users.map((user) => {
           return (
             <div className="container" key={user.id}>
-              <li className="row m-1 align-items-center border">
+              <li className="row m-1 align-items-center ">
                 <div className="row  align-items-center ">
                
-                  <p className="col bg-success ms-2 text-white rounded-pill text-center">
+                  <p className="col bg-warning ms-2  rounded-pill text-center">
                     <span className="p-2">User Name: {user.name}</span>{" "}
                   </p>
                   <p className="col bg-warning ms-2  rounded-pill text-center">
@@ -56,13 +56,13 @@ export default function AllUsers() {
                   </p>
                   {!user.isAdmin ? (
                    
-                      <p className="col bg-danger ms-2 text-white rounded-pill text-center">
+                      <p className="col bg-warning ms-2  rounded-pill text-center">
                       <span className="p-2">
                         Admin: {user.isAdmin.toString()}
                       </span>{" "}
                     </p>
                     
-                  ):  <p className="col bg-info ms-2 text-white rounded-pill text-center">
+                  ):  <p className="col bg-danger ms-2 text-white rounded-pill text-center">
                   <span className="p-2">
                     Admin: {user.isAdmin.toString()}
                   </span>{" "}
