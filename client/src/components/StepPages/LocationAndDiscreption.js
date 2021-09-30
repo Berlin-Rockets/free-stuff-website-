@@ -3,9 +3,7 @@ import React from 'react';
 export default function LocationAndDiscreption(props) {
   return (
     <div>
-      <label htmlFor="">
-        Provide a decent description of your item or search
-      </label>
+      <label htmlFor="">Provide a description of your item or search</label>
       <textarea
         className="form-control mb-3 col-11 ml-3"
         id="exampleFormControlTextarea1"

@@ -1,14 +1,16 @@
-import React from "react";
-import { useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
-import axios from "axios";
-import baseURL from "../../config/baseUrl";
+import React from 'react';
+import { useState } from 'react';
+import { FaUserCircle } from 'react-icons/fa';
+import axios from 'axios';
+import baseURL from '../../config/baseUrl';
 
 export default function FinalPage(props) {
-  const [imageSelected, setImageSelected] = useState({ preview: false, raw: "" });
+  const [imageSelected, setImageSelected] = useState({
+    preview: false,
+    raw: '',
+  });
   // console.log(baseURL);
   const fileHandler = (e) => {
-
     if (e.target.files.length) {
       setImageSelected({
         preview: URL.createObjectURL(e.target.files[0]),
@@ -17,61 +19,61 @@ export default function FinalPage(props) {
     }
   };
 
-  
-    const saveItem = async (e) => {
-      e.preventDefault();
-      let fd = new FormData();
-      fd.append("category", props.state.category);
-      fd.append("location", props.state.location);
-      if (props.state.PostOrSearch === 'Post item') {
-        fd.append("usedState", true);
-      }else{
-        fd.append("usedState", false);
-      }
-      // fd.append("PostOrSearch", props.state.PostOrSearch);
-      if (props.state.usedState === 'Used') {
-        fd.append("usedState", true);
-      }else{
-        fd.append("usedState", false);
-      }
-      
-      fd.append("name", props.state.name);
-      fd.append("userId", localStorage.getItem("userId"));
-      fd.append("description", props.state.description);
-      fd.append("image",imageSelected.raw);
-      fd.append("upload_preset","ml_default");
-  //  console.log('fddddddddd...', fd);
+  const saveItem = async (e) => {
+    e.preventDefault();
+    let fd = new FormData();
+    fd.append('category', props.state.category);
+    fd.append('location', props.state.location);
+    if (props.state.PostOrSearch === 'Post item') {
+      fd.append('usedState', true);
+    } else {
+      fd.append('usedState', false);
+    }
+    // fd.append("PostOrSearch", props.state.PostOrSearch);
+    if (props.state.usedState === 'Used') {
+      fd.append('usedState', true);
+    } else {
+      fd.append('usedState', false);
+    }
 
-   try{
-     axios({
-        method: "POST",
+    fd.append('name', props.state.name);
+    fd.append('userId', localStorage.getItem('userId'));
+    fd.append('description', props.state.description);
+    fd.append('image', imageSelected.raw);
+    fd.append('upload_preset', 'ml_default');
+    //  console.log('fddddddddd...', fd);
+
+    try {
+      axios({
+        method: 'POST',
         url: `${baseURL}/items`,
         baseURL: baseURL,
         data: fd,
         headers: {
-          "Content-Type": "multipart/form-data",
+          'Content-Type': 'multipart/form-data',
         },
-      })
-        .then((res) => {
-          console.log("resssssssssssss", res);
-        })
-   }catch(err) {
-          console.log(err);
-        };
-        window.location.replace('/items');
+      }).then((res) => {
+        console.log('resssssssssssss', res);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+    window.location.replace('/items');
   };
-
 
   // console.log('propssssss',props);
   return (
     <div>
-      <div className="">
+      <div className="text-center">
+        Choose a photo for your item by clicking
+        <br />
+        "Upload Photo" and then click "Post Item"
         <form
-          className="form m-5 border"
+          className="form m-5"
           onSubmit={saveItem}
           encType="multipart/form-data"
         >
-          <label htmlFor="upload-button" className="float-left mb-3">
+          <label htmlFor="upload-button" className="mx-auto mb-3 border">
             {imageSelected.preview ? (
               <div>
                 <img
@@ -79,37 +81,35 @@ export default function FinalPage(props) {
                   alt="profile-pic"
                   className="rounded-circle ml-3"
                   style={{
-                    width: "100px",
-                    height: "100px",
-                    boxShadow: "3px 3px 6px 2px #173F5F",
+                    width: '100px',
+                    height: '100px',
+                    boxShadow: '3px 3px 6px 2px #173F5F',
                   }}
                 />
                 <span
-                  style={{ float: "left" }}
-                  className="ml-3 mb-4 d-flex flex-direction-column align-items-start"
+                  // style={{ float: 'left' }}
+                  className="ml-3 mb-4 d-flex flex-direction-column justify-items-center"
                 >
                   <span className="text-dark col-3">
                     <FaUserCircle
-                      style={{ fontSize: "xxx-large", float: "left" }}
+                      style={{ fontSize: 'xxx-large', float: 'left' }}
                     />
                   </span>
                   <br />
-                  <h6 className="text-secondary col-7 m-3">Upload photo</h6>
+                  <h6 className="text-secondary">Upload photo</h6>
                 </span>
               </div>
             ) : (
-              <span
-                style={{ float: "left" }}
-                className="ml-3 mb-4 d-flex flex-direction-column align-items-start "
+              <div
+                // style={{ float: 'left' }}
+                className="ml-3 mb-4 d-flex flex-direction-column justify-content-center "
               >
-                <span className="text-dark col-3">
-                  <FaUserCircle
-                    style={{ fontSize: "xxx-large", float: "left" }}
-                  />
-                </span>
+                <div className="text-dark col-3">
+                  <FaUserCircle style={{ fontSize: 'xxx-large' }} />
+                </div>
                 <br />
-                <h6 className="text-secondary col-7 m-3">Upload photo</h6>
-              </span>
+                <h5 className="text-dark col-7 m-3">Upload Photo</h5>
+              </div>
             )}
           </label>
           <input
@@ -117,14 +117,27 @@ export default function FinalPage(props) {
             name="image"
             accept="image/*"
             multiple
-            style={{ display: "none" }}
+            style={{ display: 'none' }}
             id="upload-button"
             onChange={fileHandler}
           />
-
           <br />
           <br />
-          <button type="submit">Post Item</button>
+          <button
+            type="submit"
+            style={{
+              padding: 12,
+              background: '#3f51b5',
+              color: 'white',
+              fontWeight: '800',
+              borderRadius: 3,
+              border: 0,
+              width: '100%',
+              textTransform: 'uppercase',
+            }}
+          >
+            Post Item
+          </button>
         </form>
       </div>
       {/* // <p>

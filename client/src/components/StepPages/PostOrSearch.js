@@ -3,7 +3,7 @@ import React from 'react';
 export default function PostOrSearch(props) {
   return (
     <div className="">
-      <label htmlFor="">Do you want to post or a you in a search?</label>
+      <label htmlFor="">Do you want to post or are you in a search?</label>
       <select
         className="form-select"
         aria-label="Default select example"
