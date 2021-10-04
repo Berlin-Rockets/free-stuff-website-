@@ -84,7 +84,7 @@ export default function FByCategory() {
         </div>
         <div className="item-container d-flex justify-content-around mx-0 flex-column">
           <h1 className="text-center mb-5">
-            {category} {location}
+            {category} - {location}
           </h1>
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-8">
             {items.map((item) => {

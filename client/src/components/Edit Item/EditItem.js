@@ -45,7 +45,7 @@ const getItem = async () => {
        itemData
       );
       
-      history.push("/items");
+      history.push("/myItem");
     } catch (e) {
       console.log(e);
     }
