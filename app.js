@@ -5,6 +5,7 @@ const { port, mongoURL } = require("./config/env");
 const userRoute = require("./routes/UserRoutes");
 const itemRoute = require("./routes/ItemRoutes");
 const core = require("./middleware/security");
+const path = require('path')
 
 mongoose.connect(mongoURL, {
   useNewUrlParser: true,

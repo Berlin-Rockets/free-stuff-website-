@@ -25,7 +25,7 @@ const AllItems = () => {
   useEffect(() => {
     getAllItems();
   }, []);
-  // console.log(items);
+  console.log('itemsssss',items);
 
   return items ? (
     <React.Fragment>
