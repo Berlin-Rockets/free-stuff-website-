@@ -37,8 +37,8 @@ app.use((error, req, res, next) => {
   res.json(error.toString());
 });
 
-app.listen( 4000, () => {
+app.listen(port || 4000, () => {
   console.log("====================================");
-  console.log("Server start with port: 4000" );
+  console.log("Server start with port: " + port);
   console.log("====================================");
 });
