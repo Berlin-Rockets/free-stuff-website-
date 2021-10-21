@@ -22,7 +22,7 @@ export default function Login() {
     // console.log('login user', user);
     try {
       const res = await axios.post(baseURL + '/users/login', user);
-      // console.log(res.data);
+      console.log(res.data);
       if (res.data.success) {
         // console.log(res.data);
         localStorage.setItem('token', res.data.token);
@@ -31,9 +31,9 @@ export default function Login() {
         setSuccess(
           `Welcome ${res.data.data.username}, registered successfully`
         );
-        setTimeout(() => {
-          window.location.replace('/');
-        }, 500);
+        // setTimeout(() => {
+        //   window.location.replace('/');
+        // }, 500);
       } else {
         setError('NO such user found in DB. Email or password is invalid');
         setSuccess(null);
@@ -47,7 +47,8 @@ export default function Login() {
     // console.log(response);
     axios({
       method: 'POST',
-      url: 'http://localhost:4000/users/googlelogin',
+      url:`${baseURL}/users/googlelogin`,
+      // url: 'http://localhost:4000/users/googlelogin',
       data: { tokenId: response.tokenId },
     }).then((response) => {
       console.log('responseeeee',response.data);
@@ -79,7 +80,8 @@ export default function Login() {
     // console.log(response);
     axios({
       method: 'POST',
-      url: 'http://localhost:4000/users/facebooklogin',
+      url:`${baseURL}/users/facebooklogin`,
+      // url: 'http://localhost:4000/users/facebooklogin',
       data: { accessToken: response.accessToken, userID: response.userID },
     }).then((response) => {
       if (response.data.success) {
