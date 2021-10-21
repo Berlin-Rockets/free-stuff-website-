@@ -64,7 +64,7 @@ export default function Login() {
         window.location.replace('/');
       }, 200);
       }else{
-        setError("please login");
+        setError("please try to login again");
         setSuccess(null);
       }
       
@@ -72,7 +72,7 @@ export default function Login() {
   };
 
   const responseErrorGoogle = () => {
-    setError('please put your email and password');
+    setError('please try to login again');
     setSuccess(null);
   };
 
@@ -84,7 +84,7 @@ export default function Login() {
       // url: 'http://localhost:4000/users/facebooklogin',
       data: { accessToken: response.accessToken, userID: response.userID },
     }).then((response) => {
-      // console.log('responseeee', response.data.data.name);
+      console.log('responseeee', response.data.data.name);
       if ('name' in response.data.data) {
         //  console.log('responseeeee', response.data);
       localStorage.setItem('token', response.data.token);
@@ -95,11 +95,9 @@ export default function Login() {
         window.location.replace('/');
       }, 200);
       }else{
-        setError("NO such user found in DB. Email or password is invalid");
+        setError("please try to login again");
         setSuccess(null);
-        setTimeout(() => {
-          window.location.replace('/');
-        }, 200);
+     
       }
      
     });

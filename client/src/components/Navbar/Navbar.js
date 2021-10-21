@@ -73,7 +73,7 @@ class Navbar extends React.Component {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {/* {this.props.user.data.name} */}
+                {this.props.user.data.name}
               </a>
 
               <ul
@@ -88,7 +88,7 @@ class Navbar extends React.Component {
                     My items
                   </Link>
                 </li>
-                {/* {this.props.user && this.props.user.data.isAdmin && (
+                {this.props.user && this.props.user.data.isAdmin && (
                   <li>
                     <Link
                       className="dropdown-item text-decoration-none"
@@ -107,7 +107,7 @@ class Navbar extends React.Component {
                       All Users
                     </Link>
                   </li>
-                )} */}
+                )}
               </ul>
               <div className="btn-register">
                 <div className="btn--log-reg" onClick={this.onLogout}>
