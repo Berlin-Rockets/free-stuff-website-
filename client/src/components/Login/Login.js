@@ -86,20 +86,20 @@ export default function Login() {
     }).then((response) => {
       // console.log('responseeee', response.data.data.name);
       if ('name' in response.data.data) {
-         console.log('responseeeee', response.data);
+        //  console.log('responseeeee', response.data);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.userId);
       setError(null);
       setSuccess(`Welcome ${response.data.data.name}, registered successfully`);
-      // setTimeout(() => {
-      //   window.location.replace('/');
-      // }, 200);
+      setTimeout(() => {
+        window.location.replace('/');
+      }, 200);
       }else{
         setError("NO such user found in DB. Email or password is invalid");
         setSuccess(null);
-        // setTimeout(() => {
-        //   window.location.replace('/');
-        // }, 200);
+        setTimeout(() => {
+          window.location.replace('/');
+        }, 200);
       }
      
     });
