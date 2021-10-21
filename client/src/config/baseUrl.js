@@ -1,2 +1,2 @@
-const baseURL= 'http://localhost:4000'
+const baseURL= 'https://freebay-free-stuff.herokuapp.com'
 export default baseURL
