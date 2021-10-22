@@ -1,5 +1,4 @@
-// const baseURL= 'https://freebay-free-stuff.herokuapp.com'
-// export default baseURL
+
 
 const baseURL =
   process.env.REACT_APP_ENV === "development"

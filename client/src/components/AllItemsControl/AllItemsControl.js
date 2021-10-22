@@ -18,7 +18,6 @@ export default function AllItemsControl() {
   const getItems = async (e) => {
     try {
       const allItemsData = await axios.get(baseURL + "/api/items");
-      console.log('all items...............',allItemsData.data);
       setAllItems(allItemsData.data.data);
     } catch (e) {
       console.log(e);

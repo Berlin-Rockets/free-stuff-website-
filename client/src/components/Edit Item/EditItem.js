@@ -45,7 +45,7 @@ const getItem = async () => {
        itemData
       );
       
-      history.push("/myItem");
+      history.goBack();
     } catch (e) {
       console.log(e);
     }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'react-bootstrap';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import baseURL from '../../config/baseUrl';
 import './SingleItem.css';
@@ -9,7 +9,7 @@ import Moment from 'react-moment';
 
 const SingleItem = () => {
   const [item, setItem] = useState();
-  // console.log('run single item page');
+  let history = useHistory();
   const { id } = useParams();
   console.log(id);
 
@@ -30,9 +30,9 @@ const SingleItem = () => {
     getSingleItem();
   });
 
-  // const goBack =()=>{
-  //   window.history.back()
-  // }
+  const goBack =()=>{
+    history.goBack();
+  }
 
   console.log('Item:', item);
 
@@ -77,9 +77,12 @@ const SingleItem = () => {
           </div>
         </div>
         <div className="container text-center px-0 pb-5 m-0 mx-auto">
-          <Link to={`/items/${item.category}`} className="btn btn-primary me-2">
+          {/* <Link to={`/items/${item.category}`} className="btn btn-primary ">
             Back to items
-          </Link>
+          </Link> */}
+          <button type="button" className="btn btn-primary me-2" onClick={goBack}>
+          Go Back
+            </button>
           <a href="/" className="card-link">
             <button type="button" className="btn btn-primary">
               Go to Home Page
