@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import 'react-bootstrap';
-import axios from 'axios';
-import { useParams, useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import baseURL from '../../config/baseUrl';
-import './SingleItem.css';
-import Moment from 'react-moment';
+import React, { useState, useEffect } from "react";
+import "react-bootstrap";
+import axios from "axios";
+import { useParams, useHistory } from "react-router-dom";
+import baseURL from "../../config/baseUrl";
+import "./SingleItem.css";
+import Moment from "react-moment";
 
 const SingleItem = () => {
   const [item, setItem] = useState();
   let history = useHistory();
   const { id } = useParams();
-  console.log(id);
 
   const getSingleItem = async () => {
     try {
-
       const res = await axios.get(baseURL + "/api/items/singleitem/" + id);
-
-      console.log(res.data);
 
       setItem(res.data.data);
     } catch (e) {
@@ -30,11 +25,9 @@ const SingleItem = () => {
     getSingleItem();
   });
 
-  const goBack =()=>{
+  const goBack = () => {
     history.goBack();
-  }
-
-  console.log('Item:', item);
+  };
 
   return item ? (
     <React.Fragment>
@@ -49,7 +42,7 @@ const SingleItem = () => {
                 </h4>
                 <p className="mb-2">
                   <small className="text-muted">
-                    <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>{' '}
+                    <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>{" "}
                   </small>
                 </p>
               </li>
@@ -59,7 +52,7 @@ const SingleItem = () => {
               <li className="list-group-item">
                 <li>Location: {item.location}</li>
                 <li>
-                  Condition:{' '}
+                  Condition:{" "}
                   {item.usedState ? <span>Used</span> : <span>New</span>}
                 </li>
               </li>
@@ -80,9 +73,13 @@ const SingleItem = () => {
           {/* <Link to={`/items/${item.category}`} className="btn btn-primary ">
             Back to items
           </Link> */}
-          <button type="button" className="btn btn-primary me-2" onClick={goBack}>
-          Go Back
-            </button>
+          <button
+            type="button"
+            className="btn btn-primary me-2"
+            onClick={goBack}
+          >
+            Go Back
+          </button>
           <a href="/" className="card-link">
             <button type="button" className="btn btn-primary">
               Go to Home Page

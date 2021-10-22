@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import baseURL from '../../config/baseUrl';
-import './Login.css';
-import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
-import '../Button/Button.css';
+import React, { useState } from "react";
+import axios from "axios";
+import baseURL from "../../config/baseUrl";
+import "./Login.css";
+import GoogleLogin from "react-google-login";
+import FacebookLogin from "react-facebook-login";
+import "../Button/Button.css";
 
 export default function Login() {
   const [error, setError] = useState();
@@ -21,12 +21,12 @@ export default function Login() {
     };
     // console.log('login user', user);
     try {
-      const res = await axios.post(baseURL + '/users/login', user);
+      const res = await axios.post(baseURL + "/users/login", user);
       console.log(res.data);
       if (res.data.success) {
         // console.log(res.data);
-        localStorage.setItem('token', res.data.token);
-        localStorage.setItem('userId', res.data.userId);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("userId", res.data.userId);
         setError(null);
         setSuccess(
           `Welcome ${res.data.data.username}, registered successfully`
@@ -35,7 +35,7 @@ export default function Login() {
         //   window.location.replace('/');
         // }, 500);
       } else {
-        setError('NO such user found in DB. Email or password is invalid');
+        setError("NO such user found in DB. Email or password is invalid");
         setSuccess(null);
       }
     } catch (e) {
@@ -44,62 +44,55 @@ export default function Login() {
   };
 
   const responseSuccessGoogle = (response) => {
-    // console.log(response);
     axios({
-      method: 'POST',
-      url:`${baseURL}/users/googlelogin`,
-      // url: 'http://localhost:4000/users/googlelogin',
+      method: "POST",
+      url: `${baseURL}/users/googlelogin`,
+
       data: { tokenId: response.tokenId },
     }).then((response) => {
-      console.log('responseeeee',response.data);
       if (response.data.success) {
-        console.log('responseeeee',response.data);
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('userId', response.data.userId);
-      setError(null);
-      setSuccess(
-        `Welcome ${response.data.data.username}, registered successfully`
-      );
-      setTimeout(() => {
-        window.location.replace('/');
-      }, 200);
-      }else{
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userId", response.data.userId);
+        setError(null);
+        setSuccess(
+          `Welcome ${response.data.data.username}, registered successfully`
+        );
+        setTimeout(() => {
+          window.location.replace("/");
+        }, 200);
+      } else {
         setError("please try to login again");
         setSuccess(null);
       }
-      
     });
   };
 
   const responseErrorGoogle = () => {
-    setError('please try to login again');
+    setError("please try to login again");
     setSuccess(null);
   };
 
   const responseFacebook = (response) => {
-    // console.log(response);
     axios({
-      method: 'POST',
-      url:`${baseURL}/users/facebooklogin`,
+      method: "POST",
+      url: `${baseURL}/users/facebooklogin`,
       // url: 'http://localhost:4000/users/facebooklogin',
       data: { accessToken: response.accessToken, userID: response.userID },
     }).then((response) => {
-      console.log('responseeee', response.data.data.name);
-      if ('name' in response.data.data) {
-        //  console.log('responseeeee', response.data);
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('userId', response.data.userId);
-      setError(null);
-      setSuccess(`Welcome ${response.data.data.name}, registered successfully`);
-      setTimeout(() => {
-        window.location.replace('/');
-      }, 200);
-      }else{
+      if ("name" in response.data.data) {
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("userId", response.data.userId);
+        setError(null);
+        setSuccess(
+          `Welcome ${response.data.data.name}, registered successfully`
+        );
+        setTimeout(() => {
+          window.location.replace("/");
+        }, 200);
+      } else {
         setError("please try to login again");
         setSuccess(null);
-     
       }
-     
     });
   };
 
@@ -178,8 +171,8 @@ export default function Login() {
             </div>
 
             <p className="my-4 text-color">
-              If you don't have an account, please{' '}
-              <a href="/register">register here</a>{' '}
+              If you don't have an account, please{" "}
+              <a href="/register">register here</a>{" "}
             </p>
 
             <input
@@ -195,7 +188,7 @@ export default function Login() {
                 buttonText="Login with Google"
                 onSuccess={responseSuccessGoogle}
                 onFailure={responseErrorGoogle}
-                cookiePolicy={'single_host_origin'}
+                cookiePolicy={"single_host_origin"}
               />
             </div>
             <FacebookLogin

@@ -5,7 +5,6 @@ const  auth  = require("../middleware/Auth");
 
 const {
   getItems,
-  getAllItems,
   getSingleItem,
   userItems,
   postItem,

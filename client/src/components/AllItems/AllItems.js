@@ -14,7 +14,7 @@ const AllItems = () => {
   const getAllItems = async () => {
     try {
       const res = await axios.get(baseURL + '/api/items');
-      // console.log(res.data);
+      
 
       setItems(res.data.data);
     } catch (e) {
@@ -25,7 +25,7 @@ const AllItems = () => {
   useEffect(() => {
     getAllItems();
   }, []);
-  console.log('itemsssss',items);
+ 
 
   return items ? (
     <React.Fragment>

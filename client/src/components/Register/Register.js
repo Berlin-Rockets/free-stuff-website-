@@ -3,8 +3,7 @@ import axios from 'axios';
 import baseURL from '../../config/baseUrl';
 import './Register.css';
 import '../Login/Login.css';
-// import { FcGoogle } from "react-icons/fc";
-// import { FaFacebook } from "react-icons/fa";
+
 
 export default function Register() {
   const [error, setError] = useState();
@@ -24,10 +23,10 @@ export default function Register() {
       password,
       confirmPassword,
     };
-    //   console.log(user);
+    
     try {
       const res = await axios.post(baseURL + '/users/register', user);
-      console.log(res);
+      
       if (res.data.err) {
         setError(res.data.err);
         setSuccess(null);
@@ -40,7 +39,7 @@ export default function Register() {
           window.location.replace('/');
         }, 500);
       }
-      console.log('RES ==> ', res.data);
+     
     } catch (e) {
       console.log(e);
     }

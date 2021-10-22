@@ -18,7 +18,7 @@ export default function Carousel() {
 
       const res = await axios.get(baseURL + "/api/items");
 
-      // console.log(res.data);
+     
       setItems(res.data.data);
     } catch (e) {
       console.log(e);
@@ -29,7 +29,7 @@ export default function Carousel() {
     getAllItems();
   }, []);
 
-  // console.log('items are:',items);
+ 
 
   return items ? (
     <div className="car-container">

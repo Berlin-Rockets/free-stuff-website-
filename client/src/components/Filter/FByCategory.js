@@ -1,63 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import data from '../Categories/CatData';
-import locData from '../Location/LocData';
-import baseURL from '../../config/baseUrl';
-import Moment from 'react-moment';
-import { useParams } from 'react-router-dom';
-import './FByCategory.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "react-bootstrap";
+import { Link } from "react-router-dom";
+import data from "../Categories/CatData";
+import locData from "../Location/LocData";
+import baseURL from "../../config/baseUrl";
+import Moment from "react-moment";
+import { useParams } from "react-router-dom";
+import "./FByCategory.css";
 
 export default function FByCategory() {
   const [items, setItems] = useState();
-  const [category, setCategory] = useState('All');
-  const [location, setLocation] = useState(' ');
+  const [category, setCategory] = useState("All");
+  const [location, setLocation] = useState(" ");
 
   const label = useParams();
-  // console.log(label.filter);
 
+  const getItems = async () => {
+    try {
+      const res = await axios.get(baseURL + "/api/items/" + label.filter);
 
-    const getItems = async () => {
-        try {
-          const res = await axios.get(baseURL + '/api/items/'+ label.filter);
-          // console.log(res.data);
-          setItems(res.data.data);
-          setCategory(label.filter)
-        } catch (e) {
-          console.log(e);
-        }
-      };
-
+      setItems(res.data.data);
+      setCategory(label.filter);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   useEffect(() => {
     getItems();
-  },[]);
+  }, []);
 
+  const filterItems = async (cat) => {
+    try {
+      const res = await axios.get(baseURL + "/api/items/" + cat);
 
-      const filterItems = async (cat) => {
-      
-        
-        try {
-          const res = await axios.get(baseURL + '/api/items/' + cat);
-          console.log(res.data);
-          setItems(res.data.data);
-          setCategory(cat)
-        } catch (e) {
-          console.log(e);
-        }
-      };
+      setItems(res.data.data);
+      setCategory(cat);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-      const filterItemsByLoc=async(loc)=>{
-        console.log('filter by location');
-        const res=await axios.get(baseURL+'/api/items/filter/'+ category +'/'+ loc)
-        console.log(res.data.data);
-        setItems(res.data.data);
-       setLocation(loc)
-      }
+  const filterItemsByLoc = async (loc) => {
+    const res = await axios.get(
+      baseURL + "/api/items/filter/" + category + "/" + loc
+    );
 
+    setItems(res.data.data);
+    setLocation(loc);
+  };
 
-  //   console.log('itemmmmmmmmmm',items);
   return items ? (
     <React.Fragment>
       <div className="container-fluid item-container-filter d-flex mx-0 flex-column">
@@ -91,7 +84,7 @@ export default function FByCategory() {
               return (
                 <div>
                   <Link
-                    to={'singleItem/' + item._id}
+                    to={"singleItem/" + item._id}
                     className="text-decoration-none"
                   >
                     <div className="col">
@@ -115,7 +108,7 @@ export default function FByCategory() {
                         </div>
                         <div class="card-footer">
                           <small class="text-muted">
-                            Published on:{' '}
+                            Published on:{" "}
                             <Moment format="DD.MM.YYYY">
                               {item.createdAt}
                             </Moment>

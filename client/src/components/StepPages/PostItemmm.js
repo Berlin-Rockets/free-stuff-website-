@@ -1,18 +1,18 @@
-import React from 'react';
-import { Steps, Step } from 'react-step-builder';
-import NameAndCategory from './NameAndCategory';
-import LocationAndDiscreption from './LocationAndDiscreption';
-import PostOrSearch from './PostOrSearch';
-import FinalPage from './FinalPage';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import './postItem.css';
-import Login from '../Login/Login';
+import React from "react";
+import { Steps, Step } from "react-step-builder";
+import NameAndCategory from "./NameAndCategory";
+import LocationAndDiscreption from "./LocationAndDiscreption";
+import PostOrSearch from "./PostOrSearch";
+import FinalPage from "./FinalPage";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import "./postItem.css";
+import Login from "../Login/Login";
 
 const Navigation = (props) => {
   const useStyles = makeStyles((theme) => ({
     button: {
-      display: 'block',
+      display: "block",
       marginTop: theme.spacing(2),
     },
     formControl: {
@@ -20,22 +20,21 @@ const Navigation = (props) => {
       minWidth: 120,
     },
   }));
-  // console.log( props.state);
+
   return (
     <div className="d-flex w-100 justify-content-center flex-wrap">
-      <div style={{ margin: '20px 10px' }}>
+      <div style={{ margin: "20px 10px" }}>
         <Button
           variant="contained"
           size="large"
           className={useStyles.button}
           color="primary"
           onClick={props.prev}
-          // style={{ marginRight: 10 }}
         >
           Previous
         </Button>
       </div>
-      <div style={{ margin: '20px 10px' }}>
+      <div style={{ margin: "20px 10px" }}>
         <Button
           variant="contained"
           color="primary"
@@ -50,7 +49,7 @@ const Navigation = (props) => {
 };
 
 function PostItemmm() {
-  const userId = localStorage.getItem('userId');
+  const userId = localStorage.getItem("userId");
 
   // const useStyles = makeStyles((theme) => ({
   //   button: {
@@ -66,7 +65,7 @@ function PostItemmm() {
   const config = {
     navigation: {
       component: Navigation, // a React component with special props provided automatically
-      location: 'after', // or before
+      location: "after", // or before
     },
   };
 
