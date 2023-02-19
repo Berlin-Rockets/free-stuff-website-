@@ -5,10 +5,7 @@ import baseURL from '../../config/baseUrl';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import './Carousel.css';
-// import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
-// import 'swiper/css';
 
 export default function Carousel() {
   const [items, setItems] = useState();

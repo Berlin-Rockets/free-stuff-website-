@@ -77,4 +77,3 @@ const AllItems = () => {
 
 export default AllItems;
 
-// row-cols-1 row-cols-sm-12 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-4 justify-content-center
