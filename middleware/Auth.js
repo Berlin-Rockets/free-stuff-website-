@@ -21,8 +21,8 @@ const auth = async (req, res, next) => {
     next(e);
   }
 
-  console.log("AUTH ==>", token);
-  console.log("decoded ==>", decoded);
+  // console.log("AUTH ==>", token);
+  // console.log("decoded ==>", decoded);
 
   next();
 };

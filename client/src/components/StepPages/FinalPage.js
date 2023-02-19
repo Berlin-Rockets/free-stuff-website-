@@ -55,7 +55,7 @@ export default function FinalPage(props) {
     } catch (err) {
       console.log(err);
     }
-    window.location.replace("/allItems");
+    window.location.replace("/");
   };
 
   return (
