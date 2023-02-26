@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "homepage": ".",
+  "homepage": "http://.",
   "scripts": {
     "start": "node app.js",
     "client": "npm run start --prefix client",
@@ -71,5 +71,13 @@
     "plugins": [
       "@babel/plugin-transform-react-jsx"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/Berlin-Rockets/teacher-website-.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Berlin-Rockets/teacher-website-/issues"
   }
 }
